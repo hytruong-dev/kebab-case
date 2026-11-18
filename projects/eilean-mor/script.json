@@ -1,0 +1,109 @@
+{
+  "slug": "eilean-mor",
+  "title": "Ngọn hải đăng Eilean Mor: Bí ẩn 3 người gác đèn biến mất không dấu vết giữa đại dương",
+  "voice": { "engine": "omnivoice", "ref": "assets/voice_refs/narrator_tram.wav", "speed": 1.0, "tempo": 1.08 },
+  "sources": [
+    "Northern Lighthouse Board — báo cáo của Robert Muirhead, 08/01/1901",
+    "Lời khai của Joseph Moore (Museum of Scottish Lighthouses, bản chép tài liệu)",
+    "Điện tín thuyền trưởng Jim Harvie, 26/12/1900",
+    "Munro (1979) Scottish Lighthouses; Nicholson (1995) Rock Lighthouses of Britain",
+    "Mike Dash, Fortean Times (2017): các trang nhật ký 'cầu nguyện giữa bão' là bịa đặt",
+    "J. A. Love (2015) A Natural History of Lighthouses: Marshall từng bị phạt 5 shilling",
+    "Haswell-Smith (2004) The Scottish Islands; đặc tính đèn Fl(2) W 30s (NLB)"
+  ],
+  "chapters": [
+    {
+      "id": "c1",
+      "title": "Đêm đèn tắt",
+      "sentences": [
+        { "shot": "storm-sea", "say": "Đêm mười lăm tháng mười hai năm một nghìn chín trăm, giữa vùng biển Đại Tây Dương đen kịt.", "show": "Đêm 15/12/1900, giữa vùng biển Đại Tây Dương đen kịt." },
+        { "shot": "ship-passing", "say": "Con tàu hơi nước Ác-tơ đi ngang qua quần đảo Phlan-nan, ngoài khơi Xcốt-len.", "show": "Con tàu hơi nước Archtor đi ngang qua quần đảo Flannan, ngoài khơi Scotland." },
+        { "shot": "lighthouse-dark", "say": "Các thủy thủ nhìn về phía hòn đảo... và thấy ngọn hải đăng tối om.", "show": "Các thủy thủ nhìn về phía hòn đảo... và thấy ngọn hải đăng tối om." },
+        { "shot": "three-keepers-fade", "say": "Trên đảo có ba người gác đèn. Và từ đêm đó, không ai còn gặp lại họ nữa.", "show": "Trên đảo có 3 người gác đèn. Và từ đêm đó, không ai còn gặp lại họ nữa." },
+        { "shot": "lamp-ready", "say": "Không thi thể. Không lời từ biệt. Chỉ còn một ngọn đèn sạch bóng, đã châm đầy dầu, chờ một đêm không bao giờ đến.", "show": "Không thi thể. Không lời từ biệt. Chỉ còn một ngọn đèn sạch bóng, đã châm đầy dầu, chờ một đêm không bao giờ đến." },
+        { "shot": "title-card", "say": "Đây là bí ẩn ngọn hải đăng Ê-lan Mo. Hôm nay, chúng ta sẽ lần theo từng manh mối.", "show": "Đây là bí ẩn ngọn hải đăng Eilean Mòr. Hôm nay, chúng ta sẽ lần theo từng manh mối." }
+      ]
+    },
+    {
+      "id": "c2",
+      "title": "Hòn đảo cô độc",
+      "sentences": [
+        { "shot": "map", "say": "Ê-lan Mo, nghĩa là Đảo Lớn, nằm cách đảo Lu-ít của Xcốt-len khoảng ba mươi hai ki-lô-mét về phía tây.", "show": "Eilean Mòr, nghĩa là \"Đảo Lớn\", nằm cách đảo Lewis của Scotland khoảng 32 km về phía tây." },
+        { "shot": "cliff-height", "say": "Quanh đảo là vách đá dựng đứng cao bốn mươi lăm mét, sóng quất vào quanh năm.", "show": "Quanh đảo là vách đá dựng đứng cao 45 m, sóng quất vào quanh năm." },
+        { "shot": "hauling", "say": "Mọi viên đá, mọi thùng dầu để xây ngọn hải đăng đều phải kéo thẳng lên từ chân vách đá.", "show": "Mọi viên đá, mọi thùng dầu để xây ngọn hải đăng đều phải kéo thẳng lên từ chân vách đá." },
+        { "shot": "tower-first-light", "say": "Ngọn tháp cao hai mươi ba mét được thắp sáng lần đầu vào ngày bảy tháng mười hai năm một nghìn tám trăm chín mươi chín.", "show": "Ngọn tháp cao 23 m được thắp sáng lần đầu vào ngày 7/12/1899." },
+        { "shot": "beam-ships", "say": "Ánh đèn của nó dẫn đường cho tàu thuyền qua vùng biển hiểm trở... nhưng chỉ được đúng một năm bình yên.", "show": "Ánh đèn của nó dẫn đường cho tàu thuyền qua vùng biển hiểm trở... nhưng chỉ được đúng 1 năm bình yên." },
+        { "shot": "keeper-ducat", "say": "Ba người gác đèn khi ấy là Giêm Đu-cát, trưởng trạm, người có vợ và bốn đứa con trên đất liền.", "show": "Ba người gác đèn khi ấy là James Ducat, trưởng trạm, người có vợ và 4 đứa con trên đất liền." },
+        { "shot": "keeper-marshall", "say": "Tô-mát Mác-san, phụ tá thứ hai.", "show": "Thomas Marshall, phụ tá thứ hai." },
+        { "shot": "keeper-mcarthur", "say": "Và Đô-nan Mắc-a-thơ, một thủy thủ kỳ cựu được gọi ra đảo làm người gác thay tạm thời.", "show": "Và Donald McArthur, một thủy thủ kỳ cựu được gọi ra đảo làm người gác thay tạm thời." }
+      ]
+    },
+    {
+      "id": "c3",
+      "title": "Chuyến tàu trễ hẹn",
+      "sentences": [
+        { "shot": "hesperus-schedule", "say": "Theo lịch, tàu tiếp tế Hét-pơ-rút phải ra đảo ngày hai mươi tháng mười hai để đổi ca.", "show": "Theo lịch, tàu tiếp tế Hesperus phải ra đảo ngày 20/12 để đổi ca." },
+        { "shot": "harbour-storm", "say": "Nhưng bão lớn giữ chân con tàu trong cảng suốt sáu ngày liền.", "show": "Nhưng bão lớn giữ chân con tàu trong cảng suốt 6 ngày liền." },
+        { "shot": "hesperus-arrives", "say": "Trưa hai mươi sáu tháng mười hai, ngay sau lễ Giáng Sinh, Hét-pơ-rút mới cập được đảo.", "show": "Trưa 26/12, ngay sau lễ Giáng Sinh, Hesperus mới cập được đảo." },
+        { "shot": "empty-landing", "say": "Và ngay lập tức, mọi thứ đều sai. Cột cờ trống trơn. Bến tàu không có thùng hàng nào. Không ai ra đón.", "show": "Và ngay lập tức, mọi thứ đều sai. Cột cờ trống trơn. Bến tàu không có thùng hàng nào. Không ai ra đón." },
+        { "shot": "flare", "say": "Thuyền trưởng kéo còi tàu, rồi bắn cả pháo hiệu lên trời. Hòn đảo vẫn im lặng.", "show": "Thuyền trưởng kéo còi tàu, rồi bắn cả pháo hiệu lên trời. Hòn đảo vẫn im lặng." }
+      ]
+    },
+    {
+      "id": "c4",
+      "title": "Ngôi nhà trống",
+      "sentences": [
+        { "shot": "moore-climb", "say": "Người gác đèn thay ca, Giô-sép Mua, một mình leo lên con dốc dẫn tới ngọn hải đăng.", "show": "Người gác đèn thay ca, Joseph Moore, một mình leo lên con dốc dẫn tới ngọn hải đăng." },
+        { "shot": "closed-door", "say": "Cổng rào đóng. Cửa chính cũng đóng.", "show": "Cổng rào đóng. Cửa chính cũng đóng." },
+        { "shot": "bed-clock", "say": "Bên trong, giường chưa dọn, và chiếc đồng hồ trên tường đã ngừng chạy.", "show": "Bên trong, giường chưa dọn, và chiếc đồng hồ trên tường đã ngừng chạy." },
+        { "shot": "clean-kitchen", "say": "Bếp sạch sẽ, bát đĩa đã rửa xong. Bữa ăn cuối cùng của họ đã kết thúc từ lâu.", "show": "Bếp sạch sẽ, bát đĩa đã rửa xong. Bữa ăn cuối cùng của họ đã kết thúc từ lâu." },
+        { "shot": "lantern-room", "say": "Trên tháp, đèn đã được lau sạch và châm đầy dầu, sẵn sàng cho đêm tiếp theo.", "show": "Trên tháp, đèn đã được lau sạch và châm đầy dầu, sẵn sàng cho đêm tiếp theo." },
+        { "shot": "oilskin-peg", "say": "Và có một chi tiết lạ: một bộ áo mưa vẫn còn treo trên móc.", "show": "Và có một chi tiết lạ: một bộ áo mưa vẫn còn treo trên móc." },
+        { "shot": "open-door-wind", "say": "Nghĩa là một người đã lao ra ngoài trời mưa gió... chỉ mặc áo sơ mi.", "show": "Nghĩa là một người đã lao ra ngoài trời mưa gió... chỉ mặc áo sơ mi." },
+        { "shot": "search-party", "say": "Họ lục tung từng góc của hòn đảo. Không một dấu vết.", "show": "Họ lục tung từng góc của hòn đảo. Không một dấu vết." }
+      ]
+    },
+    {
+      "id": "c5",
+      "title": "Bến phía tây",
+      "sentences": [
+        { "shot": "east-west", "say": "Bến phía đông vẫn nguyên vẹn. Nhưng bến phía tây trông như vừa bị một gã khổng lồ giẫm qua.", "show": "Bến phía đông vẫn nguyên vẹn. Nhưng bến phía tây trông như vừa bị một gã khổng lồ giẫm qua." },
+        { "shot": "smashed-box", "say": "Một chiếc thùng đựng dây thừng, đặt cao ba mươi ba mét trên mặt biển, bị đập vỡ, đồ đạc văng tung tóe.", "show": "Một chiếc thùng đựng dây thừng, đặt cao 33 m trên mặt biển, bị đập vỡ, đồ đạc văng tung tóe." },
+        { "shot": "bent-rails", "say": "Lan can sắt bị bẻ cong. Đường ray bị giật bật khỏi nền bê tông.", "show": "Lan can sắt bị bẻ cong. Đường ray bị giật bật khỏi nền bê tông." },
+        { "shot": "big-rock", "say": "Một tảng đá nặng hơn một tấn bị xô lệch khỏi chỗ cũ.", "show": "Một tảng đá nặng hơn 1 tấn bị xô lệch khỏi chỗ cũ." },
+        { "shot": "turf-ripped", "say": "Trên đỉnh vách, ở độ cao hơn sáu mươi mét, cỏ bị lột sạch sâu vào tới mười mét.", "show": "Trên đỉnh vách, ở độ cao hơn 60 m, cỏ bị lột sạch sâu vào tới 10 m." },
+        { "shot": "question", "say": "Thứ gì có thể làm được những điều đó?", "show": "Thứ gì có thể làm được những điều đó?" }
+      ]
+    },
+    {
+      "id": "c6",
+      "title": "Truyền thuyết",
+      "sentences": [
+        { "shot": "newspapers", "say": "Báo chí thời đó bùng nổ với đủ loại giả thuyết.", "show": "Báo chí thời đó bùng nổ với đủ loại giả thuyết." },
+        { "shot": "sea-serpent", "say": "Có người nói một con rắn biển khổng lồ đã mang họ đi.", "show": "Có người nói một con rắn biển khổng lồ đã mang họ đi." },
+        { "shot": "mystery-ship", "say": "Có người cho rằng họ bị bắt cóc, hoặc tự trốn lên một con tàu lạ để làm lại cuộc đời.", "show": "Có người cho rằng họ bị bắt cóc, hoặc tự trốn lên một con tàu lạ để làm lại cuộc đời." },
+        { "shot": "ghost-boat", "say": "Dân địa phương thì kể về Bóng Ma Bảy Thợ Săn, con thuyền ma của vùng biển này.", "show": "Dân địa phương thì kể về \"Bóng Ma Bảy Thợ Săn\", con thuyền ma của vùng biển này." },
+        { "shot": "poem-chair", "say": "Năm một nghìn chín trăm mười hai, một bài thơ nổi tiếng còn tả chiếc ghế đổ và bữa ăn còn nguyên trên bàn.", "show": "Năm 1912, một bài thơ nổi tiếng còn tả chiếc ghế đổ và bữa ăn còn nguyên trên bàn." },
+        { "shot": "moore-debunk", "say": "Nhưng chính Giô-sép Mua đã khai: bếp rất sạch, bữa ăn đã xong từ lâu. Chiếc ghế đổ chỉ có trong thơ.", "show": "Nhưng chính Joseph Moore đã khai: bếp rất sạch, bữa ăn đã xong từ lâu. Chiếc ghế đổ chỉ có trong thơ." },
+        { "shot": "fake-logbook", "say": "Còn những trang nhật ký rùng rợn kể rằng ba người khóc lóc, cầu nguyện giữa bão, sau này đã bị chứng minh là bịa đặt.", "show": "Còn những trang nhật ký rùng rợn kể rằng 3 người khóc lóc, cầu nguyện giữa bão, sau này đã bị chứng minh là bịa đặt." }
+      ]
+    },
+    {
+      "id": "c7",
+      "title": "Lời giải",
+      "sentences": [
+        { "shot": "muirhead", "say": "Vậy chuyện gì đã thật sự xảy ra? Giám sát viên Rô-bớt Mia-hét, người từng tuyển cả ba, ra đảo điều tra ngày hai mươi chín tháng mười hai.", "show": "Vậy chuyện gì đã thật sự xảy ra? Giám sát viên Robert Muirhead, người từng tuyển cả ba, ra đảo điều tra ngày 29/12." },
+        { "shot": "two-go-down", "say": "Ông kết luận: chiều thứ Bảy, mười lăm tháng mười hai, Đu-cát và Mác-san xuống bến phía tây để buộc lại thùng dây thừng.", "show": "Ông kết luận: chiều thứ Bảy 15/12, Ducat và Marshall xuống bến phía tây để buộc lại thùng dây thừng." },
+        { "shot": "fine", "say": "Mác-san từng bị phạt năm si-linh vì để bão cuốn mất đồ nghề. Lần này, có lẽ anh không muốn mất thêm lần nữa.", "show": "Marshall từng bị phạt 5 shilling vì để bão cuốn mất đồ nghề. Lần này, có lẽ anh không muốn mất thêm lần nữa." },
+        { "shot": "geo-cave", "say": "Bờ đá ở đây bị khoét thành những khe hẹp và hang sâu. Khi sóng lớn ập vào, nước bị nén lại rồi phụt ngược lên thành cột nước khổng lồ.", "show": "Bờ đá ở đây bị khoét thành những khe hẹp và hang sâu. Khi sóng lớn ập vào, nước bị nén lại rồi phụt ngược lên thành cột nước khổng lồ." },
+        { "shot": "giant-wave", "say": "Một con sóng như thế đã vươn cao hơn chỗ họ đứng, rồi đổ ập xuống, cuốn cả hai người ra biển.", "show": "Một con sóng như thế đã vươn cao hơn chỗ họ đứng, rồi đổ ập xuống, cuốn cả hai người ra biển." },
+        { "shot": "mcarthur-runs", "say": "Còn Mắc-a-thơ, người phải ở lại trông đèn, có lẽ đã thấy những con sóng từ trên cao, và lao xuống, không kịp mặc áo mưa, để báo cho đồng đội.", "show": "Còn McArthur, người phải ở lại trông đèn, có lẽ đã thấy những con sóng từ trên cao, và lao xuống, không kịp mặc áo mưa, để báo cho đồng đội." },
+        { "shot": "empty-path", "say": "Và anh cũng không bao giờ trở về.", "show": "Và anh cũng không bao giờ trở về." },
+        { "shot": "families", "say": "Không thi thể nào được tìm thấy. Đu-cát để lại vợ và bốn con, Mắc-a-thơ để lại vợ và hai con.", "show": "Không thi thể nào được tìm thấy. Ducat để lại vợ và 4 con, McArthur để lại vợ và 2 con." },
+        { "shot": "automated", "say": "Năm một nghìn chín trăm bảy mươi mốt, ngọn hải đăng được tự động hóa. Từ đó, không còn ai phải sống trên đảo nữa.", "show": "Năm 1971, ngọn hải đăng được tự động hóa. Từ đó, không còn ai phải sống trên đảo nữa." },
+        { "shot": "flash-today", "say": "Nhưng mỗi đêm, đèn trên Ê-lan Mo vẫn chớp sáng hai lần mỗi ba mươi giây, như lời nhắc về ba người gác đèn không bao giờ trở về.", "show": "Nhưng mỗi đêm, đèn trên Eilean Mòr vẫn chớp sáng 2 lần mỗi 30 giây, như lời nhắc về 3 người gác đèn không bao giờ trở về." },
+        { "shot": "ask-viewer", "say": "Còn bạn, bạn tin vào con sóng khổng lồ, hay nghĩ rằng vẫn còn điều gì chưa được kể? Hãy để lại ý kiến của bạn nhé.", "show": "Còn bạn, bạn tin vào con sóng khổng lồ, hay nghĩ rằng vẫn còn điều gì chưa được kể? Hãy để lại ý kiến của bạn nhé." }
+      ]
+    }
+  ]
+}

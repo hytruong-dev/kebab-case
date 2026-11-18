@@ -8,5 +8,20 @@
   "accent": "#d9553b",
   "ink": "#2a211b",
   "paper": "#fbf4e6",
-  "kraft": "#d8c29c"
+  "kraft": "#d8c29c",
+  "night": "#1d2540",
+  "nightDeep": "#121729",
+  "cloud": "#3a4566",
+  "sea": "#24476b",
+  "seaMid": "#1b3656",
+  "seaDeep": "#11233b",
+  "foam": "#dfe8ee",
+  "rock": "#5b5550",
+  "rockDark": "#3b3632",
+  "grass": "#56704a",
+  "beam": "#f7e2a0",
+  "lamp": "#ffcf5c",
+  "oilskin": "#e2b232",
+  "wall": "#e8dcc6",
+  "wood": "#8a5a3c"
 }

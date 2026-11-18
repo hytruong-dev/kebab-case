@@ -1,0 +1,60 @@
+{
+ "total": 232.575,
+ "chapters": [
+  {
+   "id": "c1",
+   "n": 1,
+   "title": "Đêm đèn tắt",
+   "start": 0,
+   "end": 25.427
+  },
+  {
+   "id": "c2",
+   "n": 2,
+   "title": "Hòn đảo cô độc",
+   "start": 27.627,
+   "end": 61.991,
+   "breakStart": 25.427
+  },
+  {
+   "id": "c3",
+   "n": 3,
+   "title": "Chuyến tàu trễ hẹn",
+   "start": 64.191,
+   "end": 84.821,
+   "breakStart": 61.991
+  },
+  {
+   "id": "c4",
+   "n": 4,
+   "title": "Ngôi nhà trống",
+   "start": 87.022,
+   "end": 113.443,
+   "breakStart": 84.821
+  },
+  {
+   "id": "c5",
+   "n": 5,
+   "title": "Bến phía tây",
+   "start": 115.643,
+   "end": 137.183,
+   "breakStart": 113.443
+  },
+  {
+   "id": "c6",
+   "n": 6,
+   "title": "Truyền thuyết",
+   "start": 139.382,
+   "end": 168.208,
+   "breakStart": 137.183
+  },
+  {
+   "id": "c7",
+   "n": 7,
+   "title": "Lời giải",
+   "start": 170.408,
+   "end": 232.575,
+   "breakStart": 168.208
+  }
+ ]
+}

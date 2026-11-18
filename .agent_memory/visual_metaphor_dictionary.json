@@ -4,26 +4,75 @@
     "phong cảnh giấy": {
       "approvedCount": 1,
       "layoutPattern": "layered-parallax-landscape",
-      "primitives": ["remotion:PaperLayer x3 ridge (noise2D)", "shapes:Circle sun", "shapes:Ellipse clouds", "paths:bird-on-path", "PaperLayer title tag"],
-      "preferredColors": ["#f3e3c3", "#9cb87a", "#5f8f5a", "#2f5d45", "#f0a43a"],
+      "primitives": [
+        "remotion:PaperLayer x3 ridge (noise2D)",
+        "shapes:Circle sun",
+        "shapes:Ellipse clouds",
+        "paths:bird-on-path",
+        "PaperLayer title tag"
+      ],
+      "preferredColors": [
+        "#f3e3c3",
+        "#9cb87a",
+        "#5f8f5a",
+        "#2f5d45",
+        "#f0a43a"
+      ],
       "notes": "remotion/src/paper/PaperLandscape.tsx. Đồi đáp từ sau ra trước bằng spring, parallax 18/40/80px, nhãn tiêu đề tung vào rồi đứng yên.",
       "updatedAt": "2026-11-18 17:00"
     },
     "chuyển cảnh ngày sang đêm": {
       "approvedCount": 1,
       "layoutPattern": "torn-paper-day-to-dusk",
-      "primitives": ["hyperframes:torn-paper-rip", "remotion still: last frame + first frame as slots"],
-      "preferredColors": ["#f6f1e7"],
+      "primitives": [
+        "hyperframes:torn-paper-rip",
+        "remotion still: last frame + first frame as slots"
+      ],
+      "preferredColors": [
+        "#f6f1e7"
+      ],
       "notes": "Tờ giấy ngày bị xé toạc để lộ cùng thế giới tô màu hoàng hôn; slot dùng đúng khung cuối/đầu do Remotion render để không giật.",
       "updatedAt": "2026-11-18 17:00"
     },
     "ăn mừng": {
       "approvedCount": 1,
       "layoutPattern": "alpha-confetti-overlay",
-      "primitives": ["remotion:PaperConfetti (Star, Triangle + paper())", "VP9 alpha webm layered in HyperFrames"],
-      "preferredColors": ["#d9553b", "#f0a43a", "#5f8f5a", "#fbf4e6"],
+      "primitives": [
+        "remotion:PaperConfetti (Star, Triangle + paper())",
+        "VP9 alpha webm layered in HyperFrames"
+      ],
+      "preferredColors": [
+        "#d9553b",
+        "#f0a43a",
+        "#5f8f5a",
+        "#fbf4e6"
+      ],
       "notes": "Mảnh giấy bung từ tâm rồi rơi theo trọng lực, on twos.",
       "updatedAt": "2026-11-18 17:00"
+    },
+    "bí ẩn lịch sử có thật": {
+      "approvedCount": 1,
+      "layoutPattern": "night-sea-lighthouse + paper notes/stamps",
+      "primitives": [
+        "kit.tsx: Backdrop",
+        "Sea",
+        "Island",
+        "Lighthouse+Beam(Fl2)",
+        "Ship",
+        "Person dolls",
+        "Note",
+        "Tag",
+        "Stamp"
+      ],
+      "preferredColors": [
+        "#1d2540",
+        "#24476b",
+        "#f7e2a0",
+        "#d9553b",
+        "#fbf4e6"
+      ],
+      "notes": "Truyền thuyết đóng dấu 'Truyền thuyết'/'BỊA ĐẶT'; sự thật dùng Note giấy + Tag số liệu. Chương = thẻ giấy xé (torn-paper-rip, slot = khung cuối plate trước).",
+      "updatedAt": "2026-11-18 15:42"
     }
   }
 }

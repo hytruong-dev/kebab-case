@@ -17,3 +17,17 @@ hyperframes/.hyperframes/preview/
 # Reference library of all 448 registry items (reinstall with hyperframes add)
 hf-library/
 hf-library-install.log
+
+# per-project build output (rebuild with scripts/build-eilean.mjs)
+projects/*/film/assets/plates/
+projects/*/film/assets/frames/
+projects/*/film/assets/audio/
+projects/*/film/.hyperframes/
+projects/*/film/.thumbnails/
+projects/*/film/.waveform-cache/
+projects/*/film/.transcode-cache/
+projects/*/audio/vo/
+projects/*/audio/*.f32
+projects/*/audio/bed.wav
+projects/*/review/
+projects/*/*.log

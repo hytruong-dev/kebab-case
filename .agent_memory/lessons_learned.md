@@ -92,3 +92,23 @@
 - **Symptom:** QA phát hiện phim paper-cut-film chỉ -18.6 LUFS (HyperFrames render không master loudness).
 - **Ruled-out Dead-end:** Tin âm lượng mặc định của hf:render; chỉ nhìn max_volume.
 - **Verified Golden Path:** Sau hf:render luôn chạy node scripts/master-audio.mjs <mp4> (loudnorm 2 lượt + alimiter, -14 LUFS, TP -1.5) rồi node scripts/qa-video.mjs. Kết quả: -14.2 LUFS, TP -1.5, QA PASS.
+
+### [LESSON-19] (2026-11-18)
+- **Symptom:** Giọng OmniVoice (VoiceStudio, CPU) đứng yên nhiều chục phút khi chạy cùng lúc với job TTS của dự án khác (youtube_ai_edit-02 Tập 33): cả hai job đều không ra file mới.
+- **Ruled-out Dead-end:** Chạy song song 2 job OmniVoice, mỗi job dùng toàn bộ luồng CPU; giới hạn OMNIVOICE_THREADS=8 vẫn không đủ.
+- **Verified Golden Path:** Trước khi chạy TTS, kiểm tra tiến trình omnivoice_tts.py của dự án khác (Get-CimInstance Win32_Process). Nếu có thì chờ nó xong, hoặc hỏi chủ dự án có cho tạm dừng không; chỉ chạy một job OmniVoice mỗi lần. Cache theo từng câu nên chạy lại sẽ tiếp từ câu còn thiếu.
+
+### [LESSON-20] (2026-11-18)
+- **Symptom:** Bản render HyperFrames --quality delivery ra 25 Mbps (700MB cho 3:52), quá nặng để upload.
+- **Ruled-out Dead-end:** Dùng thẳng file delivery để đăng.
+- **Verified Golden Path:** Master xong thì xuất thêm bản upload: ffmpeg -c:v libx264 -preset slow -crf 18 -movflags +faststart -c:a copy (384MB), rồi chạy lại qa-video.mjs trên bản đó.
+
+### [LESSON-21] (2026-11-18)
+- **Symptom:** ffmpeg tremolo báo 'Value 0.08 out of range [0.1 - 20000]' khi làm nhịp sóng biển chậm cho nhạc nền.
+- **Ruled-out Dead-end:** Dùng tremolo cho nhịp chậm hơn 0.1 Hz.
+- **Verified Golden Path:** Dùng volume='a+b*sin(2*PI*t/T)':eval=frame (T giây/chu kỳ, vd 12s cho sóng). Bed tự sinh: loudnorm -25 rồi sidechaincompress threshold 0.03 ratio 3.5 release 800 → ~-33 LUFS dưới giọng.
+
+### [LESSON-22] (2026-11-18)
+- **Symptom:** Đặt hình cho từng câu thoại mà không cần Whisper căn chữ.
+- **Ruled-out Dead-end:** Tạo giọng cả đoạn dài rồi căn bằng ASR (dễ lệch, tốn thời gian).
+- **Verified Golden Path:** Tạo giọng TỪNG CÂU (scripts/tts-project.mjs, cache theo hash), ghép bằng NumPy theo timeline.json: biết chính xác start/dur mỗi câu → mỗi câu một cảnh, phụ đề chia theo tỉ lệ ký tự. Kiểm tra lại bằng faster-whisper vài câu.
