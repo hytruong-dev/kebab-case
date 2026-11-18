@@ -1,8 +1,14 @@
 ---
-description: Paper-cut video pipeline (Remotion x HyperFrames) — project rules
+description: Paper-cut video pipeline (Remotion x HyperFrames) — project rules and memory protocol
 alwaysApply: true
 ---
 
-Read `AGENTS.md` at the repo root before any change; it holds the commands, hard rules and definition of done.
-Project skills are in `.agents/skills/` — read `hyperframes/SKILL.md` for HyperFrames work and
-`remotion-best-practices/SKILL.md` for Remotion work.
+Read `AGENTS.md` at the repo root before any change. Its section 0 is mandatory: read `.agent_memory/` (director_taste,
+lessons_learned, visual_metaphor_dictionary, last production_log entries) and `.agents/skills/learned/`, run
+`node scripts/memory.mjs sync`, and open the reply with the "🧠 [Memory Synced]" line it prints.
+
+Record owner feedback (`add-taste` / `add-pattern`) and fixed bugs (`add-lesson`) with `node scripts/memory.mjs` in the same reply,
+before re-rendering. After every finished video run /retro (`node scripts/memory.mjs retro <slug>`).
+
+Skills: `.agents/skills/core/video-production` (new video), `core/self-learning-harvester` (memory), `hyperframes/`, `remotion-best-practices/`.
+Never publish videos by yourself.

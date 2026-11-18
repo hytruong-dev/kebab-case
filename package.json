@@ -10,6 +10,10 @@
     "hf:preview": "cd hyperframes && npx --yes hyperframes@0.9.65 preview",
     "hf:check": "cd hyperframes && npx --yes hyperframes@0.9.65 check --json",
     "hf:render": "cd hyperframes && npx --yes hyperframes@0.9.65 render --quality delivery -o ../out/paper-cut-film.mp4",
-    "build": "npm run palette && npm run plates && npm run hf:check && npm run hf:render"
+    "master": "node scripts/master-audio.mjs out/paper-cut-film.mp4",
+    "qa": "node scripts/qa-video.mjs out/paper-cut-film.mp4 --kind clip",
+    "build": "npm run palette && npm run plates && npm run hf:check && npm run hf:render && npm run master && npm run qa",
+    "memory": "node scripts/memory.mjs status",
+    "memory:sync": "node scripts/memory.mjs sync"
   }
 }

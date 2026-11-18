@@ -3,6 +3,32 @@
 Read this first. It applies to any coding agent (Cursor, Antigravity, Claude Code, Codex, …).
 Full background: `docs/REMOTION-x-HYPERFRAMES.md`. HyperFrames catalog: `docs/hyperframes-catalog.md`.
 
+## 0. MEMORY PROTOCOL — mandatory at the start of every session (zero-retraining handover)
+
+This project has a self-evolving portable memory (ported from `C:\QuangHy\youtube_ai_edit-02`). Before answering any
+video request or writing any code, read in order:
+
+1. `.agent_memory/director_taste.md` — the owner's taste rules `[TASTE-xx]`. Follow them; never ask again about anything written there.
+   They override framework defaults (HyperFrames/Remotion skills) when they disagree.
+2. `.agent_memory/lessons_learned.md` — verified fixes `[LESSON-xx]`. Use the golden path; never retry a ruled-out dead-end.
+3. `.agent_memory/visual_metaphor_dictionary.json` and `.agents/skills/learned/` — approved visual patterns and packaged skills.
+4. The last 2 entries of `.agent_memory/production_log.md`.
+
+Then run `node scripts/memory.mjs sync` and open your reply with the line it prints:
+*"🧠 [Memory Synced] Đã đồng bộ bộ nhớ dự án (N quy tắc đạo diễn, M bài học kỹ thuật, …). Sẵn sàng sản xuất video tiếp theo theo đúng chuẩn của bạn!"*
+
+### Continuous learning duty (skill: `.agents/skills/core/self-learning-harvester/SKILL.md`)
+- Whenever the owner gives feedback (speed, layout, colour, "đẹp", "giữ", "đừng"), record it with
+  `node scripts/memory.mjs add-taste|add-pattern …` **in that same reply, before re-rendering** (workflow `.agent/workflows/gop-y.md`).
+- Whenever you fix a real bug, record it with `node scripts/memory.mjs add-lesson "symptom" "dead-end" "golden path"`.
+- After every finished MP4, run **/retro**: `node scripts/memory.mjs retro <slug>` → fill `projects/<slug>/RETRO.md` →
+  `log-video` + the `add-*` commands it lists; package a technique reused ≥ 2 times into `.agents/skills/learned/<name>/`.
+
+### Making a new video — "làm video mới", "làm video về <chủ đề>"
+Follow `.agents/skills/core/video-production/SKILL.md` (Steps 0 → 8 with gates; short form `.agent/workflows/lam-video-moi.md`).
+Per-video data lives in `projects/<slug>/` (`BRIEF.md` from `templates/project/`, `RETRO.md`).
+⛔ Never publish or schedule anything on YouTube/social by yourself — stop after QA + report and wait for the owner's order.
+
 ## What this project is
 
 A paper-cut animation pipeline that uses two video engines together:
@@ -38,8 +64,11 @@ npm run plates           # Remotion renders every plate into hyperframes/assets/
 npm run hf:check         # HyperFrames gate: lint + runtime + layout + contrast + audio
 npm run hf:preview       # HyperFrames Studio at http://localhost:3002
 npm run hf:render        # -> out/paper-cut-film.mp4
+npm run master           # 2-pass loudnorm to -14 LUFS / TP -1.5 (video stream copied)
+npm run qa               # objective QA gate: duration, size, LUFS, true peak, frozen stretches, silences
 npm run build            # all of the above in order
 npm run remotion:studio  # Remotion Studio (plates + galleries)
+npm run memory           # memory bank status (node scripts/memory.mjs …)
 ```
 
 On a fresh clone: `cd remotion && npm install`, then `npm run build`. Rendered plates and `out/` are not in git.
@@ -78,9 +107,11 @@ After any change:
 2. `npm run plates` if any Remotion plate changed.
 3. `npm run hf:check` — `"ok": true`, no errors; weigh warnings.
 4. Look at frames: `cd hyperframes && npx --yes hyperframes@0.9.65 snapshot --at <t,…>` and open the PNGs.
-5. Only render the final film (`npm run hf:render`) when asked; then confirm with
-   `ffprobe out/paper-cut-film.mp4` that duration equals the root `data-duration` (currently 17.4 s).
+5. Only render the final film (`npm run hf:render`) when asked; then `npm run master` and
+   `node scripts/qa-video.mjs out/<file>.mp4 --expect <root data-duration>` must print `QA PASS`
+   (current film: 17.4 s, -14.2 LUFS, TP -1.5). Extract a few frames from the MP4 and look at them.
 6. If the effects gallery changed: render it and run `node scripts/audit-effects-gallery.mjs out/remotion-effects-gallery.mp4 1`.
+7. Record what you learned (memory protocol above). A task is not done until new lessons/taste are written.
 
 ## Where things are
 
@@ -95,6 +126,12 @@ After any change:
 | Which plates get rendered | `scripts/build-plates.mjs` (`PLATES`, `STILLS`) |
 | Film assembly / timing | `hyperframes/index.html` |
 | HyperFrames scenes and blocks | `hyperframes/compositions/` |
+| Owner's taste / verified fixes / approved patterns / log | `.agent_memory/` |
+| Memory tool | `scripts/memory.mjs` |
+| QA gate / loudness master | `scripts/qa-video.mjs` / `scripts/master-audio.mjs` |
+| Production process / self-learning / packaged skills | `.agents/skills/core/` / `.agents/skills/learned/` |
+| Per-video brief + retro | `projects/<slug>/` (templates in `templates/`) |
+| Antigravity workflows | `.agent/workflows/` |
 
 ## Communication
 
