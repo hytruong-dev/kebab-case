@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <body>
+    <template>
+      <style>
+        #root {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+          pointer-events: none;
+        }
+        /* Film grain: finite CSS keyframes (HyperFrames seeks them), stepped like a projector gate. */
+        #grain-texture {
+          position: absolute;
+          top: -50%;
+          left: -50%;
+          width: 200%;
+          height: 200%;
+          background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+          opacity: 0.1;
+          animation: pc-grain 0.5s steps(1) 35 both;
+        }
+        @keyframes pc-grain {
+          0%,
+          100% {
+            transform: translate(0, 0);
+          }
+          20% {
+            transform: translate(-10%, 5%);
+          }
+          40% {
+            transform: translate(-5%, 15%);
+          }
+          60% {
+            transform: translate(15%, 0);
+          }
+          80% {
+            transform: translate(-15%, 0);
+          }
+        }
+      </style>
+      <div id="root" data-composition-id="grain" data-width="1920" data-height="1080">
+        <div id="grain-texture" class="clip" data-start="0" data-duration="17.4" data-track-index="0"></div>
+      </div>
+    </template>
+  </body>
+</html>

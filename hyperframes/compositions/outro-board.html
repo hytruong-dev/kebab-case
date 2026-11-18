@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <body>
+    <template>
+      <style>
+        #root {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+        }
+        /* Kraft board with a static fibre texture (fixed-seed turbulence, never animated). */
+        #outro-board-paper {
+          position: absolute;
+          inset: 0;
+          background-color: #d8c29c;
+        }
+        #outro-board-fibre {
+          position: absolute;
+          inset: 0;
+          opacity: 0.35;
+          mix-blend-mode: multiply;
+        }
+      </style>
+      <div id="root" data-composition-id="outro-board" data-width="1920" data-height="1080" data-no-timeline>
+        <div id="outro-board-paper"></div>
+        <svg id="outro-board-fibre" viewBox="0 0 1920 1080" preserveAspectRatio="none">
+          <filter id="outro-board-noise">
+            <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" seed="7" />
+            <feColorMatrix type="saturate" values="0" />
+          </filter>
+          <rect width="1920" height="1080" filter="url(#outro-board-noise)" />
+        </svg>
+      </div>
+    </template>
+  </body>
+</html>

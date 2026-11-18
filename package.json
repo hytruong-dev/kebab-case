@@ -1,0 +1,15 @@
+{
+  "name": "paper-cut-animation",
+  "private": true,
+  "type": "module",
+  "description": "Paper-cut video pipeline: Remotion renders plates, HyperFrames assembles the film.",
+  "scripts": {
+    "palette": "node scripts/sync-palette.mjs",
+    "plates": "node scripts/build-plates.mjs",
+    "remotion:studio": "cd remotion && npx remotion studio",
+    "hf:preview": "cd hyperframes && npx --yes hyperframes@0.9.65 preview",
+    "hf:check": "cd hyperframes && npx --yes hyperframes@0.9.65 check --json",
+    "hf:render": "cd hyperframes && npx --yes hyperframes@0.9.65 render --quality delivery -o ../out/paper-cut-film.mp4",
+    "build": "npm run palette && npm run plates && npm run hf:check && npm run hf:render"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "assets/fonts/Caveat-700-latin.woff2": "891951df5e8b5b0f0bc760d31375405e795c666b5add70437de12d4a6482b33f",
+  "compositions/components/grain-overlay.html": "97a0da8f26feca9574abcf08b8186cef10ea4819b2aeabc30547ae16ed9ae80d",
+  "compositions/components/hw-boil.html": "5d9f3230026a14228bcac120ff1d837fffd44eef10368af210420d58117a00a7",
+  "compositions/components/ink-bleed-reveal.html": "dbe7948ad26a1676d3b3cb0055dc931be87cf8c1e02bfdc6ec37f542121c7042",
+  "compositions/components/paper-collage-reveal.html": "e7d138d73785cda61179b1c821d3b2590f90e61b8ac9e22e3bccb245eec9fafa",
+  "compositions/components/stop-motion-cadence.html": "52a64f69cc03cd90ff9b4d313b7f2fb8e12c88abdfef3c7198cef8c96362e0ee",
+  "compositions/components/torn-paper-rip.html": "9459fa4d1b3ebefb45d34e276b2a2181dccfb132d1ba5060dbc25e6f429764df",
+  "compositions/freeze-frame-dressing.html": "1b27e4967a44d0337192a5ff2251cc1c01380b41b4b7071c7628cc4cea26775b",
+  "compositions/hw-scribble-transition.html": "5e0867b0535bbfd440ac656f9ba5411d192dfb089a9766fb2afc2b17f22ef842",
+  "compositions/hw-title.html": "58cd8cdf8dec492f9c7a79561c856105b731ebecfe847c8bab6d0d8b121ea9ef"
+}

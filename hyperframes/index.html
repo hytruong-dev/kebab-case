@@ -1,0 +1,223 @@
+<!doctype html>
+<!--
+  Paper-cut film: Remotion x HyperFrames.
+
+  Remotion renders the paper-cut plates (assets/plates/, via scripts/build-plates.mjs):
+    paper-landscape.mp4 / paper-landscape-dusk.mp4  layered paper scenes (@remotion/effects paper,
+                                                    roughenEdges, dropShadow; @remotion/shapes, paths, noise)
+    paper-confetti.webm                             alpha overlay (VP9 + alpha)
+    paper-landscape-last.png / -dusk-first.png      exact boundary frames for the tear
+  HyperFrames assembles them with its paper primitives as the joins between plates:
+    0.0  paper-collage-reveal   torn scraps lift off the day scene
+    5.0  torn-paper-rip         the day sheet is torn away onto dusk
+    8.0  confetti (Remotion)    alpha overlay over dusk
+   10.3  hw-scribble-transition marker scribble covers the cut to the outro
+   11.4  outro: kraft board + stop-motion-cadence + hw-title
+-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <link rel="stylesheet" href="assets/palette.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: var(--pc-sky);
+      }
+      #root {
+        position: relative;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+      }
+      .plate {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 1920px;
+        height: 1080px;
+        object-fit: cover;
+      }
+      .slot-still {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="17.4"
+      data-width="1920"
+      data-height="1080"
+      data-fps="30"
+    >
+      <!-- Beat 1: day plate (Remotion), revealed by HyperFrames paper scraps. -->
+      <video
+        id="plate-day"
+        class="clip plate"
+        src="assets/plates/paper-landscape.mp4"
+        data-start="0"
+        data-duration="5"
+        data-track-index="0"
+        muted
+        playsinline
+        style="z-index: 1"
+      ></video>
+      <div
+        id="paper-collage-reveal"
+        data-composition-id="paper-collage-reveal"
+        data-composition-src="compositions/components/paper-collage-reveal.html"
+        data-start="0"
+        data-duration="2.6"
+        data-track-index="1"
+        data-track-kind="graphics"
+        data-width="1920"
+        data-height="1080"
+        data-variable-values='{"panels": 7, "tone": "mixed", "spread": "outward"}'
+        style="z-index: 2"
+      ></div>
+
+      <!-- Beat 2: HyperFrames tears the day sheet away onto Remotion's first dusk frame. -->
+      <div
+        id="torn-paper-rip"
+        data-composition-id="torn-paper-rip"
+        data-composition-src="compositions/components/torn-paper-rip.html"
+        data-start="5"
+        data-duration="1.4"
+        data-track-index="1"
+        data-track-kind="graphics"
+        data-width="1920"
+        data-height="1080"
+        data-variable-values='{"direction": "left-to-right", "tone": "cream", "roughness": 62}'
+        style="z-index: 3"
+      ></div>
+
+      <!-- Beat 3: dusk plate (Remotion) + Remotion's alpha confetti layered by HyperFrames. -->
+      <video
+        id="plate-dusk"
+        class="clip plate"
+        src="assets/plates/paper-landscape-dusk.mp4"
+        data-start="6.4"
+        data-duration="5"
+        data-track-index="0"
+        muted
+        playsinline
+        style="z-index: 1"
+      ></video>
+      <video
+        id="plate-confetti"
+        class="clip plate"
+        src="assets/plates/paper-confetti.webm"
+        data-start="8"
+        data-duration="2.5"
+        data-track-index="2"
+        muted
+        playsinline
+        style="z-index: 4"
+      ></video>
+
+      <!-- Beat 4: marker scribble covers the cut from dusk to the outro board. -->
+      <div
+        id="outro-board"
+        data-composition-id="outro-board"
+        data-composition-src="compositions/outro-board.html"
+        data-start="11.4"
+        data-duration="6"
+        data-track-index="0"
+        data-track-kind="graphics"
+        data-width="1920"
+        data-height="1080"
+        style="z-index: 1"
+      ></div>
+      <div
+        id="stop-motion-cadence"
+        data-composition-id="stop-motion-cadence"
+        data-composition-src="compositions/components/stop-motion-cadence.html"
+        data-start="11.4"
+        data-duration="6"
+        data-track-index="1"
+        data-track-kind="graphics"
+        data-width="1920"
+        data-height="1080"
+        data-variable-values='{"fps": "12", "boil": "on", "accent": "green", "exit": "none"}'
+        style="z-index: 2; --brand: #d9553b; --fg: #fbf4e6; --bg: transparent"
+      ></div>
+      <div
+        id="hw-title"
+        data-composition-id="hw-title"
+        data-composition-src="compositions/hw-title.html"
+        data-start="11.4"
+        data-duration="6"
+        data-track-index="2"
+        data-track-kind="graphics"
+        data-width="1920"
+        data-height="1080"
+        style="z-index: 3"
+      ></div>
+      <div
+        id="hw-scribble-transition"
+        data-composition-id="hw-scribble-transition"
+        data-composition-src="compositions/hw-scribble-transition.html"
+        data-start="10.3"
+        data-duration="2.2"
+        data-track-index="3"
+        data-track-kind="graphics"
+        data-width="1920"
+        data-height="1080"
+        style="z-index: 10"
+      ></div>
+
+      <!-- Grain over the whole film. -->
+      <div
+        id="grain"
+        data-composition-id="grain"
+        data-composition-src="compositions/grain.html"
+        data-start="0"
+        data-duration="17.4"
+        data-track-index="4"
+        data-track-kind="graphics"
+        data-width="1920"
+        data-height="1080"
+        style="z-index: 50"
+      ></div>
+
+      <!-- Sound on the visible actions (Remotion's @remotion/sfx files, mixed by HyperFrames). -->
+      <audio id="sfx-scraps" src="assets/sfx/page-turn.wav" data-start="0.15" data-duration="0.4" data-track-index="5" data-volume="0.8"></audio>
+      <audio id="sfx-tear" src="assets/sfx/page-turn.wav" data-start="5.05" data-duration="0.4" data-track-index="5" data-volume="1"></audio>
+      <audio id="sfx-confetti" src="assets/sfx/ding.wav" data-start="8.05" data-duration="1.4" data-track-index="5" data-volume="0.5"></audio>
+      <audio id="sfx-scribble" src="assets/sfx/whoosh.wav" data-start="10.35" data-duration="0.15" data-track-index="5" data-volume="0.9"></audio>
+      <audio id="sfx-whip" src="assets/sfx/whip.wav" data-start="11.55" data-duration="0.17" data-track-index="5" data-volume="0.7"></audio>
+    </div>
+
+    <!-- Slots for the HyperFrames paper primitives (document level; templates never render).
+         The tear gets Remotion's exact boundary frames on each side of the cut. -->
+    <template data-slot="torn-paper-rip-from">
+      <img class="slot-still" src="assets/plates/paper-landscape-last.png" alt="" />
+    </template>
+    <template data-slot="torn-paper-rip-to">
+      <img class="slot-still" src="assets/plates/paper-landscape-dusk-first.png" alt="" />
+    </template>
+    <!-- Empty slot: the scraps lift to reveal the Remotion plate playing beneath them. -->
+    <template data-slot="paper-collage-reveal-content"><div></div></template>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = gsap.timeline({ paused: true });
+    </script>
+  </body>
+</html>

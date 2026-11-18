@@ -1,0 +1,369 @@
+{
+  "version": 1,
+  "historyId": "0a9449e5-1208-44a8-a2bc-a89786931a1e",
+  "currentRevision": null,
+  "pendingChanges": false,
+  "files": {
+    "AGENTS.md": {
+      "hash": "729e31835a21c7b42ee006e2aacc63016abc05d26883f871ad3bf206943f2cfb",
+      "content": "C:\\Users\\PC\\.cache\\hyperframes\\history\\0a9449e5-1208-44a8-a2bc-a89786931a1e\\blobs\\72\\729e31835a21c7b42ee006e2aacc63016abc05d26883f871ad3bf206943f2cfb"
+    },
+    "CLAUDE.md": {
+      "hash": "729e31835a21c7b42ee006e2aacc63016abc05d26883f871ad3bf206943f2cfb",
+      "content": "C:\\Users\\PC\\.cache\\hyperframes\\history\\0a9449e5-1208-44a8-a2bc-a89786931a1e\\blobs\\72\\729e31835a21c7b42ee006e2aacc63016abc05d26883f871ad3bf206943f2cfb"
+    },
+    "assets/fonts/Caveat-700-latin.woff2": {
+      "hash": "891951df5e8b5b0f0bc760d31375405e795c666b5add70437de12d4a6482b33f",
+      "content": "C:\\Users\\PC\\.cache\\hyperframes\\history\\0a9449e5-1208-44a8-a2bc-a89786931a1e\\blobs\\89\\891951df5e8b5b0f0bc760d31375405e795c666b5add70437de12d4a6482b33f"
+    },
+    "assets/palette.css": {
+      "hash": "d8011c22c688e559a37edaa0f4c0228dcb5d470ef109fcfe29de55a63ffe3a45",
+      "content": "C:\\Users\\PC\\.cache\\hyperframes\\history\\0a9449e5-1208-44a8-a2bc-a89786931a1e\\blobs\\d8\\d8011c22c688e559a37edaa0f4c0228dcb5d470ef109fcfe29de55a63ffe3a45"
+    },
+    "assets/plates/paper-confetti.webm": {
+      "hash": "2f8822c5799ce38d7744c10eed1561cad1adc0ee0b80d4db363e7e6ca346aea6",
+      "content": "C:\\Users\\PC\\.cache\\hyperframes\\history\\0a9449e5-1208-44a8-a2bc-a89786931a1e\\blobs\\2f\\2f8822c5799ce38d7744c10eed1561cad1adc0ee0b80d4db363e7e6ca346aea6"
+    },
+    "assets/sfx/ding.wav": {
+      "hash": "97c823dc8ef1fb6dab5599f5b8b8aee5ec2dfa4c9d987151e64d6c5a5f87adbe",
+      "content": "C:\\Users\\PC\\.cache\\hyperframes\\history\\0a9449e5-1208-44a8-a2bc-a89786931a1e\\blobs\\97\\97c823dc8ef1fb6dab5599f5b8b8aee5ec2dfa4c9d987151e64d6c5a5f87adbe"
+    },
+    "assets/sfx/page-turn.wav": {
+      "hash": "72762a9dafd5f9dd4bdf365f373519a35a8786ae975de4e2bc339fcdcf6b5f6d",
+      "content": "C:\\Users\\PC\\.cache\\hyperframes\\history\\0a9449e5-1208-44a8-a2bc-a89786931a1e\\blobs\\72\\72762a9dafd5f9dd4bdf365f373519a35a8786ae975de4e2bc339fcdcf6b5f6d"
+    },
+    "assets/sfx/whip.wav": {
+      "hash": "8713e68578c7f579bdfc24ff77fd3e3eefc1a9b5d1232a63c10800b81d0ead5f",
+      "content": "C:\\Users\\PC\\.cache\\hyperframes\\history\\0a9449e5-1208-44a8-a2bc-a89786931a1e\\blobs\\87\\8713e68578c7f579bdfc24ff77fd3e3eefc1a9b5d1232a63c10800b81d0ead5f"
+    },
+    "assets/sfx/whoosh.wav": {
+      "hash": "d98f010fa5f03fd3f4f77418f8ba6a962d36e63357265772771c4ac69c1a63a7",
+      "content": "C:\\Users\\PC\\.cache\\hyperframes\\history\\0a9449e5-1208-44a8-a2bc-a89786931a1e\\blobs\\d9\\d98f010fa5f03fd3f4f77418f8ba6a962d36e63357265772771c4ac69c1a63a7"
+    },
+    "compositions/components/grain-overlay.html": {
+      "hash": "97a0da8f26feca9574abcf08b8186cef10ea4819b2aeabc30547ae16ed9ae80d",
+      "content": "C:\\Users\\PC\\.cache\\hyperframes\\history\\0a9449e5-1208-44a8-a2bc-a89786931a1e\\blobs\\97\\97a0da8f26feca9574abcf08b8186cef10ea4819b2aeabc30547ae16ed9ae80d"
+    },
+    "compositions/components/hw-boil.html": {
+      "hash": "5d9f3230026a14228bcac120ff1d837fffd44eef10368af210420d58117a00a7",
+      "content": "C:\\Users\\PC\\.cache\\hyperframes\\history\\0a9449e5-1208-44a8-a2bc-a89786931a1e\\blobs\\5d\\5d9f3230026a14228bcac120ff1d837fffd44eef10368af210420d58117a00a7"
+    },
+    "compositions/components/ink-bleed-reveal.html": {
+      "hash": "dbe7948ad26a1676d3b3cb0055dc931be87cf8c1e02bfdc6ec37f542121c7042",
+      "content": "C:\\Users\\PC\\.cache\\hyperframes\\history\\0a9449e5-1208-44a8-a2bc-a89786931a1e\\blobs\\db\\dbe7948ad26a1676d3b3cb0055dc931be87cf8c1e02bfdc6ec37f542121c7042"
+    },
+    "compositions/components/paper-collage-reveal.html": {
+      "hash": "e7d138d73785cda61179b1c821d3b2590f90e61b8ac9e22e3bccb245eec9fafa",
+      "content": "C:\\Users\\PC\\.cache\\hyperframes\\history\\0a9449e5-1208-44a8-a2bc-a89786931a1e\\blobs\\e7\\e7d138d73785cda61179b1c821d3b2590f90e61b8ac9e22e3bccb245eec9fafa"
+    },
+    "compositions/components/stop-motion-cadence.html": {
+      "hash": "52a64f69cc03cd90ff9b4d313b7f2fb8e12c88abdfef3c7198cef8c96362e0ee",
+      "content": "C:\\Users\\PC\\.cache\\hyperframes\\history\\0a9449e5-1208-44a8-a2bc-a89786931a1e\\blobs\\52\\52a64f69cc03cd90ff9b4d313b7f2fb8e12c88abdfef3c7198cef8c96362e0ee"
+    },
+    "compositions/components/torn-paper-rip.html": {
+      "hash": "9459fa4d1b3ebefb45d34e276b2a2181dccfb132d1ba5060dbc25e6f429764df",
+      "content": "C:\\Users\\PC\\.cache\\hyperframes\\history\\0a9449e5-1208-44a8-a2bc-a89786931a1e\\blobs\\94\\9459fa4d1b3ebefb45d34e276b2a2181dccfb132d1ba5060dbc25e6f429764df"
+    },
+    "compositions/freeze-frame-dressing.html": {
+      "hash": "1b27e4967a44d0337192a5ff2251cc1c01380b41b4b7071c7628cc4cea26775b",
+      "content": "C:\\Users\\PC\\.cache\\hyperframes\\history\\0a9449e5-1208-44a8-a2bc-a89786931a1e\\blobs\\1b\\1b27e4967a44d0337192a5ff2251cc1c01380b41b4b7071c7628cc4cea26775b"
+    },
+    "compositions/grain.html": {
+      "hash": "280d1c4d1c2af55f60c4d81fb4c8e3879327b61b2aa106794f9e735c3fc829cc",
+      "content": "C:\\Users\\PC\\.cache\\hyperframes\\history\\0a9449e5-1208-44a8-a2bc-a89786931a1e\\blobs\\28\\280d1c4d1c2af55f60c4d81fb4c8e3879327b61b2aa106794f9e735c3fc829cc"
+    },
+    "compositions/hw-scribble-transition.html": {
+      "hash": "5a8bcf91dd249ff47cac8006bf8e90962337b0e5a3bd533ad970fe1d89d96138",
+      "content": "C:\\Users\\PC\\.cache\\hyperframes\\history\\0a9449e5-1208-44a8-a2bc-a89786931a1e\\blobs\\5a\\5a8bcf91dd249ff47cac8006bf8e90962337b0e5a3bd533ad970fe1d89d96138"
+    },
+    "compositions/hw-title.html": {
+      "hash": "604b4ae04126ef05ba5d6dacd9221cbf1740a110bd960b9457396c83aa94e82f",
+      "content": "C:\\Users\\PC\\.cache\\hyperframes\\history\\0a9449e5-1208-44a8-a2bc-a89786931a1e\\blobs\\60\\604b4ae04126ef05ba5d6dacd9221cbf1740a110bd960b9457396c83aa94e82f"
+    },
+    "compositions/outro-board.html": {
+      "hash": "0fd0412bb409c5e681f34c838e60a9d69da3272781585a50bce71711f41c0420",
+      "content": "C:\\Users\\PC\\.cache\\hyperframes\\history\\0a9449e5-1208-44a8-a2bc-a89786931a1e\\blobs\\0f\\0fd0412bb409c5e681f34c838e60a9d69da3272781585a50bce71711f41c0420"
+    },
+    "hyperframes.json": {
+      "hash": "dd8f89ee99973c7c10af4c544c748a27b0dc9fa7f45703c3d9c9cf2f46dae833",
+      "content": "C:\\Users\\PC\\.cache\\hyperframes\\history\\0a9449e5-1208-44a8-a2bc-a89786931a1e\\blobs\\dd\\dd8f89ee99973c7c10af4c544c748a27b0dc9fa7f45703c3d9c9cf2f46dae833"
+    },
+    "hyperframes.lock.json": {
+      "hash": "41376f728ace756256ad6e291af2c36615bdaf6c73b9eae96a6c8310e8b6de37",
+      "content": "C:\\Users\\PC\\.cache\\hyperframes\\history\\0a9449e5-1208-44a8-a2bc-a89786931a1e\\blobs\\41\\41376f728ace756256ad6e291af2c36615bdaf6c73b9eae96a6c8310e8b6de37"
+    },
+    "index.html": {
+      "hash": "e304084fe9b302e26def9ec6621b2130d038f2b739a8b7a7b28e42151e4d7d7a",
+      "content": "C:\\Users\\PC\\.cache\\hyperframes\\history\\0a9449e5-1208-44a8-a2bc-a89786931a1e\\blobs\\e3\\e304084fe9b302e26def9ec6621b2130d038f2b739a8b7a7b28e42151e4d7d7a"
+    },
+    "meta.json": {
+      "hash": "11e3accfd6da3e691ff41a6815cf781fd871c760a01aec8aa867e33d1c3c2f5b",
+      "content": "C:\\Users\\PC\\.cache\\hyperframes\\history\\0a9449e5-1208-44a8-a2bc-a89786931a1e\\blobs\\11\\11e3accfd6da3e691ff41a6815cf781fd871c760a01aec8aa867e33d1c3c2f5b"
+    },
+    "package.json": {
+      "hash": "ecc4388614c8c883b6ab46ec498b3532688870c563a5365a2b44156744bf3ed1",
+      "content": "C:\\Users\\PC\\.cache\\hyperframes\\history\\0a9449e5-1208-44a8-a2bc-a89786931a1e\\blobs\\ec\\ecc4388614c8c883b6ab46ec498b3532688870c563a5365a2b44156744bf3ed1"
+    },
+    "assets/plates/paper-landscape-dusk-first.png": {
+      "hash": "635f3810506704d81ed20a83ee1cd270f94e22bd13d63948e2c5183aa7724bae",
+      "content": "C:\\Users\\PC\\.cache\\hyperframes\\history\\0a9449e5-1208-44a8-a2bc-a89786931a1e\\blobs\\63\\635f3810506704d81ed20a83ee1cd270f94e22bd13d63948e2c5183aa7724bae"
+    },
+    "assets/plates/paper-landscape-dusk.mp4": {
+      "hash": "3b12fd7dea30bb17e1d390517e13d367aa86f3a9b0311767145c1cfa310f5654",
+      "content": "C:\\Users\\PC\\.cache\\hyperframes\\history\\0a9449e5-1208-44a8-a2bc-a89786931a1e\\blobs\\3b\\3b12fd7dea30bb17e1d390517e13d367aa86f3a9b0311767145c1cfa310f5654"
+    },
+    "assets/plates/paper-landscape-last.png": {
+      "hash": "fdc80dccd992f21f7d8da682db40db6c06a824c4a886a5ba654fa02ff476830d",
+      "content": "C:\\Users\\PC\\.cache\\hyperframes\\history\\0a9449e5-1208-44a8-a2bc-a89786931a1e\\blobs\\fd\\fdc80dccd992f21f7d8da682db40db6c06a824c4a886a5ba654fa02ff476830d"
+    },
+    "assets/plates/paper-landscape.mp4": {
+      "hash": "f3b34769ba61600b023e7352adf1d21ec11153d49cdfe39a9efd8862243173bf",
+      "content": "C:\\Users\\PC\\.cache\\hyperframes\\history\\0a9449e5-1208-44a8-a2bc-a89786931a1e\\blobs\\f3\\f3b34769ba61600b023e7352adf1d21ec11153d49cdfe39a9efd8862243173bf"
+    }
+  },
+  "revisions": {},
+  "checks": {
+    "latest": {
+      "revision": null,
+      "id": "f4e0b28f-ce19-4baf-b041-b7fba65d03cb"
+    },
+    "revisions": {},
+    "unversioned": [
+      {
+        "id": "f4e0b28f-ce19-4baf-b041-b7fba65d03cb",
+        "scope": "project",
+        "report": "C:\\QuangHy\\paper-cut animation\\hyperframes\\.hyperframes\\artifacts\\checks\\f4e0b28f-ce19-4baf-b041-b7fba65d03cb.json",
+        "metadata": {
+          "ok": true,
+          "browserSkipped": false,
+          "options": {
+            "samples": 9,
+            "atTransitions": false,
+            "maxIssues": 80,
+            "collapseStatic": true,
+            "tolerance": 2,
+            "timeout": 45000,
+            "cache": true,
+            "contrast": true,
+            "craft": true,
+            "strict": false,
+            "snapshots": false,
+            "safeZones": [
+              "tiktok",
+              "reels",
+              "shorts"
+            ],
+            "browserGpuMode": "auto",
+            "includeUnmounted": false
+          }
+        },
+        "createdAt": 1794998051520,
+        "contentHash": "3858568bf00f5efc4817edef7988dced61d8bacf02b569baab84790318d5d6ff",
+        "revision": null,
+        "inputFingerprint": "bb04f8fdc96e9e8e8a920069d47f81f6af651a3f5f42440970b0e1c22c828c8d",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      }
+    ]
+  },
+  "snapshots": {
+    "latest": {
+      "revision": null,
+      "id": "f149c1ab-cf18-4fc0-9211-ffaca3476e8c-8"
+    },
+    "revisions": {},
+    "unversioned": [
+      {
+        "scope": "full",
+        "id": "f149c1ab-cf18-4fc0-9211-ffaca3476e8c-0",
+        "image": "C:\\QuangHy\\paper-cut animation\\hyperframes\\.hyperframes\\artifacts\\snapshots\\110f4361-d7b0-4ec1-b88f-cc6963483dff\\frame-00-at-0.5s.png",
+        "time": 0.5,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1794998167853,
+        "contentHash": "e19f4d93dbc452487cd01e8e386c480f2d0b44e3578812c63ed4bc86deff95a0",
+        "revision": null,
+        "inputFingerprint": "bb04f8fdc96e9e8e8a920069d47f81f6af651a3f5f42440970b0e1c22c828c8d",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "f149c1ab-cf18-4fc0-9211-ffaca3476e8c-1",
+        "image": "C:\\QuangHy\\paper-cut animation\\hyperframes\\.hyperframes\\artifacts\\snapshots\\110f4361-d7b0-4ec1-b88f-cc6963483dff\\frame-01-at-2.8s.png",
+        "time": 2.8,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1794998167853,
+        "contentHash": "3ecfe864d02430f588bffe1b2a7a0f4cbcdb974231ca24a8001185a8924b679d",
+        "revision": null,
+        "inputFingerprint": "bb04f8fdc96e9e8e8a920069d47f81f6af651a3f5f42440970b0e1c22c828c8d",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "f149c1ab-cf18-4fc0-9211-ffaca3476e8c-2",
+        "image": "C:\\QuangHy\\paper-cut animation\\hyperframes\\.hyperframes\\artifacts\\snapshots\\110f4361-d7b0-4ec1-b88f-cc6963483dff\\frame-02-at-5.5s.png",
+        "time": 5.5,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1794998167853,
+        "contentHash": "06392a30e25730169814dbf889d699976a37f8c2d89c9fe0a54df0f401b57b15",
+        "revision": null,
+        "inputFingerprint": "bb04f8fdc96e9e8e8a920069d47f81f6af651a3f5f42440970b0e1c22c828c8d",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "f149c1ab-cf18-4fc0-9211-ffaca3476e8c-3",
+        "image": "C:\\QuangHy\\paper-cut animation\\hyperframes\\.hyperframes\\artifacts\\snapshots\\110f4361-d7b0-4ec1-b88f-cc6963483dff\\frame-03-at-6.1s.png",
+        "time": 6.1,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1794998167853,
+        "contentHash": "b1bc4b0384a349b002468a1a41968e6ad9572b3e000068bb6a864e5d89996012",
+        "revision": null,
+        "inputFingerprint": "bb04f8fdc96e9e8e8a920069d47f81f6af651a3f5f42440970b0e1c22c828c8d",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "f149c1ab-cf18-4fc0-9211-ffaca3476e8c-4",
+        "image": "C:\\QuangHy\\paper-cut animation\\hyperframes\\.hyperframes\\artifacts\\snapshots\\110f4361-d7b0-4ec1-b88f-cc6963483dff\\frame-04-at-9s.png",
+        "time": 9,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1794998167853,
+        "contentHash": "1f012b6581874add0d5f3c424f4d6adba4d3432ac16d63bb972aa728d2cd81b3",
+        "revision": null,
+        "inputFingerprint": "bb04f8fdc96e9e8e8a920069d47f81f6af651a3f5f42440970b0e1c22c828c8d",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "f149c1ab-cf18-4fc0-9211-ffaca3476e8c-5",
+        "image": "C:\\QuangHy\\paper-cut animation\\hyperframes\\.hyperframes\\artifacts\\snapshots\\110f4361-d7b0-4ec1-b88f-cc6963483dff\\frame-05-at-10.9s.png",
+        "time": 10.9,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1794998167854,
+        "contentHash": "2395fed4a1cc87d2d07ac4d2b85cb53474bda07e3e8a7884ed41f23b8b0c9390",
+        "revision": null,
+        "inputFingerprint": "bb04f8fdc96e9e8e8a920069d47f81f6af651a3f5f42440970b0e1c22c828c8d",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "f149c1ab-cf18-4fc0-9211-ffaca3476e8c-6",
+        "image": "C:\\QuangHy\\paper-cut animation\\hyperframes\\.hyperframes\\artifacts\\snapshots\\110f4361-d7b0-4ec1-b88f-cc6963483dff\\frame-06-at-13.5s.png",
+        "time": 13.5,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1794998167854,
+        "contentHash": "29417f4504a058f304c2b7706406230c3e8c935a30cadc33d12e48940e0a0ec2",
+        "revision": null,
+        "inputFingerprint": "bb04f8fdc96e9e8e8a920069d47f81f6af651a3f5f42440970b0e1c22c828c8d",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "f149c1ab-cf18-4fc0-9211-ffaca3476e8c-7",
+        "image": "C:\\QuangHy\\paper-cut animation\\hyperframes\\.hyperframes\\artifacts\\snapshots\\110f4361-d7b0-4ec1-b88f-cc6963483dff\\frame-07-at-16.5s.png",
+        "time": 16.5,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1794998167854,
+        "contentHash": "657d642c6a4c0c4018249374758a6fcea4eb9f578b9fbba86bae6c97d9f8636e",
+        "revision": null,
+        "inputFingerprint": "bb04f8fdc96e9e8e8a920069d47f81f6af651a3f5f42440970b0e1c22c828c8d",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "f149c1ab-cf18-4fc0-9211-ffaca3476e8c-8",
+        "image": "C:\\QuangHy\\paper-cut animation\\hyperframes\\.hyperframes\\artifacts\\snapshots\\110f4361-d7b0-4ec1-b88f-cc6963483dff\\frame-08-at-17.15s.png",
+        "time": 17.15,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1794998167854,
+        "contentHash": "5390d0cf5ad2b173ef85c23b8aed11db1b958c2568dd1af4b80a57e91e21d23c",
+        "revision": null,
+        "inputFingerprint": "bb04f8fdc96e9e8e8a920069d47f81f6af651a3f5f42440970b0e1c22c828c8d",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      }
+    ]
+  },
+  "renders": {
+    "latest": {
+      "id": "78119201-ca21-4af8-928e-75c1378faaec",
+      "completedAt": 1794998330778,
+      "output": "C:\\QuangHy\\paper-cut animation\\out\\paper-cut-film.mp4",
+      "status": "completed",
+      "revision": null
+    },
+    "retainedRevisions": []
+  },
+  "pendingArtifactCleanup": []
+}

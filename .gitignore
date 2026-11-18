@@ -1,0 +1,19 @@
+node_modules/
+out/
+remotion/out/
+.catalog.json
+*.bin
+
+# HyperFrames: rendered plates are build output (npm run plates)
+hyperframes/assets/plates/
+hyperframes/renders/
+hyperframes/.thumbnails/
+hyperframes/.waveform-cache/
+hyperframes/.transcode-cache/
+hyperframes/.hyperframes/artifacts/
+hyperframes/.hyperframes/cache/
+hyperframes/.hyperframes/preview/
+
+# Reference library of all 448 registry items (reinstall with hyperframes add)
+hf-library/
+hf-library-install.log

@@ -1,0 +1,8 @@
+---
+description: Paper-cut video pipeline (Remotion x HyperFrames) — project rules
+alwaysApply: true
+---
+
+Read `AGENTS.md` at the repo root before any change; it holds the commands, hard rules and definition of done.
+Project skills are in `.agents/skills/` — read `hyperframes/SKILL.md` for HyperFrames work and
+`remotion-best-practices/SKILL.md` for Remotion work.
