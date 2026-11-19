@@ -35,10 +35,11 @@ type CutProps = {
   children: React.ReactNode;
 };
 const PAD = 26; // room for the torn edge and the cast shadow inside the canvas
+// HtmlInCanvas needs integer canvas sizes: round here so callers can pass any scale (e.g. Person s=0.42)
 export const Cut: React.FC<CutProps> = ({ x, y, w, h, seed, depth = 8, rot = 0, opacity = 1, children }) => (
   <PaperLayer
-    width={w + PAD * 2}
-    height={h + PAD * 2}
+    width={Math.ceil(w) + PAD * 2}
+    height={Math.ceil(h) + PAD * 2}
     seed={seed}
     depth={depth}
     style={{ position: "absolute", left: x - PAD, top: y - PAD, rotate: `${rot}deg`, opacity }}

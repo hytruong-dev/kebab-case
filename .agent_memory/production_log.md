@@ -13,3 +13,7 @@
 ### Video: eilean-wave-scene - "Con sóng ở bến phía tây (màn chuyển động 12 lớp giấy Gemini)" (2026-11-19 02:54)
 - **Thời lượng:** 26.5s
 - **Bài học rút ra:** 12 prompt theo lớp, tạo qua Playwright MCP ~30s/ảnh, tải bản 2752px, khử logo 12/12, tách nền 4 lớp iso; 6 beat; QA PASS -14.0 LUFS.
+
+### Video: eilean-assemble - "Lắp ráp cảnh mở đầu Eilean Mòr (học từ clip mẫu)" (2026-11-19 03:20)
+- **Thời lượng:** 9.0s
+- **Bài học rút ra:** 22 mảnh, 4 nhóm, camera đứng yên, idle motion, đèn bật là phần thưởng cuối. Component dùng chung remotion/src/paper/Assemble.tsx.

@@ -9,6 +9,8 @@
 - [TASTE-03] (2026-11-18) [paper-cut] Chiều sâu bằng nhiều lớp giấy (tối thiểu nền + 3 lớp), lớp gần trôi nhiều hơn lớp xa khi camera lia (parallax); lớp gần có bóng đổ sâu hơn (depth 4 → 14px).
 - [TASTE-04] (2026-11-18) [paper-cut] Bảng màu duy nhất ở `shared/palette.json` (kem/nâu giấy, xanh đồi, cam nắng, đỏ nhấn). Không hard-code màu mới; biến thể (hoàng hôn) = cùng lớp, tô lại màu.
 - [TASTE-05] (2026-11-18) [paper-cut] Chuyển cảnh phải có lý do vật lý của giấy: xé (torn-paper-rip), mảnh giấy bay đi (paper-collage-reveal), lật trang (pageTurn / bookFlip), bút dạ quét che. Không crossfade giữa hai thế giới.
+- [TASTE-19] (2026-11-19) Cảnh giới thiệu bối cảnh dùng kỹ thuật LẮP RÁP: 15-25 mảnh giấy nhỏ bay vào theo trình tự nền (0-1.2s) → khối lớn (1.2-3.6s) → chi tiết vừa (3.6-6s) → chi tiết nhỏ lấp mép (6-8.5s), mảnh sau vào khi mảnh trước còn đang đáp (không khoảnh khắc đứng hình), giữ 0.5-1s rồi cắt. Học từ clip mẫu chủ dự án gửi (Video Project 2).
+- [TASTE-20] (2026-11-19) Trong cảnh lắp ráp CAMERA ĐỨNG YÊN; chuyển động đến từ mảnh giấy. Mảnh đã đáp vẫn cử động nhẹ tại chỗ (sóng bập bềnh, tàu lắc, cờ phất, chim bay, mây trôi). Độ chi tiết đến từ SỐ LƯỢNG mảnh đơn giản, không từ một hình phức tạp.
 
 ## 2. Chuyển động & nhịp (chuẩn HyperFrames, áp dụng mặc định)
 - [TASTE-06] (2026-11-18) [paper-cut] Vật đến: ease đuôi dài (`expo.out`/`power4.out`, spring damping 0.7-0.85); lia camera `power2.inOut`; thoát `power3.in`, ngắn hơn lúc vào 40-50%. Tiêu đề đáp xong thì đứng yên, không trôi/thở.

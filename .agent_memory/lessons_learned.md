@@ -117,3 +117,8 @@
 - **Symptom:** Playwright MCP: browser_run_code_unsafe không có require/fs/import (sandbox), tham số filename bị chặn ngoài thư mục MCP; ảnh lấy từ trang Gemini chỉ 1024x572.
 - **Ruled-out Dead-end:** Ghi file bằng fs trong code MCP; đọc ảnh bằng canvas/dataURL từ thẻ img.
 - **Verified Golden Path:** Lưu bằng API phía server: download.saveAs(path) sau khi bấm 'Tải hình ảnh có kích thước đầy đủ xuống' (ra 2752x1536), hoặc page.screenshot({path}). Truyền code inline. Lệnh chạy cả lô bị Cursor báo timeout nhưng vòng lặp trong trình duyệt vẫn chạy — theo dõi file trên đĩa.
+
+### [LESSON-24] (2026-11-19)
+- **Symptom:** Render lỗi 'HtmlInCanvas: width must be a positive integer. Received: 110.8' khi dùng Person s=0.42.
+- **Ruled-out Dead-end:** Truyền kích thước lẻ (w*scale) thẳng vào PaperLayer/HtmlInCanvas.
+- **Verified Golden Path:** Làm tròn trong Cut (Math.ceil(w) + PAD*2) — đã sửa trong remotion/src/eilean/kit.tsx, mọi scale đều dùng được.
