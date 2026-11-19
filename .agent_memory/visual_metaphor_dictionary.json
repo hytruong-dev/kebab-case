@@ -73,6 +73,25 @@
       ],
       "notes": "Truyền thuyết đóng dấu 'Truyền thuyết'/'BỊA ĐẶT'; sự thật dùng Note giấy + Tag số liệu. Chương = thẻ giấy xé (torn-paper-rip, slot = khung cuối plate trước).",
       "updatedAt": "2026-11-18 15:42"
+    },
+    "màn cao trào nhiều lớp ảnh ai": {
+      "approvedCount": 1,
+      "layoutPattern": "6 beats x 4.5s: establish → setting+characters → rise → crash(shake+flash+debris) → explainer → aftermath",
+      "primitives": [
+        "Gemini plates 16:9 + _iso cutouts",
+        "Remotion camera moves",
+        "rainFall",
+        "lightLeak",
+        "vignette"
+      ],
+      "preferredColors": [
+        "#1d2540",
+        "#24476b",
+        "#dfe8ee",
+        "#d9553b"
+      ],
+      "notes": "projects/eilean-mor/papercut + remotion/src/eilean/WaveScene.tsx; 12 ảnh cho 26.5s",
+      "updatedAt": "2026-11-19 02:54"
     }
   }
 }

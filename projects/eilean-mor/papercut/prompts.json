@@ -1,0 +1,67 @@
+{
+  "_scene": "Cảnh cao trào chương 7 'Lời giải': chiều 15/12/1900, bến phía tây đảo Eilean Mòr. Sóng khổng lồ phụt lên từ khe đá, cuốn Ducat và Marshall; McArthur lao xuống báo động. Mỗi ảnh là MỘT LỚP giấy cắt riêng để Remotion/HyperFrames ghép thành màn chuyển động có parallax.",
+  "_style": "Ảnh minh họa phong cách GIẤY CẮT THỦ CÔNG nhiều lớp (layered paper-cut craft, papercraft diorama): từng lớp giấy màu được cắt bằng kéo, mép xé có thớ giấy trắng lộ ra, bóng đổ mềm giữa các lớp tạo chiều sâu, kết cấu sợi giấy rõ. Bảng màu: xanh đêm #1d2540, xanh biển #24476b và #11233b, bọt sóng trắng ngà #dfe8ee, đá xám nâu #5b5550, cỏ #56704a, ánh đèn vàng #f7e2a0, giấy kem #fbf4e6, điểm nhấn đỏ cam #d9553b. Không chữ, không số, không logo, không watermark. Phong cách kể chuyện điện ảnh, không bạo lực, không máu.",
+  "_layer_note": "Ảnh có hậu tố _iso là vật thể đơn lẻ trên NỀN TRẮNG TRƠN để tách nền thành lớp trong suốt.",
+  "items": [
+    {
+      "id": "pc01_sky",
+      "layer": "background",
+      "prompt": "Bầu trời bão tố cuối chiều trên biển Bắc Đại Tây Dương, làm hoàn toàn bằng nhiều lớp giấy cắt: các dải mây giấy xám xanh chồng lên nhau theo chiều ngang, mép mây xé lởm chởm lộ lõi giấy trắng, vài vệt mưa xiên cắt từ giấy mỏng, một khe sáng vàng nhạt le lói phía chân trời. Không có biển, không có đảo, chỉ bầu trời rộng, khung ngang 16:9."
+    },
+    {
+      "id": "pc02_sea_far",
+      "layer": "far",
+      "prompt": "Dải biển xa phía chân trời bằng giấy cắt nhiều lớp: 4-5 lớp sóng giấy xanh đậm dần về phía trước, đỉnh sóng có viền giấy trắng ngà như bọt, mép giấy xé thô, bóng đổ nhẹ giữa các lớp. Bố cục nằm ở nửa dưới khung ngang 16:9, nửa trên để trống màu trời xám xanh nhạt."
+    },
+    {
+      "id": "pc03_island_lighthouse",
+      "layer": "mid",
+      "prompt": "Đảo đá Eilean Mòr nhìn từ biển, làm bằng giấy cắt: vách đá dựng đứng nhiều tầng giấy xám nâu, thảm cỏ xanh rêu trên đỉnh, một ngọn hải đăng trắng nhỏ với mái đèn đen và nhà gác đèn mái xám bên cạnh, đèn chưa bật, một con đường mòn ngoằn ngoèo bằng giấy nâu dẫn xuống bến đá phía bên phải. Diorama giấy, bóng đổ giữa lớp, khung ngang 16:9."
+    },
+    {
+      "id": "pc04_west_landing",
+      "layer": "mid",
+      "prompt": "Cận cảnh bến tàu phía tây của đảo đá, phong cách giấy cắt nhiều lớp: một khe đá hẹp sâu (geo) giữa hai vách đá giấy xám đen, cuối khe là miệng hang tối; bậc thang đá và lan can sắt nhỏ bằng giấy đen bám dọc vách; một cần cẩu gỗ nhỏ và một thùng gỗ đựng dây thừng đặt trong hốc đá ở lưng chừng vách. Nước trong khe dâng lên sủi bọt giấy trắng. Khung ngang 16:9."
+    },
+    {
+      "id": "pc05_wave_rise",
+      "layer": "hero",
+      "prompt": "Một con sóng khổng lồ đang dựng đứng lên từ khe đá, hoàn toàn bằng giấy cắt: hàng chục lớp giấy xanh biển xếp chồng uốn cong thành bức tường nước cao vút, mép trên xoăn cuộn như móng vuốt với viền bọt giấy trắng ngà xé tua rua, những giọt nước là các mẩu giấy tròn nhỏ bay lên. Ánh sáng chiều chiếu xiên tạo bóng đổ sâu giữa các lớp. Cảm giác hùng vĩ, đáng sợ nhưng đẹp như tác phẩm thủ công. Khung ngang 16:9."
+    },
+    {
+      "id": "pc06_wave_crash",
+      "layer": "hero",
+      "prompt": "Khoảnh khắc con sóng giấy khổng lồ đổ ập xuống bến đá, phong cách giấy cắt nhiều lớp: bọt trắng ngà nổ tung thành hàng trăm mảnh giấy xé nhỏ bay tứ tung, các lớp giấy xanh cuộn xoáy, thùng gỗ và dây thừng bằng giấy bị hất văng giữa không trung, lan can sắt giấy đen bị bẻ cong. Không có người. Chuyển động mạnh, chiều sâu rõ, khung ngang 16:9."
+    },
+    {
+      "id": "pc07_geyser_cave",
+      "layer": "hero",
+      "prompt": "Mặt cắt ngang khe đá và hang ngầm kiểu sách giáo khoa nhưng làm bằng giấy cắt: nước biển giấy xanh tràn vào hang, bị nén lại rồi phụt ngược lên thành cột nước trắng ngà cao vút ra khỏi miệng khe, các mũi tên cong bằng giấy đỏ cam chỉ hướng dòng nước đi vào rồi bắn lên. Rõ ràng, dễ hiểu cho người xem, không có chữ, khung ngang 16:9."
+    },
+    {
+      "id": "pc08_keepers_iso",
+      "layer": "character",
+      "prompt": "Hai người gác đèn năm 1900 làm bằng búp bê giấy cắt (paper doll) đứng cạnh nhau trên NỀN TRẮNG TRƠN: một người râu rậm mặc áo khoác dày xanh than đội mũ lưỡi trai đen, một người trẻ hơn mặc áo khoác xanh rêu đội mũ lưỡi trai, cả hai đang cúi người kéo một sợi dây thừng giấy nâu, nét mặt tập trung. Thân người là các mảnh giấy ghép có khớp ghim tròn ở vai và khuỷu tay. Toàn thân, không bóng nền, nền trắng tinh."
+    },
+    {
+      "id": "pc09_mcarthur_iso",
+      "layer": "character",
+      "prompt": "Một người thủy thủ kỳ cựu năm 1900 làm bằng búp bê giấy cắt trên NỀN TRẮNG TRƠN: râu nâu, chỉ mặc áo sơ mi trắng xắn tay và quần đen, KHÔNG mặc áo mưa, đang chạy hết tốc lực sang phải, một tay giơ cao vẫy báo động, tóc và vạt áo bay trong gió. Thân người là các mảnh giấy ghép có khớp ghim tròn. Toàn thân, nền trắng tinh."
+    },
+    {
+      "id": "pc10_debris_iso",
+      "layer": "props",
+      "prompt": "Bộ đạo cụ giấy cắt rời rạc xếp thưa trên NỀN TRẮNG TRƠN, mỗi vật cách nhau rõ ràng: một thùng gỗ vỡ đôi, ba mảnh ván gỗ, một cuộn dây thừng bung ra, một đoạn lan can sắt đen bị bẻ cong, một tảng đá xám lớn, năm mảng cỏ xanh bị lột kèm đất nâu, mười mẩu bọt biển giấy trắng ngà nhiều kích cỡ. Nhìn thẳng, bóng đổ nhẹ, nền trắng tinh."
+    },
+    {
+      "id": "pc11_spray_iso",
+      "layer": "fx",
+      "prompt": "Một chùm bọt sóng và tia nước bắn tung lên bằng giấy cắt trắng ngà và xanh nhạt trên NỀN TRẮNG TRƠN: hàng chục mảnh giấy xé tua rua, giọt nước giấy tròn và dải giấy cong như tia nước, tỏa ra hình quạt từ dưới lên. Không có vật thể khác, nền trắng tinh."
+    },
+    {
+      "id": "pc12_lighthouse_window",
+      "layer": "detail",
+      "prompt": "Nhìn từ trong nhà gác đèn ra ngoài qua khung cửa sổ gỗ, phong cách giấy cắt nhiều lớp: bên trong là bức tường giấy kem, một bộ áo mưa vàng treo trên móc gỗ, chiếc đồng hồ treo tường; qua ô cửa thấy biển giấy xanh cuồn cuộn và một cột nước trắng khổng lồ đang dựng lên ở phía xa. Không có người. Ánh sáng chiều u ám, khung ngang 16:9."
+    }
+  ]
+}

@@ -112,3 +112,8 @@
 - **Symptom:** Đặt hình cho từng câu thoại mà không cần Whisper căn chữ.
 - **Ruled-out Dead-end:** Tạo giọng cả đoạn dài rồi căn bằng ASR (dễ lệch, tốn thời gian).
 - **Verified Golden Path:** Tạo giọng TỪNG CÂU (scripts/tts-project.mjs, cache theo hash), ghép bằng NumPy theo timeline.json: biết chính xác start/dur mỗi câu → mỗi câu một cảnh, phụ đề chia theo tỉ lệ ký tự. Kiểm tra lại bằng faster-whisper vài câu.
+
+### [LESSON-23] (2026-11-19)
+- **Symptom:** Playwright MCP: browser_run_code_unsafe không có require/fs/import (sandbox), tham số filename bị chặn ngoài thư mục MCP; ảnh lấy từ trang Gemini chỉ 1024x572.
+- **Ruled-out Dead-end:** Ghi file bằng fs trong code MCP; đọc ảnh bằng canvas/dataURL từ thẻ img.
+- **Verified Golden Path:** Lưu bằng API phía server: download.saveAs(path) sau khi bấm 'Tải hình ảnh có kích thước đầy đủ xuống' (ra 2752x1536), hoặc page.screenshot({path}). Truyền code inline. Lệnh chạy cả lô bị Cursor báo timeout nhưng vòng lặp trong trình duyệt vẫn chạy — theo dõi file trên đĩa.

@@ -9,3 +9,7 @@
 ### Video: eilean-mor - "Ngọn hải đăng Eilean Mor: Bí ẩn 3 người gác đèn biến mất" (2026-11-18 15:42)
 - **Thời lượng:** 232.6s
 - **Bài học rút ra:** 7 chương, 51 câu = 51 cảnh paper-cut (Remotion 15fps on twos), 6 thẻ chương xé giấy (HyperFrames), phụ đề 149 nhóm, giọng OmniVoice tempo 1.08, nhạc nền tự sinh (sóng + drone) ducking. QA PASS -14.0 LUFS TP -1.5, không đoạn đứng hình. Bản YouTube CRF18 384MB.
+
+### Video: eilean-wave-scene - "Con sóng ở bến phía tây (màn chuyển động 12 lớp giấy Gemini)" (2026-11-19 02:54)
+- **Thời lượng:** 26.5s
+- **Bài học rút ra:** 12 prompt theo lớp, tạo qua Playwright MCP ~30s/ảnh, tải bản 2752px, khử logo 12/12, tách nền 4 lớp iso; 6 beat; QA PASS -14.0 LUFS.

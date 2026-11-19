@@ -1,6 +1,7 @@
 import { Composition, Folder } from "remotion";
 import { EileanChapter, type EileanChapterProps } from "./eilean/EileanChapter";
 import { FPS as EILEAN_FPS } from "./eilean/kit";
+import { WAVE_DURATION_S, WAVE_FPS, WaveScene } from "./eilean/WaveScene";
 import { EffectsGallery, galleryHeight } from "./gallery/EffectsGallery";
 import { TransitionsGallery, transitionsGalleryDuration } from "./gallery/TransitionsGallery";
 import { PaperConfetti } from "./paper/PaperConfetti";
@@ -47,6 +48,8 @@ export const RemotionRoot: React.FC = () => {
           defaultProps={{ shots: [{ shot: "title-card", start: 0, dur: 5 }, { shot: "storm-sea", start: 5, dur: 5 }], total: 10 } satisfies EileanChapterProps}
           calculateMetadata={({ props }) => ({ durationInFrames: Math.max(1, Math.round(props.total * EILEAN_FPS)) })}
         />
+        {/* One motion screen from 12 Gemini paper-cut layers (projects/eilean-mor/papercut/prompts.json). */}
+        <Composition id="EileanWaveScene" component={WaveScene} durationInFrames={Math.round(WAVE_DURATION_S * WAVE_FPS)} fps={WAVE_FPS} width={1920} height={1080} />
       </Folder>
 
       <Folder name="Galleries">

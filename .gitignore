@@ -31,3 +31,4 @@ projects/*/audio/*.f32
 projects/*/audio/bed.wav
 projects/*/review/
 projects/*/*.log
+projects/*/papercut/_raw/
