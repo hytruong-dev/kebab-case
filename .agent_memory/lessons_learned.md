@@ -122,3 +122,8 @@
 - **Symptom:** Render lỗi 'HtmlInCanvas: width must be a positive integer. Received: 110.8' khi dùng Person s=0.42.
 - **Ruled-out Dead-end:** Truyền kích thước lẻ (w*scale) thẳng vào PaperLayer/HtmlInCanvas.
 - **Verified Golden Path:** Làm tròn trong Cut (Math.ceil(w) + PAD*2) — đã sửa trong remotion/src/eilean/kit.tsx, mọi scale đều dùng được.
+
+### [LESSON-25] (2026-11-19)
+- **Symptom:** PowerShell làm hỏng chuỗi filter ffmpeg: '$k:normalize' bị hiểu là biến có scope, 'adelay=$ms|$ms' cũng dễ vỡ; lệnh lỗi giữa chừng còn xoá luôn file render chưa ghép tiếng.
+- **Ruled-out Dead-end:** Ghép filter_complex dài bằng chuỗi PowerShell nội suy rồi Remove-Item ngay trong cùng một dòng lệnh.
+- **Verified Golden Path:** Viết bước âm thanh thành script Node (scripts/mux-assembly-audio.mjs) truyền mảng args cho ffmpeg; chỉ xoá file tạm sau khi bước sau đã thành công.

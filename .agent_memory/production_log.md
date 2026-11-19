@@ -17,3 +17,7 @@
 ### Video: eilean-assemble - "Lắp ráp cảnh mở đầu Eilean Mòr (học từ clip mẫu)" (2026-11-19 03:20)
 - **Thời lượng:** 9.0s
 - **Bài học rút ra:** 22 mảnh, 4 nhóm, camera đứng yên, idle motion, đèn bật là phần thưởng cuối. Component dùng chung remotion/src/paper/Assemble.tsx.
+
+### Video: eilean-layer-assemble - "Lắp ráp cảnh mở đầu bằng 22 lớp giấy Gemini" (2026-11-19 03:50)
+- **Thời lượng:** 9.5s
+- **Bài học rút ra:** 22 prompt từng mảnh (nền trắng) qua Playwright MCP, khử logo 22/22, tách nền 22/22, lắp theo 4 nhóm, 22 tiếng giấy, đèn bật cuối. QA PASS -14.0 LUFS.

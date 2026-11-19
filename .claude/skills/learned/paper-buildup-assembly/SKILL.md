@@ -28,3 +28,9 @@ Phân tích clip mẫu: `projects/_study/vp2/` (sheet_3fps.jpg, timing.py, camer
 
 ## Bẫy
 - `HtmlInCanvas` cần kích thước nguyên: `Cut` trong `kit.tsx` đã làm tròn (scale lẻ như 0.42 → lỗi `width must be a positive integer`).
+
+## Bản dùng ảnh Gemini (đã làm 2026-11-19)
+- Prompt theo từng mảnh: `projects/eilean-mor/layers/prompts.json` (22 mảnh, chia 4 nhóm, mỗi mảnh ghi `entry`). Khối style chung bắt đầu bằng 'Một mảnh GIẤY CẮT THỦ CÔNG duy nhất … trên NỀN TRẮNG TRƠN … không bóng đổ xuống nền'.
+- Sóng/dải nền: ghi tỉ lệ trong prompt ('tỉ lệ khoảng 5:1') → Gemini trả ảnh rộng thật (4640x928, 5088x832).
+- Tạo: 2 lệnh MCP x 11 ảnh (~28 s/ảnh, ~10 phút tổng); khử logo; `tools/image/cutout_white.py` giữ được phần trắng bên trong vật (thân tháp, chim, áo sơ mi).
+- Dựng: `remotion/src/eilean/LayerAssemble.tsx` (`Img` + drop-shadow, dùng `Assemble`); tiếng giấy mỗi lần mảnh vào: `scripts/mux-assembly-audio.mjs`.
