@@ -1,6 +1,7 @@
 import React from "react";
 import { Composition, Folder } from "remotion";
 import { BrainEpisode, type BrainEpisodeProps, brainEpisodeDuration } from "./brain/BrainEpisode";
+import { FPS as BRAIN_FPS } from "./brain/kit";
 import { EffectsGallery, galleryHeight } from "./gallery/EffectsGallery";
 import { TransitionsGallery, transitionsGalleryDuration } from "./gallery/TransitionsGallery";
 import { PaperConfetti } from "./paper/PaperConfetti";
@@ -17,8 +18,8 @@ export const RemotionRoot: React.FC = () => {
         <Composition
           id="BrainEpisode"
           component={BrainEpisode}
-          durationInFrames={30 * 10}
-          fps={30}
+          durationInFrames={BRAIN_FPS * 10}
+          fps={BRAIN_FPS}
           width={1920}
           height={1080}
           defaultProps={{ items: [], total: 10, tail: 1.5, withAudio: false } satisfies BrainEpisodeProps}

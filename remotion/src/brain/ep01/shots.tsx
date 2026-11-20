@@ -1,4 +1,5 @@
-// Episode 01 "Why Your Brain Loves Procrastinating" — 51 shots, one per narration beat (owner plan section 5).
+// Episode 01 "Why Your Brain Loves Procrastinating" — 72 shots, one per narration beat (owner doc v2, section 5 + research beats,
+// 10-11 min episode, modular [BRIDGE_TRANSITION] + [SINGLE_OUTRO] ending).
 // Picture changes every 3-5 s (plan 2.1): each shot builds in 2-3 stages on its own clock t (s since the beat began).
 // Mascot = Gemini assets (M01..M15 in public/brain/ep01); everything else = vector icons (icons.tsx) + kinetic type.
 import React from "react";
@@ -8,7 +9,9 @@ import {
   AlarmButton, Amyg, Bell, Book, Boulder, Brain, Briefcase, Calendar, Caveman, Ceo, Check, Chest, Clock, Cookie, Couch, Cross, Crt, Door,
   Dumbbell, Fist, Flame, Flask, Folder, FuelCan, Gears, GradCap, Head, Heart, Keyboard, Knot, Laptop, Lock, Pebble, Person, Phone, PlayCard,
   Puzzle, Remote, Scale, Scanner, Sheet, Telescope, Tiger, Weight, Papers, Couch as Sofa, Almond, Pencils, TaxForm,
+  Im,
 } from "../iconsImg";
+import { G as Grp } from "../icons";
 
 import type { ShotProps } from "../kit";
 const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
@@ -23,6 +26,32 @@ const Sub: React.FC<{ x: number; y: number; text: string; k: number; color?: str
   );
 
 /** Gemini hero illustration (plan section 5 prompt) as the beat's backdrop; falls back to the vector build if missing. */
+/** Slow camera drift over the whole beat (push-in + lateral sway) — keeps long beats alive (doc 7.2: never static > 4 s). */
+const Drift: React.FC<{ t: number; d: number; children: React.ReactNode; amt?: number }> = ({ t, d, children, amt = 0.07 }) => {
+  const p = Math.min(1, t / Math.max(1, d));
+  return (
+    <div style={{ position: "absolute", inset: 0, transform: `scale(${1 + amt * p}) translate(${Math.sin(t * 0.35) * 14}px, ${Math.cos(t * 0.3) * 8}px)`, transformOrigin: "50% 45%" }}>
+      {children}
+    </div>
+  );
+};
+
+/** Late-beat kickers so long beats keep changing: pills pop at 55% and 80% of the beat. */
+const Kick: React.FC<{ t: number; d: number; a: string; b?: string; y?: number }> = ({ t, d, a, b, y = 960 }) => (
+  <>
+    <Tag x={b ? 700 : 960} y={y} text={a} bg={C.amber} k={pop(t, d * 0.55) * (0.94 + 0.06 * Math.sin(t * 4))} size={30} />
+    {b && <Tag x={1240} y={y} text={b} bg={C.teal} k={pop(t, d * 0.8) * (0.94 + 0.06 * Math.sin(t * 4 + 1))} size={30} />}
+  </>
+);
+
+/** Any published Gemini prop by id (cropped png), placed in SVG space, with fallback node when missing. */
+const Obj: React.FC<{ n: string; x: number; y: number; w: number; h?: number; k?: number; rot?: number; fallback?: React.ReactNode }> = ({ n, x, y, w, h, k = 1, rot = 0, fallback = null }) => {
+  const has = useHas();
+  if (k <= 0.01) return null;
+  if (!has.has(n)) return <>{fallback}</>;
+  return <Grp x={x} y={y} k={k} rot={rot}><Im n={n} w={w} h={h ?? w} /></Grp>;
+};
+
 const HeroOr: React.FC<{ n: string; t: number; d?: number; dim?: number; children?: React.ReactNode; fallback: React.ReactNode }> = ({ n, t, d = 8, dim = 0, children, fallback }) => {
   const has = useHas();
   if (!has.has(n)) return <>{fallback}</>;
@@ -773,7 +802,361 @@ export const outro_end: React.FC<ShotProps> = ({ t }) => (
   </>
 );
 
+
+/* ================= v2 research beats (owner doc v2: 10-11 min) ================= */
+
+export const hook_emotion: React.FC<ShotProps> = ({ t, d }) => {
+  const tilt = lerp(0, 1, ramp(t, 3.0, 1.0, Easing.out(Easing.back(1.4)))) + 0.08 * Math.sin(t * 2.2) * ramp(t, 4, 1);
+  return (
+    <Drift t={t} d={d}>
+      <S>
+        <Scale x={960} y={560} s={1.4} k={pop(t, 0.2)} tilt={tilt}
+          left={<Clock x={0} y={-60} s={0.5} k={1} m={t * 30} h={3} />}
+          right={<Heart x={0} y={-60} s={0.55} k={1} glow={0.6} />} />
+      </S>
+      <Tag x={560} y={200} text="Time management" bg={C.panel} color={C.text} k={pop(t, 0.8)} />
+      <Tag x={1360} y={200} text="Emotional regulation" bg={C.coral} color={C.text} k={pop(t, 1.6)} />
+      <Sub x={960} y={940} text="Pychyl & Sirois: we delay to escape bad feelings" k={pop(t, 5.0)} color={C.text} size={34} />
+      {["boredom", "anxiety", "self-doubt"].map((x, i) => <Tag key={x} x={1360 + (i - 1) * 190} y={300} text={x} bg={C.panel} color={C.coral} k={pop(t, 7.5 + i * 1.2)} size={24} />)}
+      <Pic n="M04_overthinking" cx={220} cy={760} size={380} k={pop(t, 10.0)} t={t} float={5} />
+    </Drift>
+  );
+};
+
+export const hook_sources: React.FC<ShotProps> = ({ t, d }) => (
+  <Drift t={t} d={d}>
+    <Card x={180} y={230} w={740} h={300} k={ramp(t, 0.3, 0.5)} color={C.amber}>
+      <div style={{ fontSize: 30, color: C.dim, fontWeight: 700 }}>Piers Steel · 2007 review</div>
+      <div style={{ fontSize: 120, fontWeight: 900, color: C.amber, lineHeight: 1.1 }}>{Math.round(95 * ramp(t, 0.8, 1.6))}%</div>
+      <div style={{ fontSize: 34, fontWeight: 800 }}>of college students</div>
+    </Card>
+    <Card x={1000} y={230} w={740} h={300} k={ramp(t, 4.6, 0.5)} color={C.coral}>
+      <div style={{ fontSize: 30, color: C.dim, fontWeight: 700 }}>Joseph Ferrari</div>
+      <div style={{ fontSize: 120, fontWeight: 900, color: C.coral, lineHeight: 1.1 }}>1 in 5</div>
+      <div style={{ fontSize: 34, fontWeight: 800 }}>adults: chronic</div>
+    </Card>
+    <S>{Array.from({ length: 5 }, (_, i) => <Person key={i} x={1060 + i * 150} y={760} s={0.55} k={pop(t, 6.0 + i * 0.15)} color={i === 2 ? C.coral : "#475569"} />)}</S>
+    <Pic n="M02_pointing" cx={420} cy={790} size={420} k={pop(t, 1.4)} t={t} float={4} />
+    <Tag x={1430} y={950} text="CHRONIC" bg={C.coral} color={C.text} k={pop(t, 8.0) * (0.85 + 0.15 * Math.sin(t * 5))} size={30} />
+    <Ring cx={600} cy={380} r={0} p={0} color={C.amber} />
+  </Drift>
+);
+
+export const pfc_slow: React.FC<ShotProps> = ({ t, d }) => {
+  const ages = [10, 15, 20, 25];
+  const p = ramp(t, 1.0, 4.0);
+  return (
+    <Drift t={t} d={d}>
+      <S>
+        <line x1={300} y1={760} x2={1640} y2={760} stroke={C.line} strokeWidth={8} />
+        {ages.map((a, i) => <circle key={a} cx={300 + i * 446} cy={760} r={16} fill={p * 3 >= i ? C.amber : C.line} />)}
+        <Head x={300 + 1340 * p} y={520} s={0.7 + 0.4 * p} k={pop(t, 0.3)} front={p} />
+      </S>
+      {ages.map((a, i) => <Sub key={a} x={300 + i * 446} y={830} text={`${a}${i === 3 ? "+" : ""}`} k={pop(t, 0.6 + i * 0.3)} color={C.text} size={40} />)}
+      <Tag x={960} y={150} text="Prefrontal Cortex: matures into your mid-20s" k={pop(t, 0.4)} size={36} />
+      <Meter x={1180} y={940} w={520} p={0.4 + 0.5 * Math.abs(Math.sin(t * 1.4))} color={C.coral} label="SELF-CONTROL = EFFORT" h={26} />
+    <Kick t={t} d={d} a="Self-control runs out" b="→ the CEO gets tired" />
+    </Drift>
+  );
+};
+
+export const amyg_fast: React.FC<ShotProps> = ({ t, d }) => {
+  const lap = Math.max(0, t - 0.8) % Math.max(4, d / 2);
+  const a = ramp(lap, 0, 0.9, Easing.out(Easing.cubic));
+  const b = ramp(lap, 0, 4.5, Easing.inOut(Easing.quad));
+  return (
+    <>
+      <Sub x={160} y={330} text="START" k={pop(t, 0.2)} color={C.dim} size={30} />
+      <S>
+        <line x1={260} y1={420} x2={1700} y2={420} stroke={C.line} strokeWidth={4} strokeDasharray="12 10" />
+        <line x1={260} y1={720} x2={1700} y2={720} stroke={C.line} strokeWidth={4} strokeDasharray="12 10" />
+        <line x1={1700} y1={300} x2={1700} y2={840} stroke={C.text} strokeWidth={6} />
+        <Amyg x={260 + 1360 * a} y={420} s={0.8} k={pop(t, 0.3)} t={t} panic={a} whistle={false} />
+        <Ceo x={260 + 1360 * b} y={720} s={0.75} k={pop(t, 0.3)} />
+      </S>
+      <Tag x={1100} y={250} text="⚡ a fraction of a second" bg={C.coral} color={C.text} k={pop(t, 1.8)} />
+      <Sub x={1100} y={880} text="the CEO is still reading the situation…" k={pop(t, 3.0)} color={C.dim} size={32} />
+    </>
+  );
+};
+
+export const bochum_study: React.FC<ShotProps> = ({ t, d }) => (
+  <Drift t={t} d={d}>
+    <Tag x={960} y={110} text="Ruhr University Bochum · 2018 · 264 adults" bg={C.panel} color={C.text} k={pop(t, 0.2)} size={36} />
+    <S>
+      <Obj n="O46_brain_scan_split" x={600} y={540} w={560} k={pop(t, 0.8)} fallback={<Brain x={600} y={540} s={2.4} k={1} deep={1} />} />
+      <circle cx={560} cy={580} r={60 + 12 * Math.sin(t * 5)} fill="none" stroke={C.coral} strokeWidth={6} opacity={ramp(t, 4.0, 0.4)} />
+    </S>
+    <Card x={1060} y={330} w={700} h={130} k={ramp(t, 5.0, 0.5)} color={C.coral}>
+      <div style={{ fontSize: 38, fontWeight: 900 }}>Larger Amygdala</div>
+    </Card>
+    <Card x={1060} y={500} w={700} h={170} k={ramp(t, 8.5, 0.5)} color={C.sky}>
+      <div style={{ fontSize: 38, fontWeight: 900 }}>Weaker link to the dorsal anterior cingulate cortex</div>
+    </Card>
+    <Sub x={1410} y={760} text="people who struggle to act on intentions" k={pop(t, 2.4)} color={C.dim} size={30} w={700} />
+    <S><line x1={560} y1={580} x2={760} y2={430} stroke={C.sky} strokeWidth={5} strokeDasharray="8 18" strokeDashoffset={-t * 40} opacity={ramp(t, 9.0, 0.6) * (0.5 + 0.5 * Math.sin(t * 6))} /></S>
+    <Pic n="M03_shocked" cx={1500} cy={900} size={300} k={pop(t, 12.5)} t={t} float={4} />
+  </Drift>
+);
+
+export const bochum_meaning: React.FC<ShotProps> = ({ t }) => (
+  <>
+    <S>
+      <AlarmButton x={520} y={520} s={1.4} k={pop(t, 0.2)} flash={Math.floor(t * 6) % 2 === 0 ? 1 : 0.3} />
+      <line x1={760} y1={520} x2={1260} y2={520} stroke={C.sky} strokeWidth={6} strokeDasharray="6 26" opacity={0.6 + 0.4 * Math.sin(t * 9)} />
+      <Ceo x={1460} y={540} s={1.6} k={pop(t, 2.4)} />
+    </S>
+    <Tag x={520} y={830} text="LOUDER alarm" bg={C.coral} color={C.text} k={pop(t, 0.8)} size={40} />
+    <Tag x={1460} y={830} text="weaker line to the CEO" bg={C.sky} k={pop(t, 2.8)} size={40} />
+  </>
+);
+
+const Money: React.FC<{ x: number; y: number; v: string; k: number; color: string }> = ({ x, y, v, k, color }) =>
+  k <= 0.01 ? null : (
+    <div style={{ position: "absolute", left: x, top: y, transform: `translate(-50%,-50%) scale(${k})`, width: 330, height: 200, borderRadius: 24, background: C.panel, border: `6px solid ${color}`, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: FONT, fontWeight: 900, fontSize: 96, color }}>{v}</div>
+  );
+
+export const discount_test: React.FC<ShotProps> = ({ t }) => (
+  <>
+    <Title x={960} y={170} text="Quick test:" size={60} color={C.dim} k={pop(t, 0.2)} />
+    <Money x={600} y={500} v="$100" k={pop(t, 0.8)} color={C.amber} />
+    <Money x={1320} y={500} v="$110" k={pop(t, 1.8)} color={C.sky} />
+    <Tag x={600} y={680} text="TODAY" k={pop(t, 1.0)} />
+    <Tag x={1320} y={680} text="NEXT WEEK" bg={C.panel} color={C.text} k={pop(t, 2.0)} />
+    <Title x={960} y={500} text="or" size={56} color={C.dim} k={pop(t, 1.4)} />
+    <S><Check x={600} y={360} s={1.4} k={pop(t, 4.2)} /></S>
+    <Pic n="M06_distracted" cx={240} cy={840} size={360} k={pop(t, 4.4)} t={t} float={4} />
+  </>
+);
+
+export const discount_flip: React.FC<ShotProps> = ({ t, d }) => (
+  <Drift t={t} d={d}>
+    <Money x={600} y={420} v="$100" k={pop(t, 0.2)} color={C.amber} />
+    <Money x={1320} y={420} v="$110" k={pop(t, 0.6)} color={C.sky} />
+    <Tag x={600} y={600} text="in 52 weeks" bg={C.panel} color={C.text} k={pop(t, 1.4)} />
+    <Tag x={1320} y={600} text="in 53 weeks" bg={C.panel} color={C.text} k={pop(t, 2.0)} />
+    <S><Check x={1320} y={280} s={1.4} k={pop(t, 5.2)} /></S>
+    <Title x={960} y={820} text="Same 7 days. Different answer." size={60} color={C.amber} k={pop(t, 8.0)} />
+    <S><Clock x={960} y={420} s={0.7} k={pop(t, 3.0)} m={t * 60} h={t * 5} /></S>
+    <Pic n="M03_shocked" cx={1720} cy={880} size={320} k={pop(t, 10.5)} t={t} float={5} />
+  </Drift>
+);
+
+export const avatar_mirror: React.FC<ShotProps> = ({ t, d }) => (
+  <Drift t={t} d={d}>
+    <Tag x={960} y={110} text="Hal Hershfield · UCLA" bg={C.panel} color={C.text} k={pop(t, 0.2)} size={40} />
+    <Pic n="M01_explaining" cx={480} cy={620} size={640} k={pop(t, 0.4)} t={t} float={4} />
+    <S>
+      <Obj n="O38_aged_mirror" x={1360} y={560} w={560} h={640} k={pop(t, 2.0)} fallback={<Person x={1360} y={560} s={1.8} k={1} color="#94A3B8" />} />
+      <Arrow x1={760} y1={560} x2={1060} y2={560} color={C.amber} w={8} p={ramp(t, 3.0, 0.6)} dash />
+    </S>
+    <Sub x={1360} y={940} text="your face, digitally aged" k={pop(t, 3.6)} color={C.text} size={34} />
+  <Kick t={t} d={d} a="Future You = a real person" />
+    </Drift>
+);
+
+export const avatar_result: React.FC<ShotProps> = ({ t, d }) => (
+  <Drift t={t} d={d}>
+    <S><line x1={700} y1={820} x2={1700} y2={820} stroke={C.line} strokeWidth={6} /></S>
+    <Bar x={950} base={820} w={220} h={520} p={ramp(t, 0.8, 0.8) * 0.4} color={C.dim} label="Saw current self" />
+    <Bar x={1450} base={820} w={220} h={520} p={ramp(t, 2.0, 1.2) * 0.9} color={C.amber} label="Met older self" value="> 2×" />
+    <S><Obj n="O39_piggy_bank" x={380} y={540} w={420} k={pop(t, 0.4)} fallback={<Chest x={380} y={540} s={1.2} k={1} />} /></S>
+    <Title x={380} y={820} text="Future You felt real" size={44} color={C.teal} k={pop(t, 5.6)} />
+  <Kick t={t} d={d} a="Hershfield et al. 2011" b="> 2× for retirement" />
+    </Drift>
+);
+
+export const dopamine_wanting: React.FC<ShotProps> = ({ t, d }) => {
+  const pts = Array.from({ length: 60 }, (_, i) => {
+    const x = 260 + i * 24;
+    const spike = Math.exp(-Math.pow((i - 14) / 4, 2)) * 300 + Math.exp(-Math.pow((i - 32) / 4, 2)) * 260 + Math.exp(-Math.pow((i - 50) / 4, 2)) * 230;
+    return `${x},${780 - spike}`;
+  });
+  const shown = Math.floor(60 * ramp(t, 1.0, d - 2.5));
+  return (
+    <Drift t={t} d={d} amt={0.05}>
+      <Tag x={960} y={110} text="DOPAMINE = ANTICIPATION, not pleasure" k={pop(t, 0.2)} size={40} />
+      <S>
+        <line x1={260} y1={780} x2={1700} y2={780} stroke={C.line} strokeWidth={6} />
+        {shown > 1 && <polyline points={pts.slice(0, shown).join(" ")} fill="none" stroke={C.amber} strokeWidth={10} strokeLinejoin="round" />}
+        <Bell x={260 + 14 * 24} y={360} s={0.6} k={pop(t, 1.0 + (d - 3.5) * 14 / 60)} ring={Math.sin(t * 14)} />
+        <Phone x={260 + 32 * 24} y={360} s={0.45} k={pop(t, 1.0 + (d - 3.5) * 32 / 60)} />
+        <Phone x={260 + 50 * 24} y={360} s={0.45} k={pop(t, 1.0 + (d - 3.5) * 50 / 60)} />
+      </S>
+      <Sub x={596} y={860} text="expecting a reward" k={pop(t, 2.8)} color={C.text} size={30} />
+      <Sub x={1150} y={860} text="'the next scroll might be good'" k={pop(t, 1.4 + (d - 3.5) * 32 / 60)} color={C.text} size={30} />
+    </Drift>
+  );
+};
+
+export const tice_early: React.FC<ShotProps> = ({ t, d }) => (
+  <Drift t={t} d={d}>
+    <Tag x={960} y={110} text="Tice & Baumeister · 1997" bg={C.panel} color={C.text} k={pop(t, 0.2)} size={40} />
+    <S><Calendar x={480} y={480} s={1.2} k={pop(t, 0.6)} mark={1} label="WEEK 1" /></S>
+    <Pic n="M13_relaxing" cx={1300} cy={560} size={640} k={pop(t, 2.0)} t={t} />
+    <Meter x={1040} y={880} w={520} p={lerp(0.6, 0.2, ramp(t, 3.4, 1.4))} color={C.teal} label="STRESS (procrastinators)" />
+    <Tag x={480} y={760} text="…felt LESS stressed" bg={C.teal} k={pop(t, 6.0)} size={34} />
+    <Tag x={480} y={850} text="(for now)" bg={C.panel} color={C.dim} k={pop(t, 8.5)} size={28} />
+  </Drift>
+);
+
+export const tice_late: React.FC<ShotProps> = ({ t }) => (
+  <>
+    <S><Calendar x={330} y={360} s={0.9} k={pop(t, 0.2)} mark={1} label="FINALS" /></S>
+    {[{ l: "Stress", c: C.coral, at: 1.2 }, { l: "Illness", c: C.coral, at: 2.6 }, { l: "Grades", c: C.sky, at: 4.0 }].map((r, i) => (
+      <React.Fragment key={r.l}>
+        <Sub x={760} y={300 + i * 170} text={r.l} k={pop(t, r.at)} color={C.text} size={44} />
+        <Title x={1000} y={300 + i * 170} text={i < 2 ? "↑" : "↓"} size={110} color={r.c} k={pop(t, r.at + 0.3)} />
+      </React.Fragment>
+    ))}
+    <S>
+      <Obj n="O42_thermometer" x={1300} y={470} w={260} k={pop(t, 2.8)} />
+      <Obj n="O43_report_card" x={1300} y={640} w={240} k={pop(t, 4.2)} />
+    </S>
+    <Pic n="M08_burnout" cx={1640} cy={720} size={460} k={pop(t, 1.0)} t={t} float={3} />
+    <Card x={300} y={840} w={1000} h={110} k={ramp(t, 6.4, 0.5)} color={C.amber}>
+      <div style={{ fontSize: 36, fontWeight: 900 }}>The relief was borrowed — with interest.</div>
+    </Card>
+  </>
+);
+
+export const sirois_health: React.FC<ShotProps> = ({ t, d }) => (
+  <Drift t={t} d={d}>
+    <Tag x={960} y={110} text="Fuschia Sirois · health research" bg={C.panel} color={C.text} k={pop(t, 0.2)} size={40} />
+    <Meter x={300} y={330} w={700} p={ramp(t, 1.0, 1.4) * 0.85} color={C.coral} label="STRESS" />
+    <S>
+      <Calendar x={1350} y={430} s={0.8} k={pop(t, 3.6)} mark={1} label="CHECK-UP" />
+      <Dumbbell x={1350} y={720} s={0.9} k={pop(t, 5.0)} />
+      <Cross x={1560} y={430} s={1} k={pop(t, 4.2)} />
+      <Cross x={1560} y={720} s={1} k={pop(t, 5.6)} />
+    </S>
+    <Sub x={650} y={520} text="poorer health habits ↓" k={pop(t, 2.6)} color={C.text} size={38} />
+    <Pic n="M15_sleepless" cx={650} cy={800} size={400} k={pop(t, 2.8)} t={t} float={3} />
+  <Kick t={t} d={d} a="Skipped check-ups" b="Less exercise" />
+    </Drift>
+);
+
+export const zeigarnik_waiters: React.FC<ShotProps> = ({ t, d }) => {
+  const paid = ramp(t, 5.6, 0.6);
+  return (
+    <Drift t={t} d={d}>
+      <Tag x={960} y={110} text="Bluma Zeigarnik · 1920s" bg={C.panel} color={C.text} k={pop(t, 0.2)} size={40} />
+      <S><Obj n="O40_waiter" x={480} y={600} w={520} k={pop(t, 0.6)} fallback={<Person x={480} y={600} s={2} k={1} color="#F8FAFC" />} /></S>
+      {["Soup · table 4", "Coffee ×2 · table 7", "Cake · table 2"].map((x, i) => (
+        <Card key={x} x={1000} y={260 + i * 150} w={700} h={110} k={ramp(t, 1.4 + i * 0.8, 0.4)} color={paid > 0.5 ? C.line : C.amber}>
+          <div style={{ fontSize: 36, fontWeight: 800, opacity: 1 - 0.7 * paid, textDecoration: paid > 0.5 ? "line-through" : "none" }}>{x}</div>
+        </Card>
+      ))}
+      <Tag x={1350} y={790} text={paid > 0.5 ? "BILL PAID → forgotten" : "UNPAID → remembered"} bg={paid > 0.5 ? C.teal : C.amber} k={pop(t, 4.0)} size={38} />
+    <Kick t={t} d={d} a="Open loops stick" b="Closed loops fade" />
+    </Drift>
+  );
+};
+
+export const hack1_tiny: React.FC<ShotProps> = ({ t }) => {
+  const steps = [
+    { l: "Open the document", at: 1.0, el: (k: number) => <Laptop x={420} y={460} s={0.8} k={k} t={t} /> },
+    { l: "Write one ugly sentence", at: 2.4, el: (k: number) => <Laptop x={960} y={460} s={0.8} k={k} t={t} fill={0.18} vec /> },
+    { l: "Set a 5-minute timer", at: 3.8, el: (k: number) => <Obj n="O44_timer_5min" x={1500} y={460} w={260} k={k} fallback={<Clock x={1500} y={460} s={1} k={1} m={t * 6} />} /> },
+  ];
+  return (
+    <>
+      <S>{steps.map((s, i) => <g key={i}>{s.el(pop(t, s.at))}</g>)}</S>
+      {steps.map((s, i) => <Tag key={i} x={[420, 960, 1500][i]} y={690} text={s.l} bg={C.panel} color={C.text} k={pop(t, s.at + 0.2)} size={30} />)}
+      <Title x={700} y={880} text="Starting = hard" size={56} color={C.coral} k={pop(t, 6.0)} />
+      <Title x={1300} y={880} text="Continuing = easy" size={56} color={C.teal} k={pop(t, 7.0)} />
+    </>
+  );
+};
+
+export const achor_guitar: React.FC<ShotProps> = ({ t, d }) => {
+  const move = ramp(t, 5.0, 1.6, Easing.inOut(Easing.cubic));
+  return (
+    <Drift t={t} d={d}>
+      <Tag x={960} y={110} text="Shawn Achor · the 20-second rule" k={pop(t, 0.2)} size={40} />
+      <S>
+        <Door x={380} y={560} s={1.5} k={pop(t, 0.6)} open={ramp(t, 4.4, 0.5)} />
+        <Obj n="O41_guitar_stand" x={lerp(380, 1100, move)} y={lerp(560, 600, move)} w={lerp(180, 420, move)} k={pop(t, 4.6)} />
+        <Couch x={1550} y={720} s={0.8} k={pop(t, 2.0)} />
+      </S>
+      <Sub x={380} y={880} text="closet: 20 s away" k={pop(t, 1.2)} color={C.dim} size={32} />
+      <Tag x={1100} y={880} text="20 s closer → habit stuck" bg={C.teal} k={pop(t, 8.0)} size={34} />
+      <Count x={960} y={300} to={20} t={t} at={2.6} dur={1.2} suffix=" s" size={100} color={C.amber} />
+    <Kick t={t} d={d} a="Make the good habit easy" b="Make the bad one harder" />
+    </Drift>
+  );
+};
+
+export const hack2_barriers: React.FC<ShotProps> = ({ t }) => {
+  const items = [
+    { l: "Delete the app from home screen", at: 0.6, el: (k: number) => <Phone x={380} y={460} s={0.8} k={k} badge={false} /> },
+    { l: "Sign out", at: 2.0, el: (k: number) => <Lock x={960} y={460} s={1} k={k} /> },
+    { l: "Phone in a drawer", at: 3.4, el: (k: number) => <Obj n="O45_drawer_phone" x={1540} y={460} w={360} k={k} fallback={<Phone x={1540} y={460} s={0.6} k={1} glow={0} />} /> },
+  ];
+  return (
+    <>
+      <S>{items.map((s, i) => <g key={i}>{s.el(pop(t, s.at))}</g>)}</S>
+      {items.map((s, i) => <Tag key={i} x={[380, 960, 1540][i]} y={690} text={s.l} bg={C.panel} color={C.text} k={pop(t, s.at + 0.2)} size={28} />)}
+      <Meter x={560} y={860} w={800} p={ramp(t, 5.0, 2.0)} color={C.teal} label="SECONDS FOR THE CEO TO CATCH UP" />
+      <S><Ceo x={1460} y={860} s={0.6} k={pop(t, 6.6)} /></S>
+    </>
+  );
+};
+
+export const selfcomp_why: React.FC<ShotProps> = ({ t, d }) => {
+  const kind = ramp(t, 6.0, 0.8);
+  return (
+    <Drift t={t} d={d}>
+      <S>
+        <Amyg x={960} y={560} s={2.0} k={pop(t, 0.3)} t={t} panic={1 - kind} whistle={false} />
+        <Weight x={500} y={lerp(-200, 520, ramp(t, 1.2, 0.5, Easing.in(Easing.quad)))} s={1.3} k={1 - kind} label="CRITICISM" />
+        <Heart x={1420} y={520} s={1.0} k={pop(t, 5.6)} glow={0.8} />
+      </S>
+      <Tag x={500} y={840} text="self-criticism = another threat" bg={C.coral} color={C.text} k={pop(t, 2.2) * (1 - kind)} size={32} />
+      <Tag x={1420} y={840} text="self-compassion = alarm OFF" bg={C.teal} k={pop(t, 6.2)} size={32} />
+      <Meter x={710} y={960} w={500} p={lerp(0.95, 0.15, ramp(t, 6.4, d - 8))} color={kind > 0.5 ? C.teal : C.coral} label="AMYGDALA ALARM" h={26} />
+    <Kick t={t} d={d} a="Kindness ≠ excuses" b="Kindness = restart" />
+    </Drift>
+  );
+};
+
+export const selfcomp_try: React.FC<ShotProps> = ({ t }) => (
+  <>
+    <Pic n="M01_explaining" cx={420} cy={640} size={660} k={pop(t, 0.2)} t={t} float={4} />
+    {["“That was frustrating.”", "“It's normal.”", "“Let's do 5 minutes now.”"].map((x, i) => (
+      <Card key={x} x={900} y={220 + i * 200} w={860} h={140} k={ramp(t, 1.4 + i * 1.6, 0.5)} color={[C.coral, C.amber, C.teal][i]}>
+        <div style={{ fontSize: 46, fontWeight: 900 }}>{x}</div>
+      </Card>
+    ))}
+  </>
+);
+
+export const bridge_step_one: React.FC<ShotProps> = ({ t, d }) => (
+  <HeroOr n="H7_bridge_handshake" t={t} d={d} dim={0.1} fallback={<><S><Ceo x={760} y={560} s={1.6} k={1} /><Amyg x={1160} y={580} s={1.4} k={1} t={t} whistle={false} /></S></>}>
+    <Tag x={960} y={110} text="STEP 1 ✓ Why the Amygdala triggers procrastination" k={pop(t, 0.6)} size={36} />
+  </HeroOr>
+);
+
+export const bridge_dopamine: React.FC<ShotProps> = ({ t }) => {
+  const z = ramp(t, 0.2, 2.0, Easing.inOut(Easing.cubic));
+  return (
+    <>
+      <Glow cx={960} cy={520} r={520} color={C.coral} op={0.3 + 0.1 * Math.sin(t * 3)} />
+      <S>
+        <Obj n="O47_dopamine_leak" x={960} y={520} w={lerp(300, 560, z)} k={pop(t, 0.2)} fallback={<Flask x={960} y={520} s={2} k={1} t={t} />} />
+        <Phone x={420} y={420} s={0.6} k={pop(t, 2.0)} rot={-12} />
+        <PlayCard x={330} y={720} s={0.7} k={pop(t, 2.8)} rot={8} />
+        <Bell x={1560} y={480} s={0.7} k={pop(t, 3.6)} ring={Math.sin(t * 14)} />
+      </S>
+      <Title x={960} y={900} text="NEXT: CHEAP DOPAMINE" size={72} color={C.coral} k={pop(t, 5.0)} />
+    </>
+  );
+};
+
 export const SHOTS: Record<string, React.FC<ShotProps>> = {
+  hook_emotion, hook_sources, pfc_slow, amyg_fast, bochum_study, bochum_meaning, discount_test, discount_flip, avatar_mirror, avatar_result,
+  dopamine_wanting, tice_early, tice_late, sirois_health, zeigarnik_waiters, hack1_tiny, achor_guitar, hack2_barriers, selfcomp_why, selfcomp_try,
+  bridge_step_one, bridge_dopamine,
   hook_deadline, hook_avoid, hook_familiar, hook_twist, hook_stats, hook_glitch, hook_promise,
   roommates_intro, pfc_ceo, pfc_jobs, amygdala_intro, amygdala_survival, amygdala_two_things, threat_task, threat_alarm, fight_flight, flight_phone, ancestor_modern,
   present_bias, small_now_big_later, fmri_intro, fmri_present, fmri_future, fmri_stranger, someone_else, dopamine_bars, toss_papers,

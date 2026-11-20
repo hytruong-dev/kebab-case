@@ -6,7 +6,7 @@ import { Easing, Img, interpolate, staticFile } from "remotion";
 import { loadFont } from "@remotion/google-fonts/Montserrat";
 
 export const { fontFamily: FONT } = loadFont("normal", { weights: ["600", "800", "900"], subsets: ["latin"] });
-export const FPS = 30;
+export const FPS = 60; // owner doc 7.2 step 3: 1920x1080 60fps
 /** Every shot gets its own clock: t = seconds since the beat began, d = beat length. */
 export type ShotProps = { t: number; d: number };
 /** Names of the Gemini assets present in public/brain/<ep> (passed in props) — icons fall back to vector when missing. */

@@ -1,0 +1,110 @@
+{
+ "intro": "The attached image shows the MASCOT and the exact art style of this series (flat 2D vector, Kurzgesagt-like). We will make a set of separate illustration assets for ONE animated explainer video about the psychology of procrastination in this conversation. Each message asks for exactly ONE image. Keep exactly the same style, line weight, palette and the same mascot as the attached reference in every image.",
+ "chat": "https://gemini.google.com/app/a95fbe7f1204c1a1",
+ "invariants": "STYLE for every image: flat 2D vector illustration, modern minimalist editorial infographic style (like Kurzgesagt), clean geometric shapes, crisp edges, subtle cel-shading, palette: deep navy #0F172A, slate #1E293B, warm amber #F59E0B, coral #F43F5E, off-white #F8FAFC, soft teal #2DD4BF.",
+ "steps": [
+  [
+   "M04_overthinking",
+   "EXACTLY the same mascot character as the attached reference image (same face, hair, sweater, emblem, proportions, line weight). minimalist flat 2D vector mascot character, a friendly stylized thinker with clean geometric proportions, large expressive white eyes, neat dark slate hair, wearing a charcoal turtleneck sweater with a tiny glowing amber brain emblem on the chest, waist-up portrait, dizzy spiral eyes, a tangled glowing coral yarn ball floating above head, overwhelmed expression. Square 1:1. Isolated single subject centered with generous margin. BACKGROUND: every pixel that is not the subject is ONE flat solid pure chroma-key green (#00FF00) right up to all four edges: no gradient, no shadow on the green, no green glow, no green inside the subject. No text, no letters, no numbers."
+  ],
+  [
+   "M07_eureka",
+   "EXACTLY the same mascot character as the attached reference image (same face, hair, sweater, emblem, proportions, line weight). minimalist flat 2D vector mascot character, a friendly stylized thinker with clean geometric proportions, large expressive white eyes, neat dark slate hair, wearing a charcoal turtleneck sweater with a tiny glowing amber brain emblem on the chest, waist-up portrait, bright happy eyes, index finger raised upward, a glowing warm amber lightbulb floating directly above head. Square 1:1. Isolated single subject centered with generous margin. BACKGROUND: every pixel that is not the subject is ONE flat solid pure chroma-key green (#00FF00) right up to all four edges: no gradient, no shadow on the green, no green glow, no green inside the subject. No text, no letters, no numbers."
+  ],
+  [
+   "M10_victorious",
+   "EXACTLY the same mascot character as the attached reference image (same face, hair, sweater, emblem, proportions, line weight). minimalist flat 2D vector mascot character, a friendly stylized thinker with clean geometric proportions, large expressive white eyes, neat dark slate hair, wearing a charcoal turtleneck sweater with a tiny glowing amber brain emblem on the chest, waist-up portrait, cheerful relieved smile, giving a confident thumbs up, relaxed upright posture. Square 1:1. Isolated single subject centered with generous margin. BACKGROUND: every pixel that is not the subject is ONE flat solid pure chroma-key green (#00FF00) right up to all four edges: no gradient, no shadow on the green, no green glow, no green inside the subject. No text, no letters, no numbers."
+  ],
+  [
+   "M13_relaxing",
+   "EXACTLY the same mascot character as the attached reference image (same face, hair, sweater, emblem, proportions, line weight). minimalist flat 2D vector mascot character, a friendly stylized thinker with clean geometric proportions, large expressive white eyes, neat dark slate hair, wearing a charcoal turtleneck sweater with a tiny glowing amber brain emblem on the chest, waist-up portrait, full body, lying relaxed on a cosy amber couch, holding a glowing smartphone, carefree smile. Square 1:1. Isolated single subject centered with generous margin. BACKGROUND: every pixel that is not the subject is ONE flat solid pure chroma-key green (#00FF00) right up to all four edges: no gradient, no shadow on the green, no green glow, no green inside the subject. No text, no letters, no numbers."
+  ],
+  [
+   "M15_sleepless",
+   "EXACTLY the same mascot character as the attached reference image. minimalist flat 2D vector mascot character, a friendly stylized thinker with clean geometric proportions, large expressive white eyes, neat dark slate hair, wearing a charcoal turtleneck sweater with a tiny glowing amber brain emblem on the chest, waist-up portrait, sitting up in bed at night under a blanket, wide-awake bloodshot eyes staring, worried face. Square 1:1. Isolated single subject centered with generous margin. BACKGROUND: every pixel that is not the subject is ONE flat solid pure chroma-key green (#00FF00) right up to all four edges: no gradient, no shadow on the green, no green glow, no green inside the subject. No text, no letters, no numbers."
+  ],
+  [
+   "H3_present_future",
+   "Same style and palette as the earlier images in this chat (the mascot, if shown, is the same character as the attached reference). Infographic illustration showing two identical minimalist characters separated by a dashed timeline barrier: the left character relaxes on a couch holding a glowing smartphone while tossing a heavy stack of papers over the barrier to the stressed character on the right, warm amber and coral highlights, high contrast. 16:9 landscape, FULL-BLEED edge to edge, no frame, no border. Solid flat dark navy blue background #0F172A. No text, no letters, no numbers."
+  ],
+  [
+   "H6_outro",
+   "Same style and palette as the earlier images in this chat (the mascot, if shown, is the same character as the attached reference). A minimalist character happily completing a glowing progress bar at a clean desk while two small friendly brain mascots high-five inside a translucent thought bubble above, warm amber and coral highlights, high contrast. 16:9 landscape, FULL-BLEED edge to edge, no frame, no border. Solid flat dark navy blue background #0F172A. No text, no letters, no numbers."
+  ],
+  [
+   "T3_thumb_split",
+   "Same style and palette as the earlier images in this chat (the mascot, if shown, is the same character as the attached reference). Split-screen YouTube thumbnail divided vertically by a glowing dashed line, left side: the mascot relaxing on a couch scrolling a glowing phone in calm blue tones; right side: the exact same mascot panicking while holding up a collapsing giant mountain of papers and ticking clocks in urgent coral-red tones, high contrast. 16:9 landscape, FULL-BLEED edge to edge, no frame, no border. Solid flat dark navy blue background #0F172A. No text, no letters, no numbers."
+  ],
+  [
+   "C02_amygdala",
+   "Same style and palette as the earlier images in this chat. A small cute primitive caveman-like creature with coral-red fuzzy skin, big nervous eyes, holding a coral warning whistle, full body (represents the brain's Amygdala). Square 1:1. Isolated single subject centered with generous margin. BACKGROUND: every pixel that is not the subject is ONE flat solid pure chroma-key green (#00FF00) right up to all four edges: no gradient, no shadow on the green, no green glow, no green inside the subject. No text, no letters, no numbers."
+  ],
+  [
+   "O01_head_section",
+   "Same style and palette as the earlier images in this chat. Side-profile silhouette of a human head facing right in slate blue, with the skull cut open showing a large soft pink brain inside, the brain occupies most of the head. Square 1:1. Isolated single subject centered with generous margin. BACKGROUND: every pixel that is not the subject is ONE flat solid pure chroma-key green (#00FF00) right up to all four edges: no gradient, no shadow on the green, no green glow, no green inside the subject. No text, no letters, no numbers."
+  ],
+  [
+   "O04_laptop_blank",
+   "Same style and palette as the earlier images in this chat. An open laptop seen from the front, the screen shows a completely blank white document page with a blinking cursor bar. Square 1:1. Isolated single subject centered with generous margin. BACKGROUND: every pixel that is not the subject is ONE flat solid pure chroma-key green (#00FF00) right up to all four edges: no gradient, no shadow on the green, no green glow, no green inside the subject. No text, no letters, no numbers."
+  ],
+  [
+   "O07_papers_stack",
+   "Same style and palette as the earlier images in this chat. A tall heavy stack of messy office papers and folders, slightly leaning. Square 1:1. Isolated single subject centered with generous margin. BACKGROUND: every pixel that is not the subject is ONE flat solid pure chroma-key green (#00FF00) right up to all four edges: no gradient, no shadow on the green, no green glow, no green inside the subject. No text, no letters, no numbers."
+  ],
+  [
+   "O10_padlock_closed",
+   "Same style and palette as the earlier images in this chat. A closed amber padlock. Square 1:1. Isolated single subject centered with generous margin. BACKGROUND: every pixel that is not the subject is ONE flat solid pure chroma-key green (#00FF00) right up to all four edges: no gradient, no shadow on the green, no green glow, no green inside the subject. No text, no letters, no numbers."
+  ],
+  [
+   "O13_dopamine_flask",
+   "Same style and palette as the earlier images in this chat. A round glass laboratory flask filled with glowing amber liquid and small bubbles, neon glow. Square 1:1. Isolated single subject centered with generous margin. BACKGROUND: every pixel that is not the subject is ONE flat solid pure chroma-key green (#00FF00) right up to all four edges: no gradient, no shadow on the green, no green glow, no green inside the subject. No text, no letters, no numbers."
+  ],
+  [
+   "O16_alarm_button",
+   "Same style and palette as the earlier images in this chat. A big red emergency alarm button on a slate base with a striped warning ring. Square 1:1. Isolated single subject centered with generous margin. BACKGROUND: every pixel that is not the subject is ONE flat solid pure chroma-key green (#00FF00) right up to all four edges: no gradient, no shadow on the green, no green glow, no green inside the subject. No text, no letters, no numbers."
+  ],
+  [
+   "O19_fuel_can",
+   "Same style and palette as the earlier images in this chat. A coral-red jerry fuel can tipped over, pouring liquid. Square 1:1. Isolated single subject centered with generous margin. BACKGROUND: every pixel that is not the subject is ONE flat solid pure chroma-key green (#00FF00) right up to all four edges: no gradient, no shadow on the green, no green glow, no green inside the subject. No text, no letters, no numbers."
+  ],
+  [
+   "O22_balance_scale",
+   "Same style and palette as the earlier images in this chat. An empty balance scale with two pans, level, brass and slate. Square 1:1. Isolated single subject centered with generous margin. BACKGROUND: every pixel that is not the subject is ONE flat solid pure chroma-key green (#00FF00) right up to all four edges: no gradient, no shadow on the green, no green glow, no green inside the subject. No text, no letters, no numbers."
+  ],
+  [
+   "O25_calendar",
+   "Same style and palette as the earlier images in this chat. A desk calendar page with one day circled in coral. Square 1:1. Isolated single subject centered with generous margin. BACKGROUND: every pixel that is not the subject is ONE flat solid pure chroma-key green (#00FF00) right up to all four edges: no gradient, no shadow on the green, no green glow, no green inside the subject. No text, no letters, no numbers."
+  ],
+  [
+   "O28_folders",
+   "Same style and palette as the earlier images in this chat. A messy pile of colourful computer folder icons. Square 1:1. Isolated single subject centered with generous margin. BACKGROUND: every pixel that is not the subject is ONE flat solid pure chroma-key green (#00FF00) right up to all four edges: no gradient, no shadow on the green, no green glow, no green inside the subject. No text, no letters, no numbers."
+  ],
+  [
+   "O31_couch",
+   "Same style and palette as the earlier images in this chat. An empty cosy amber couch, side view. Square 1:1. Isolated single subject centered with generous margin. BACKGROUND: every pixel that is not the subject is ONE flat solid pure chroma-key green (#00FF00) right up to all four edges: no gradient, no shadow on the green, no green glow, no green inside the subject. No text, no letters, no numbers."
+  ],
+  [
+   "O34_tv_remote",
+   "Same style and palette as the earlier images in this chat. A TV remote control. Square 1:1. Isolated single subject centered with generous margin. BACKGROUND: every pixel that is not the subject is ONE flat solid pure chroma-key green (#00FF00) right up to all four edges: no gradient, no shadow on the green, no green glow, no green inside the subject. No text, no letters, no numbers."
+  ],
+  [
+   "O37_calculator_money",
+   "Same style and palette as the earlier images in this chat. Two stacks of green dollar bills side by side, a smaller stack and a slightly taller stack, each with a small amber price tag (blank). Square 1:1. Isolated single subject centered with generous margin. BACKGROUND: every pixel that is not the subject is ONE flat solid pure chroma-key green (#00FF00) right up to all four edges: no gradient, no shadow on the green, no green glow, no green inside the subject. No text, no letters, no numbers."
+  ],
+  [
+   "O40_waiter",
+   "Same style and palette as the earlier images in this chat. A friendly 1920s cafe waiter with a white apron holding a small notepad and a tray, full body. Square 1:1. Isolated single subject centered with generous margin. BACKGROUND: every pixel that is not the subject is ONE flat solid pure chroma-key green (#00FF00) right up to all four edges: no gradient, no shadow on the green, no green glow, no green inside the subject. No text, no letters, no numbers."
+  ],
+  [
+   "O43_report_card",
+   "Same style and palette as the earlier images in this chat. A school report card paper with a big red circled grade mark (no readable letters, just a red circle and lines). Square 1:1. Isolated single subject centered with generous margin. BACKGROUND: every pixel that is not the subject is ONE flat solid pure chroma-key green (#00FF00) right up to all four edges: no gradient, no shadow on the green, no green glow, no green inside the subject. No text, no letters, no numbers."
+  ],
+  [
+   "O46_brain_scan_split",
+   "Same style and palette as the earlier images in this chat. A brain scan image: a side view of the brain with a glowing coral almond-shaped region deep inside and a thin dim connection line to the front of the brain. Square 1:1. Isolated single subject centered with generous margin. BACKGROUND: every pixel that is not the subject is ONE flat solid pure chroma-key green (#00FF00) right up to all four edges: no gradient, no shadow on the green, no green glow, no green inside the subject. No text, no letters, no numbers."
+  ]
+ ],
+ "refs": [
+  "projects/brain-procrastination-ep01/assets/ref_mascot.png"
+ ]
+}

@@ -1,28 +1,33 @@
-# BRIEF — Brain & Psychology EP01: Why Your Brain Loves Procrastinating (And How to Trick It)
+# BRIEF — Brain & Psychology S1E01: Why Your Brain Loves Procrastinating (And How to Trick It)
 
-Source of truth: `PLAN_owner.md` (owner's channel plan; section 5 = script, 4 = mascot, 7 = SEO + assembly).
+Source of truth: `PLAN_owner.md` (owner doc v2, 2026-11-21): single episodes **10–11 min**, Season 1 = 6 linked episodes → Mega-Video > 1 h,
+modular ending `[BRIDGE_TRANSITION]` + `[SINGLE_OUTRO]` (7.3), 1920×1080 **60 fps** (7.2).
 
 | Field | Value |
 | --- | --- |
-| Channel / niche | International (US/UK/CA/AU), Animated Explainers & Infographics — Brain & Psychology, Season 1 EP01 |
-| Language | English voiceover + English captions (the plan's voiceover, word for word) |
-| Length | ~6:16 (plan target 7:00; the voiceover text itself reads in ~6:15 at natural pace) |
-| Format | 1920×1080, 30 fps, H.264 (plan says 60 fps; 30 kept for render time — say if 60 is wanted) |
-| Look | Flat 2D vector, Kurzgesagt-like; navy `#0F172A`, amber `#F59E0B` (data/positive), coral `#F43F5E` (stress) + teal/sky accents |
-| Mascot | Gemini, ONE chat, plan 4.1 anchor prompt, 14 expressions (M01–M14) keyed from #00FF00 |
-| Voice | Kokoro-82M `am_michael` (local, free; ElevenLabs not configured) — `scripts/tts_kokoro.py` |
-| Audio | narration + whoosh on every cut + pop on first element + chapter chime + clock ticks (hook) + alarm (threat) + ambient synth bed; -14 LUFS / -1.5 dBTP |
-| Pace | 51 beats (one per narration line, TASTE-08), each builds in 2–3 stages → picture changes every ~2–4 s (plan 2.1) |
+| Length | **10:22** (narration 620.8 s + 1.5 s tail) — inside the 10–11 min target |
+| Voice | Kokoro `am_michael` (local); ElevenLabs not configured |
+| Beats | 72 (51 verbatim lines from doc section 5 + 21 research beats) — one picture per line, each builds in 2–3 stages |
+| Ending | Part 6 = `[BRIDGE_TRANSITION]` (recap + "Next: cheap dopamine", keep in Mega-Video) · last block = `[SINGLE_OUTRO]` (end screen to Ep 02, cut in Mega-Video, no PART card) |
+| Images | Gemini, 3 accounts in parallel, mascot reference pasted into each chat (77 assets) |
 
-## Storyboard (shot = narration line; full text in `script.json`)
-- **Part 1 Hook (0:00–0:58):** deadline calendar + ticking clock → mascot polishing plant + 45 min counter (folders / keyboard / pencil video) → "LAZY?" stamp → LAZINESS / TIME MANAGEMENT struck out → 95% / 20% rings → willpower bar drains, brain glitches → zoom into head + "why it sabotages you / 3 ways".
-- **Part 2 Roommates (0:58–2:18):** head with CEO + Amygdala → PFC glows, CEO with blueprint → planning/logic/future icons → zoom to the Amygdala (almond) → career/grades/plan crossed out → avoid pain / seek pleasure → boring/confusing/overwhelming → spreadsheet turns red "THREAT!" → FIGHT or FLIGHT → mascot runs from spreadsheet to phone → THEN tiger / NOW spreadsheet split.
-- **Part 3 Future You (2:18–3:21):** TIME INCONSISTENCY = PRESENT BIAS → scale: cookie now beats treasure chest → fMRI scanner → present self lights amber → +2 days / +10 years timeline → Future You ≈ stranger → "someone else's problem" → instant dopamine vs delayed reward bars → Present You tosses papers over the dashed wall to Future You.
-- **Part 4 Doom Loop (3:21–4:19):** GUILT weight drops → midnight clock + 5 AM vow → guilt = fuel can on the fire → 5-node loop lights 1→5 → cortisol flask fills → stress meter climbs while loop spins → "you care TOO MUCH".
-- **Part 5 3 tricks (4:19–5:36):** willpower empty, speak its language → 3 locks → boulder "3-HOUR TASK" shrinks to "5 MIN" pebble → 00:00→05:00 timer + permission → no alarm + Zeigarnik ring closes → friction scale flips (+20 s) → phone behind door, laptop fills → heart → Carleton bars → loop + fire die out.
-- **Part 6 Outro (5:36–6:16):** CRT "ancient software" + orbiting distractions → recap 3 cards → dopamine flask teaser (EP06) → end-screen frame + pointing mascot + thumbs up.
+## Chapters (= SEO timestamps)
+0:00 It's Not Laziness · 1:26 The Two Roommates in Your Head · 3:33 Future You Is a Stranger · 5:35 The Procrastination Doom Loop ·
+7:03 3 Ways to Trick Your Brain · 9:33 Your Brain Isn't Broken (bridge) · 10:09 [SINGLE_OUTRO]
 
-## Deliverables
-- `out/brain-procrastination-ep01.mp4` (video) · `projects/brain-procrastination-ep01/SEO.md` (titles A/B/C, description with chapters, tags, pinned comment).
-- Thumbnails (plan 4.3) + the 6 hero illustrations: still queued in Gemini (limit reached) — not needed by the film.
-- Shorts 01–03 (plan section 6): not made yet — next step after the owner approves the long video.
+## Research beats added for length (all verifiable, cited in the description)
+| Beat | Claim | Source |
+| --- | --- | --- |
+| hook_emotion | Procrastination = emotion-regulation problem | Tim Pychyl (Carleton) & Fuschia Sirois (Sheffield), 2013 |
+| hook_sources | Up to 95% of college students procrastinate; ~1 in 5 adults chronic | Steel 2007, Psychological Bulletin; Ferrari (DePaul) |
+| pfc_slow | PFC matures into mid-20s | developmental neuroscience consensus |
+| amyg_fast | Amygdala reacts in a fraction of a second | LeDoux "low road" |
+| bochum_study / meaning | Larger amygdala, weaker amygdala–dACC connectivity in poor action control (264 adults) | Schlüter et al. 2018, Psychological Science (Ruhr University Bochum) |
+| discount_test / flip | $100 now vs $110 in a week; reversal at 52 vs 53 weeks | hyperbolic discounting (Thaler; Ainslie) |
+| avatar_mirror / result | Age-progressed avatars → > 2× allocation to retirement account | Hershfield et al. 2011, J. Marketing Research |
+| dopamine_wanting | Dopamine tracks anticipation ("wanting") | Schultz; Berridge & Robinson |
+| tice_early / late | Procrastinators less stressed early, more stress/illness & lower grades late | Tice & Baumeister 1997, Psychological Science |
+| sirois_health | Procrastination ↔ stress, poorer health behaviours | Sirois 2003/2015 |
+| zeigarnik_waiters | Waiters remember unpaid orders | Zeigarnik 1927 |
+| achor_guitar | 20-second rule, guitar on a stand | Shawn Achor, *The Happiness Advantage* (2010) |
+| selfcomp_why / try | Self-criticism as threat; self-compassion lowers it | Neff; Sirois 2014; Wohl et al. 2010 |

@@ -8,6 +8,14 @@ description: CHUẨN ĐÃ DUYỆT ("hoàn hảo", 2026-11-20) để sản xuất
 Kế hoạch kênh (nguồn gốc mọi quyết định): `projects/brain-procrastination-ep01/PLAN_owner.md` — 10 tập Season 1 (mục 3.3),
 mascot + 10 biểu cảm (4.1–4.2), cấu trúc kịch bản (2.4, 3.4), Shorts (6), SEO (7.1), lắp ráp (7.2).
 
+## Chuẩn v2 (docs chủ dự án 2026-11-21 — BẮT BUỘC)
+- **Thời lượng tập lẻ 10–11 phút** (TASTE-34). Lời thoại docs chỉ ~6 phút → giữ NGUYÊN VĂN docs, chèn thêm beat nghiên cứu có nguồn thật
+  (ghi nguồn vào `BRIEF.md` + mô tả SEO) cho tới khi `timeline.total` = 600–660 s. Ước lượng trước: Kokoro `am_michael` ≈ 142 từ/phút.
+- **1920×1080 60 fps** (`FPS` trong `remotion/src/brain/kit.tsx`; mọi thời gian tính bằng giây, không bằng frame).
+- **Kết thúc mô-đun** (docs 7.3): chương cuối thường = `[BRIDGE_TRANSITION]` (tóm tắt + mở vòng sang tập sau, GIỮ khi ghép Mega-Video);
+  chương riêng tên `"[SINGLE_OUTRO]"` (end screen → tập sau; CẮT khi ghép) — tên bắt đầu bằng `[` thì không có thẻ PART/chime.
+- Season 1 = 6 tập nối nhau (docs 3.3) → Mega-Video > 1 tiếng sau tập 06.
+
 ## Nhìn là biết đúng chuẩn
 - 1920×1080, 30 fps, nền navy `#0F172A` có hạt bụi trôi; vàng `#F59E0B` = dữ liệu/tích cực, đỏ san hô `#F43F5E` = căng thẳng, thêm teal/sky.
 - Mỗi câu thoại = 1 cảnh (TASTE-08). Mỗi cảnh **dựng dần 2–3 nhịp** (pop-in, số đếm, vòng/thanh/đồng hồ chạy, gạch chữ) → hình đổi mỗi 2–4 s.
@@ -39,14 +47,18 @@ mascot + 10 biểu cảm (4.1–4.2), cấu trúc kịch bản (2.4, 3.4), Short
    - Mascot: dùng lại `M01–M15` của ep01 (chép sang `public/brain/ep02/`) — chỉ tạo biểu cảm/tư thế mới cần cho tập.
    - Đồ vật/nhân vật riêng của tập (`Cxx`/`Oxx`) trên phông xanh `#00FF00` (TASTE-24), 6 hero `H1–H6` (prompt từng phân cảnh trong docs) + 3 thumbnail `T1–T3`.
    - `job.refs = ["projects/brain-procrastination-ep01/assets/ref_mascot.png"]` → ảnh mascot được dán vào tin nhắn đầu → cùng nhân vật dù đổi tài khoản.
+   - **3 tài khoản song song** (~25 ảnh/tài khoản, xong 77 ảnh trong ~20 phút): `split_jobs.py` chia job1 (tạo M01 trước, không ref) / job2 / job3 (ref = M01 vừa tạo), mỗi job MỘT chat; `assets/raw/` = gộp `job*/raw/`.
+     Lỗi `download.saveAs ENOENT` lặp lại = thư mục tạm Playwright hỏng → dừng tiến trình đó, chạy lại cùng job (resume, cùng chat).
    - Chạy: mở Chrome profile riêng (`tools/gemini-alt/chrome-profile[-N]`, cổng 9333/9334/9335), `$env:GEMINI_PORT="933N"; node tools/gemini-alt/run-thread.mjs projects/<slug>/assets/job.json`.
      Hết lượt (QUOTA_HIT, ~15–30 ảnh/tài khoản) → **chuyển tài khoản khác chạy tiếp, không thay bằng hình vẽ code** (TASTE-32, LESSON-37). Xếp hero/thumbnail lên trước.
    - `python scripts/brain/assets.py <slug> ep02` → mở `assets/sheet_all.jpg` xem (khung đỏ = chạm mép → tạo lại).
 6. **Cảnh**: tạo `remotion/src/brain/ep02/shots.tsx` (chép cấu trúc ep01: `M` mascot, `Sub`, `HeroOr`, `Loop`…), export `SHOTS`, đăng ký trong `EPISODES` ở `BrainEpisode.tsx`.
    Mỗi cảnh: `({ t, d })` → phần tử vào theo `pop(t, giây)`; bố cục mascot trái (x≈360–600) / nội dung phải; chữ lớn ≥ 52 px; không để trống > 4 s.
 7. **Duyệt trước khi render dài**: `cd remotion; npx tsc --noEmit` → `node scripts/brain/render.mjs <slug> stills` → MỞ XEM `out/review/sheetNN.jpg` từng tấm, sửa đè chữ/lệch.
+   Rồi **cổng chuyển động**: `cd remotion; node brain-motion-check.mjs <slug> --min 9` phải in `motion OK` (beat dài cần `Drift` + `Kick` trong `ep01/shots.tsx`) — nếu không QA sẽ FAIL "frozen" sau 20 phút render.
 8. **Âm thanh + phim**: `node scripts/brain/audio.mjs <slug>` → `node scripts/brain/render.mjs <slug> film` (lỗi chỉ hiện "[Tab N…]" → ghi log ra file, chạy lại; LESSON-38)
    → `node scripts/master-audio.mjs out/<slug>.mp4` → `node scripts/qa-video.mjs out/<slug>.mp4 --expect <timeline.total + 1.55>` = **QA PASS** → trích 6–8 khung từ MP4 xem.
+   Render 10 phút 60 fps ≈ 20 phút. Phụ đề: `node scripts/brain/srt.mjs <slug>`.
 9. **Giao**: phụ đề `.srt` (12 từ/dòng, theo timeline), `SEO.md` (3 tiêu đề A/B/C, mô tả có mốc chương THẬT, tags, bình luận ghim), thumbnail ở `out/thumbnails/`.
 10. **/retro**: `node scripts/memory.mjs retro <slug>` → điền → `log-video` + `add-*`. ⛔ Không tự đăng.
 

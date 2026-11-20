@@ -1,17 +1,18 @@
 # KẾ HOẠCH TOÀN DIỆN XÂY DỰNG KÊNH YOUTUBE AI THỊ TRƯỜNG QUỐC TẾ
 **Ngách nội dung:** Animated Explainers & Infographics — Chuyên sâu Tâm lý học & Não bộ (*Brain & Psychology*)  
-**Thị trường mục tiêu:** Quốc tế (Mỹ, Anh, Canada, Úc — Tối ưu RPM cao)
+**Chiến lược định dạng:** Tập lẻ chuyên sâu (10–11 phút) liên kết theo Mùa -> Ghép bản tổng hợp **Mega-Documentary (> 1 tiếng)**  
+**Thị trường mục tiêu:** Quốc tế (Mỹ, Anh, Canada, Úc — Tối ưu RPM cao & thời lượng xem lớn)
 
 ---
 
 ## MỤC LỤC
 1. [Tổng quan thị trường & Nguyên tắc sống còn](#1-tổng-quan-thị-trường--nguyên-tắc-sống-còn)
 2. [Chiến lược phát triển dài hạn với Animated Explainers & Infographics](#2-chiến-lược-phát-triển-dài-hạn-với-animated-explainers--infographics)
-3. [Kế hoạch chuyên sâu Ngách 1: Brain & Psychology (Season 1 Blueprint)](#3-kế-hoạch-chuyên-sâu-ngách-1-brain--psychology-season-1-blueprint)
+3. [Hệ thống 3 Mùa liên kết & Bản tổng hợp > 1 Tiếng (Brain & Psychology)](#3-hệ-thống-3-mùa-liên-kết--bản-tổng-hợp--1-tiếng-brain--psychology)
 4. [Hệ thống nhận diện nhân vật (Mascot) & Thiết kế Thumbnail High-CTR](#4-hệ-thống-nhận-diện-nhân-vật-mascot--thiết-kế-thumbnail-high-ctr)
-5. [Kịch bản chi tiết Tập 01 (Video dài 7 phút + AI Image Prompts)](#5-kịch-bản-chi-tiết-tập-01-video-dài-7-phút--ai-image-prompts)
+5. [Kịch bản chi tiết Tập 01 (Chuẩn cấu trúc Mô-đun + AI Image Prompts)](#5-kịch-bản-chi-tiết-tập-01-chuẩn-cấu-trúc-mô-đun--ai-image-prompts)
 6. [Chiến lược phễu YouTube Shorts (3 kịch bản dọc 9:16 từ Tập 01)](#6-chiến-lược-phễu-youtube-shorts-3-kịch-bản-dọc-916-từ-tập-01)
-7. [Bộ Metadata chuẩn SEO & Quy trình lắp ráp xuất bản hoàn chỉnh](#7-bộ-metadata-chuẩn-seo--quy-trình-lắp-ráp-xuất-bản-hoàn-chỉnh)
+7. [Bộ Metadata chuẩn SEO, Quy trình lắp ráp AI & Đóng gói Mega-Video](#7-bộ-metadata-chuẩn-seo-quy-trình-lắp-ráp-ai--đóng-gói-mega-video)
 
 ---
 
@@ -46,41 +47,43 @@ Thay vì làm các video rời rạc, kênh được xây dựng theo mô hình 
   2. *Whiteboard / Comic hài hước (kiểu Casually Explained / MinuteEarth):* Nét vẽ tay đơn giản trên nền trắng/giấy nháp, tập trung vào biểu cảm hài hước và nhịp độ nhanh.
   3. *2D Motion kết hợp dữ liệu thực tế (kiểu Vox):* Dùng ảnh tư liệu, bản đồ, biểu đồ tăng trưởng kết hợp hoạt họa đơn giản.
 * **Nhân vật đại diện (Channel Mascot):** Tạo 1 nhân vật đặc trưng với bộ 10–15 biểu cảm khác nhau đóng vai trò người dẫn chuyện xuyên suốt, giúp kênh thoát khỏi mác nội dung AI công nghiệp.
-* **Định dạng chuẩn:** Video dài **7–10 phút** (đủ để chèn nhiều điểm quảng cáo giữa video), nhịp chuyển cảnh mỗi **3–5 giây** bằng các hiệu ứng zoom, trượt biểu đồ hoặc đổi biểu cảm nhân vật.
+* **Định dạng chuẩn phục vụ ghép Omnibus:** Mỗi tập lẻ dài **10–11 phút** (đủ để chèn nhiều điểm quảng cáo giữa video), nhịp chuyển cảnh mỗi **3–5 giây**. Khi ghép **6 tập lẻ** cùng **2 phút mở đầu tổng hợp**, bạn sẽ có ngay một video **Mega-Documentary dài 62–68 phút (> 1 tiếng)**.
 
 ### 2.2. Hệ thống 4 Series trụ cột mở rộng
 
 | Tên Series | Trọng tâm nội dung | Ý tưởng tập mẫu (Tiêu đề tiếng Anh) | Mục tiêu chiến lược |
 | :--- | :--- | :--- | :--- |
-| **1. Brain & Psychology**<br>*(Giải mã tâm lý & não bộ)* | Hiệu ứng tâm lý, thói quen, cơ chế hoạt động của cảm xúc con người. | • *Why Your Brain Makes You Procrastinate (And How to Trick It)*<br>• *The Dunning-Kruger Effect Explained in 7 Minutes*<br>• *What Happens to Your Brain When You Are Lonely?* | **Kéo thời lượng xem (Retention):** Khán giả thích xem nội dung giúp hiểu chính mình. |
+| **1. Brain & Psychology**<br>*(Giải mã tâm lý & não bộ)* | Hiệu ứng tâm lý, thói quen, cơ chế hoạt động của cảm xúc con người. | • *Why Your Brain Loves Procrastinating (And How to Trick It)*<br>• *The Dunning-Kruger Effect Explained in 7 Minutes*<br>• *What Happens to Your Brain When You Are Lonely?* | **Kéo thời lượng xem (Retention):** Khán giả thích xem nội dung giúp hiểu chính mình. |
 | **2. Extreme "What If?"**<br>*(Giả định cực hạn & Sinh tồn)* | Các kịch bản khoa học giả định, giới hạn chịu đựng của cơ thể và vũ trụ. | • *What If You Stopped Sleeping for 7 Days?*<br>• *What Would Happen If the Earth Stopped Spinning for 1 Second?*<br>• *How Long Could You Survive Inside a Submarine?* | **Tạo đề xuất bùng nổ (Viral):** Tiêu đề gây tò mò mạnh, CTR cực cao. |
 | **3. How Systems Work**<br>*(Hệ thống ngầm & Tiền bạc)* | Giải thích cách vận hành của kinh tế, công nghệ, chuỗi cung ứng và các ngành công nghiệp. | • *How Budget Airlines Actually Make Money*<br>• *The Hidden Supply Chain Behind Your Smartphone*<br>• *Why Diamonds Are Actually Not Rare* | **Tăng doanh thu (High RPM):** Thu hút tệp khán giả quan tâm kinh doanh, tài chính. |
 | **4. Hidden History & Science**<br>*(Khoa học & Lịch sử ẩn giấu)* | Những sự thật ít biết đằng sau các phát minh, sự kiện lịch sử hoặc hiện tượng tự nhiên. | • *The Deadliest Invention in Human History*<br>• *How One Mistake Almost Started World War III*<br>• *Why Time Feels Faster as You Get Older* | **Nội dung bền vững (Evergreen):** Có lượt tìm kiếm đều đặn sau nhiều năm. |
 
 ### 2.3. Lộ trình triển khai 12 tháng
 * **Giai đoạn 1: Xây nền & Thử nghiệm (Tháng 1 – Tháng 3)**
-  * Sản xuất 12 video dài với tần suất **1 video/tuần**.
+  * Sản xuất 12 video dài (hoàn thành trọn vẹn Mùa 1 và Mùa 2) với tần suất **1 video/tuần**, kèm **2 Mega-Video dài > 1 tiếng** sau mỗi 6 tập.
   * Theo dõi chỉ số **CTR (tỷ lệ nhấp)** và **AVD (thời lượng xem trung bình)** trong YouTube Studio để đo lường mức độ đón nhận của khán giả US/UK.
   * Từ mỗi video dài, cắt ra **2–3 YouTube Shorts** dạng *Infographic 40 giây* và gắn link dẫn về video dài.
 * **Giai đoạn 2: Tối ưu & Nhân bản công thức (Tháng 4 – Tháng 6)**
   * Tập trung nhân bản các chủ đề có hiệu suất giữ chân cao nhất.
   * Chuẩn hóa bộ template chuyển động (intro, bảng biểu, nhân vật, hiệu ứng âm thanh) để rút ngắn thời gian dựng mỗi video xuống còn 1–2 ngày.
 * **Giai đoạn 3: Mở rộng quy mô & Đa dạng nguồn thu (Tháng 7 – Tháng 12)**
-  * Sử dụng tính năng **Multi-language Audio** của YouTube để thêm bản lồng tiếng AI cho tiếng Tây Ban Nha, Bồ Đào Nha và Đức trên các video thắng lớn.
+  * Sử dụng tính năng **Multi-language Audio** của YouTube để thêm bản lồng tiếng AI cho tiếng Tây Ban Nha, Bồ Đào Nha và Đức trên các video thắng lớn và bản Mega-Documentary 1 tiếng.
   * Kết nối với các nền tảng tài trợ phổ biến cho kênh giáo dục quốc tế (*Brilliant, CuriosityStream, NordVPN, Ground News*) hoặc bán bộ tài nguyên đồ họa/template trên Gumroad.
 
 ### 2.4. Quy trình sản xuất chuẩn hóa bằng AI
 1. **Nghiên cứu & Kiểm chứng số liệu (Perplexity / Claude):** Tổng hợp các nghiên cứu khoa học hoặc số liệu thống kê thực tế kèm nguồn trích dẫn để tạo uy tín.
 2. **Viết kịch bản theo cấu trúc giữ chân (Claude / ChatGPT):**
    * *0:00 – 0:30 (Hook):* Đưa ra nghịch lý hoặc câu hỏi gây sốc, không chào hỏi dài dòng.
-   * *0:30 – 6:30 (Body):* Chia thành 3–4 luận điểm rõ ràng, mỗi luận điểm đi kèm ẩn dụ trực quan dễ vẽ.
-   * *6:30 – End (Open Loop):* Kết thúc gọn gàng và gợi mở sang video khác trong cùng series.
+   * *0:30 – 9:30 (Body):* Chia thành 3–4 luận điểm rõ ràng, mỗi luận điểm đi kèm ẩn dụ trực quan dễ vẽ.
+   * *9:30 – End (Modular Bridge + Outro):* Tách riêng đoạn cầu nối sang tập kế tiếp và đoạn kêu gọi đăng ký kênh.
 3. **Tạo giọng đọc bản xứ (ElevenLabs):** Chọn 1 giọng đọc cố định, giữ nguyên thiết lập giọng cho mọi tập.
 4. **Dựng hình & Chuyển động:** Dùng AI (Midjourney / Ideogram) với mã tham chiếu phong cách (`--sref`) để tạo cụm hình minh họa đồng nhất, ghép chuyển động biểu đồ và chữ chạy bằng CapCut Pro, After Effects hoặc công cụ lập trình animation tự động (như Remotion).
 
 ---
 
-## 3. KẾ HOẠCH CHUYÊN SÂU NGÁCH 1: BRAIN & PSYCHOLOGY (SEASON 1 BLUEPRINT)
+## 3. HỆ THỐNG 3 MÙA LIÊN KẾT & BẢN TỔNG HỢP > 1 TIẾNG (BRAIN & PSYCHOLOGY)
+
+Chiến lược làm 6 tập lẻ (10–11 phút/tập) rồi ghép thành bản tổng hợp dài hơn 1 tiếng (**Omnibus / Mega-Documentary Format**) cực kỳ hiệu quả trên thị trường quốc tế. Khán giả US/UK rất chuộng mở các video dài 60–90 phút dạng *Visual Guide* để nghe khi làm việc, học tập hoặc xem trên Smart TV, giúp kênh ăn trọn doanh thu quảng cáo giữa video (mid-roll ads) và nhận đề xuất mạnh từ thuật toán.
 
 ### 3.1. Định vị thương hiệu & Hệ thống ngôn ngữ hình ảnh (Visual System)
 * **Nhân vật dẫn chuyện (Mascot):** Thiết kế nhân vật tối giản (stylized thinker) với bộ **10–15 biểu cảm cố định**.
@@ -98,20 +101,55 @@ Thay vì làm các video rời rạc, kênh được xây dựng theo mô hình 
 3. **Tâm lý học xã hội & Giao tiếp (Social Dynamics):** Ngôn ngữ cơ thể, hiệu ứng tâm lý đám đông, cách con người tạo ấn tượng đầu tiên hoặc bị thao túng tâm lý.
 4. **Cơ chế sinh học của cảm xúc (Emotional Mechanics):** Chuyện gì thực sự xảy ra với các hormone trong não khi con người cô đơn, quá tải suy nghĩ (overthinking) hoặc mất ngủ.
 
-### 3.3. Lộ trình 10 tập đầu tiên (Season 1 Blueprint)
+### 3.3. Kiến trúc 3 Mùa liên kết chặt chẽ (18 Tập lẻ + 3 Mega-Documentaries)
 
-| Tập | Tiêu đề tiếng Anh (Tối ưu CTR) | Khái niệm tâm lý cốt lõi | Gợi ý hình ảnh & Infographic minh họa |
-| :--- | :--- | :--- | :--- |
-| **01** | *Why Your Brain Loves Procrastinating (And How to Trick It)* | **Time Inconsistency & Dopamine** (Não ưu tiên phần thưởng tức thì) | Cuộc kéo co giữa "Não Hiện Tại" và "Não Tương Lai", biểu đồ sụt giảm động lực theo thời gian. |
-| **02** | *The Spotlight Effect: Why Nobody Is Actually Watching You* | **Spotlight Effect** (Ảo tưởng mình luôn là tâm điểm chú ý) | Hình ảnh nhân vật đứng dưới ánh đèn sân khấu khổng lồ trong khi đám đông xung quanh đều đeo tai nghe, nhìn hướng khác. |
-| **03** | *The Dunning-Kruger Effect Explained in 7 Minutes* | **Dunning-Kruger Effect** (Người ít hiểu biết thường tự tin thái quá) | Biểu đồ đường cong nổi tiếng với 4 điểm mốc: *Đỉnh Ngu Muội*, *Thung Lũng Tuyệt Vọng*, *Dốc Giác Ngộ*. |
-| **04** | *What Happens to Your Brain When You Overthink?* | **Analysis Paralysis & Cortisol** (Vòng lặp lo âu làm tê liệt vỏ não trước trán) | Sơ đồ mê cung bên trong não với hàng trăm tab trình duyệt mở cùng lúc làm thanh pin tụt về 0%. |
-| **05** | *The Paradox of Choice: Why More Options Make You Unhappy* | **Choice Overload** (Quá nhiều lựa chọn dẫn đến hối tiếc và tê liệt quyết định) | Thí nghiệm gian hàng 24 loại mứt vs. 6 loại mứt, biểu đồ so sánh tỷ lệ mua hàng. |
-| **06** | *How Your Brain Gets Hooked on Cheap Dopamine* | **Dopamine Baseline** (Sự tụt giảm ngưỡng hưng phấn do kích thích ngắn hạn) | Bình chứa Dopamine bị rò rỉ và biểu đồ đường sóng lên xuống dốc đứng sau khi lướt video ngắn. |
-| **07** | *The Halo Effect: How One Trait Tricks Your Brain* | **Halo Effect** (Đánh giá toàn diện một người chỉ qua một ưu điểm bề ngoài) | Vòng hào quang phát sáng trên đầu nhân vật che mờ các khuyết điểm được liệt kê phía sau. |
-| **08** | *Why Time Feels Faster as You Get Older* | **Proportional Theory & Novelty** (Não ngừng ghi nhớ chi tiết mới khi lặp lại thói quen) | Thước đo tỷ lệ 1 năm của đứa trẻ 5 tuổi (20% cuộc đời) so với người 50 tuổi (2% cuộc đời). |
-| **09** | *The Bystander Effect: Why Crowds Make People Less Helpful* | **Diffusion of Responsibility** (Sự phân tán trách nhiệm trong đám đông) | Mô phỏng thí nghiệm căn phòng đầy khói: 1 người ngồi một mình vs. 5 người ngồi cùng nhau. |
-| **10** | *Imposter Syndrome: Why Smart People Feel Like Frauds* | **Imposter Syndrome** (Hội chứng kẻ mạo danh ở người có năng lực) | Hai vòng tròn giao nhau: "Những gì tôi biết" vs. "Những gì tôi nghĩ người khác biết". |
+#### MÙA 1: TÁI LẬP TRÌNH BỘ NÃO & SỰ TẬP TRUNG (~65 phút)
+*Mùa này nối tiếp trực tiếp từ Tập 01 (Trì hoãn), đi từ triệu chứng bề nổi đến nguyên nhân sinh học và phác đồ sửa chữa.*
+
+| Tập | Tiêu đề tập lẻ (10–11 phút) | Mắt xích liên kết (Tại sao phải xem tiếp?) |
+| :--- | :--- | :--- |
+| **01** | *Why Your Brain Loves Procrastinating (And How to Trick It)* | **Điểm khởi đầu:** Giải thích vùng Amygdala coi việc khó là mối đe dọa nên đẩy bạn đi tìm thú vui tức thì. |
+| **02** | *How Cheap Dopamine Hijacks Your Brain* | **Nối từ Tập 01:** "Thú vui tức thì" đó chính là Dopamine rẻ tiền — thứ làm tụt ngưỡng hưng phấn khiến việc học/làm trở nên đau đớn. |
+| **03** | *The Attention Residue Trap: Why Multitasking Destroys IQ* | **Nối từ Tập 02:** Khi não nghiện Dopamine, bạn liên tục chuyển tab/lướt điện thoại, tạo ra "cặn chú ý" làm giảm hiệu suất nhận thức. |
+| **04** | *Analysis Paralysis: Why Too Many Goals Freeze Your Brain* | **Nối từ Tập 03:** Ngay cả khi tắt điện thoại, sự quá tải lựa chọn vẫn làm tê liệt Vỏ não trước trán (Prefrontal Cortex). |
+| **05** | *The Habit Loop: How Your Brain Automates Laziness* | **Nối từ Tập 04:** Khi các hành vi né tránh lặp lại đủ nhiều, hạch nền (Basal Ganglia) biến chúng thành thói quen tự động. |
+| **06** | *The 7-Day Brain Reset Protocol (Science-Backed)* | **Chốt hạ toàn mùa:** Tổng hợp toàn bộ cơ chế của 5 tập trước thành lộ trình 7 ngày khôi phục Dopamine và sự tập trung. |
+
+* **Tiêu đề bản ghép 1 tiếng (Mega-Video 01):** `The Complete Neuroscience of Focus, Dopamine & Habits (1-Hour Visual Guide)`
+
+---
+
+#### MÙA 2: NHỮNG ĐIỂM MÙ TƯ DUY & BẪY TÂM LÝ (~63 phút)
+*Khám phá cách bộ não tự bóp méo thực tế và khiến con người đưa ra các quyết định sai lầm trong cuộc sống, tiền bạc và công việc.*
+
+| Tập | Tiêu đề tập lẻ (10–11 phút) | Mắt xích liên kết |
+| :--- | :--- | :--- |
+| **07** | *The Spotlight Effect: Why Nobody Is Actually Watching You* | **Điểm khởi đầu:** Ảo tưởng tâm lý đầu tiên — bộ não phóng đại sự chú ý của người khác dành cho bạn. |
+| **08** | *The Halo Effect: How One Trait Tricks Your Judgment* | **Nối từ Tập 07:** Không chỉ nhìn nhầm về mình, não còn đánh giá sai toàn bộ con người khác chỉ qua một ấn tượng ban đầu. |
+| **09** | *The Dunning-Kruger Effect: Why Ignorance Breeds Confidence* | **Nối từ Tập 08:** Sự lệch pha giữa nhận thức và năng lực thật khiến người mới thường tự tin thái quá, còn người giỏi lại hoài nghi. |
+| **10** | *Confirmation Bias: Why Smart People Believe False Things* | **Nối từ Tập 09:** Để bảo vệ sự tự tin đó, bộ não chủ động lọc bỏ bằng chứng trái chiều và chỉ tìm thông tin ủng hộ định kiến. |
+| **11** | *The Sunk Cost Fallacy: Why Your Brain Refuses to Quit* | **Nối từ Tập 10:** Chính vì không chịu thừa nhận mình sai, bạn tiếp tục đổ thêm tiền bạc, thời gian vào những thứ đã thất bại. |
+| **12** | *6 Mental Models to Outsmart Your Own Brain* | **Chốt hạ toàn mùa:** Bộ công cụ kiểm tra chéo tư duy giúp hóa giải cả 5 thiên kiến nhận thức ở các tập trên. |
+
+* **Tiêu đề bản ghép 1 tiếng (Mega-Video 02):** `Every Psychological Trap Controlling Your Decisions (60-Minute Visual Guide)`
+
+---
+
+#### MÙA 3: TÂM LÝ HỌC XÃ HỘI & SỰ THAO TÚNG NGẦM (~65 phút)
+*Chuyển từ bên trong cá nhân sang sự va chạm giữa các bộ não trong đám đông, công việc và các mối quan hệ.*
+
+| Tập | Tiêu đề tập lẻ (10–11 phút) | Mắt xích liên kết |
+| :--- | :--- | :--- |
+| **13** | *The Bystander Effect: Why Crowds Make People Less Helpful* | **Điểm khởi đầu:** Chuyện gì xảy ra khi đặt nhiều bộ não cạnh nhau — trách nhiệm cá nhân bị pha loãng trong đám đông. |
+| **14** | *The Asch Experiment: Why Your Brain Conforms to Lies* | **Nối từ Tập 13:** Không chỉ đứng nhìn, áp lực bầy đàn còn ép bộ não bẻ cong sự thật hiển nhiên để hòa nhập với số đông. |
+| **15** | *Dark Psychology: How Subtle Manipulation Hijacks Emotion* | **Nối từ Tập 14:** Kẻ thao túng lợi dụng chính nỗi sợ bị cô lập và cảm giác tội lỗi để điều khiển hành vi người khác. |
+| **16** | *Attachment Styles: How Childhood Wires Adult Love* | **Nối từ Tập 15:** Lý do một số người dễ rơi vào bẫy thao túng hoặc né tránh nằm ở "bản đồ gắn bó" hình thành từ nhỏ. |
+| **17** | *What Happens to Your Brain When You Are Lonely* | **Nối từ Tập 16:** Khi hệ thống gắn bó đứt gãy, sự cô đơn kéo dài kích hoạt vùng đau đớn thể xác và làm suy giảm miễn dịch. |
+| **18** | *The Neuroscience of Trust & Genuine Charisma* | **Chốt hạ toàn mùa:** Cách kích hoạt Oxytocin và xây dựng kết nối an toàn, bền vững dựa trên khoa học hành vi. |
+
+* **Tiêu đề bản ghép 1 tiếng (Mega-Video 03):** `The Hidden Psychology of Human Behavior & Social Influence (Full Documentary)`
+
+---
 
 ### 3.4. Công thức giữ chân 30 giây đầu (Interactive Hook)
 1. **0:00 – 0:10 (Bài test nhanh cho não):** Đưa ra tình huống hoặc câu đố thị giác ngắn để khán giả tự trải nghiệm ngay lập tức.
@@ -186,7 +224,7 @@ minimalist flat 2D vector mascot character, a friendly stylized thinker with cle
 
 ---
 
-## 5. KỊCH BẢN CHI TIẾT TẬP 01 (VIDEO DÀI 7 PHÚT + AI IMAGE PROMPTS)
+## 5. KỊCH BẢN CHI TIẾT TẬP 01 (CHUẨN CẤU TRÚC MÔ-ĐUN + AI IMAGE PROMPTS)
 
 **Master Style Suffix (Dán vào cuối mọi prompt minh họa phân cảnh):**
 ```text
@@ -199,7 +237,7 @@ flat 2D vector illustration, modern minimalist editorial infographic style, clea
   * *0:15 – 0:30:* Đồng hồ đếm ngược chạy nhanh trên tường. Bảng thống kê bật lên: **95% người trưởng thành trì hoãn**, **20% trì hoãn mãn tính**.
   * *0:30 – 0:45:* Zoom cận cảnh vào đầu nhân vật, mở ra mặt cắt bộ não phát sáng với dòng chữ chuyển động: *Emotional Regulation vs. Time Management*.
 * **Lời thoại tiếng Anh (Voiceover):**
-  > "Picture this: You have a massive deadline tomorrow. It’s important, you know it’s important, and yet… you just spent forty-five minutes reorganizing your desktop folders, wiping down your keyboard, and watching a video about how pencils are made. Sound familiar? If you’ve ever beaten yourself up for being lazy or undisciplined, here is a plot twist backed by neuroscience: procrastination has almost nothing to do with laziness, and it isn’t even a time-management problem. In fact, studies show that over ninety-five percent of people procrastinate, and roughly twenty percent do it chronically. What’s actually happening isn’t a failure of willpower—it’s an ancient biological glitch inside your skull. In the next seven minutes, we’re going inside your brain to see why it actively sabotages your goals, and three science-backed ways to rewire it."
+  > "Picture this: You have a massive deadline tomorrow. It’s important, you know it’s important, and yet… you just spent forty-five minutes reorganizing your desktop folders, wiping down your keyboard, and watching a video about how pencils are made. Sound familiar? If you’ve ever beaten yourself up for being lazy or undisciplined, here is a plot twist backed by neuroscience: procrastination has almost nothing to do with laziness, and it isn’t even a time-management problem. In fact, studies show that over ninety-five percent of people procrastinate, and roughly twenty percent do it chronically. What’s actually happening isn’t a failure of willpower—it’s an ancient biological glitch inside your skull. In the next few minutes, we’re going inside your brain to see why it actively sabotages your goals, and three science-backed ways to rewire it."
 * **AI Image Prompt:**
   ```text
   A stressed minimalist character sitting at a desk in front of a glowing blank laptop screen, absurdly polishing a desk plant with a tiny cloth while a giant clock ticks in the background, flat 2D vector illustration, modern minimalist editorial infographic style, clean geometric shapes, dark navy blue background #0F172A, warm amber and coral highlights, crisp edges, no text, high contrast, 16:9
@@ -252,12 +290,17 @@ flat 2D vector illustration, modern minimalist editorial infographic style, clea
   Split-screen three-panel infographic showing three productivity hacks: panel one shows a tiny pebble pushing a giant boulder over a hill, panel two shows a smartphone locked behind a small barrier while a laptop glows open, panel three shows a glowing heart resetting a red stress gauge to calm green, flat 2D vector illustration, modern minimalist editorial infographic style, clean geometric shapes, dark navy blue background #0F172A, warm amber and coral highlights, crisp edges, no text, high contrast, 16:9
   ```
 
-### Phân cảnh 6: Kết thúc & Mở vòng lặp sang tập tiếp theo (6:30 – 7:00)
-* **Hình ảnh & Infographic:**
-  * *6:30 – 6:45:* Vị CEO (Prefrontal Cortex) và sinh vật nhỏ (Limbic System) bắt tay/đập tay nhau trong phòng điều khiển bộ não; thanh tiến độ công việc chạy đầy 100%.
-  * *6:45 – 7:00:* Màn hình thu nhỏ (End Screen) hiện khung xem trước của Tập 06 với biểu tượng bình chứa Dopamine phát sáng màu neon, mũi tên chỉ thẳng vào khung video đề xuất.
-* **Lời thoại tiếng Anh (Voiceover):**
-  > "At the end of the day, your brain isn’t broken—it’s just running ancient survival software in a modern world full of infinite distractions. Stop fighting your biology with guilt, lower the starting line to five minutes, and give Future You a break. Of course, understanding procrastination is only half the battle. If you want to see how modern apps, short videos, and notifications are engineered to hijack that exact dopamine system—and how to reset your brain’s baseline in just seven days—click this video right here. Thanks for watching, and I’ll see you in the next one."
+### Phân cảnh 6: Kết thúc Mô-đun (Cầu nối sang Tập 02 + Outro tập lẻ)
+*Tách làm 2 khối độc lập trên timeline dựng phim để dễ dàng ghép thành Mega-Video 1 tiếng:*
+
+* **Khối A — `[BRIDGE_TRANSITION]` (Nối trực tiếp sang Tập 02: Cheap Dopamine):**
+  * *Hình ảnh:* Vị CEO (Prefrontal Cortex) và sinh vật nhỏ (Limbic System) bắt tay nhau trong phòng điều khiển bộ não; sau đó zoom vào bình chứa Dopamine phát sáng màu neon đỏ cam đang rò rỉ.
+  * *Lời thoại tiếng Anh:*
+    > "At the end of the day, your brain isn’t broken—it’s just running ancient survival software in a modern world full of infinite distractions. Stop fighting your biology with guilt, lower the starting line to five minutes, and give Future You a break. Of course, understanding why your Amygdala triggers procrastination is only step one. Next, we need to look at the exact chemical fuel modern apps, short videos, and notifications use to hijack that circuit: cheap dopamine."
+* **Khối B — `[SINGLE_OUTRO]` (Chỉ dùng cho bản đăng lẻ, cắt bỏ khi ghép Mega-Video):**
+  * *Hình ảnh:* Màn hình thu nhỏ (End Screen) hiện khung xem trước của Tập 02 (*How Cheap Dopamine Hijacks Your Brain*), mũi tên chỉ thẳng vào khung video đề xuất.
+  * *Lời thoại tiếng Anh:*
+    > "Click this video right here to see how cheap dopamine rewires your brain—and how to reset your baseline. Thanks for watching, and I’ll see you in the next chapter."
 * **AI Image Prompt:**
   ```text
   A minimalist character happily completing a glowing progress bar at a clean desk while two small friendly brain mascots high-five inside a translucent thought bubble above, flat 2D vector illustration, modern minimalist editorial infographic style, clean geometric shapes, dark navy blue background #0F172A, warm amber and coral highlights, crisp edges, no text, high contrast, 16:9
@@ -306,7 +349,7 @@ Mỗi video Short được thiết kế là một **mảnh ghép độc lập (M
 
 ---
 
-## 7. BỘ METADATA CHUẨN SEO & QUY TRÌNH LẮP RÁP XUẤT BẢN HOÀN CHỈNH
+## 7. BỘ METADATA CHUẨN SEO, QUY TRÌNH LẮP RÁP AI & ĐÓNG GÓI MEGA-VIDEO
 
 ### 7.1. Bộ Metadata chuẩn SEO tiếng Anh cho Tập 01
 
@@ -327,7 +370,7 @@ In this animated explainer, we look inside the battle between your Prefrontal Co
 2:15 Why Your Brain Treats Future You Like a Stranger
 3:45 The Procrastination Doom Loop
 5:00 3 Science-Backed Ways to Trick Your Brain
-6:30 How to Reset Your Dopamine Baseline
+6:30 Next: How Cheap Dopamine Hijacks This Circuit
 
 🔬 STUDIES & CONCEPTS MENTIONED:
 • Temporal Self-Continuity & fMRI Brain Scans (Hal Hershfield, UCLA)
@@ -356,18 +399,35 @@ Be honest: what is the ONE task you are currently avoiding by watching this vide
    * Thông số khuyến nghị: `Stability: 45–50%`, `Clarity: 75%`, `Style Exaggeration: 15%`.
    * Chuẩn hóa âm lượng file audio về mức chuẩn YouTube (**-14 LUFS**) và chạy qua **Whisper** để xuất file phụ đề `.srt` cùng dữ liệu thời gian (word-level timestamps) làm mốc đồng bộ chuyển cảnh 3–5 giây.
 2. **Bước 2 — Xuất kho tài nguyên đồ họa đồng nhất:**
-   * Tạo trọn bộ 6 bức minh họa phân cảnh (`16:9`) và bộ 10 biểu cảm Mascot (`1:1`) bằng **Midjourney** hoặc **Ideogram** với chung mã nền `#0F172A`.
+   * Tạo trọn bộ các bức minh họa phân cảnh (`16:9`) và bộ 10 biểu cảm Mascot (`1:1`) bằng **Midjourney** hoặc **Ideogram** với chung mã nền `#0F172A`.
    * Với các biểu đồ số liệu (biểu đồ cột Dopamine, vòng lặp 5 bước Cortisol, thước đo 95% trì hoãn), xuất dạng file vector `.svg` hoặc `.png` nền trong suốt bằng **Illustrator**, **Figma** hoặc viết component đồ họa trực tiếp để không bị vỡ nét khi zoom.
 3. **Bước 3 — Lắp ráp Timeline và tạo chuyển động Infographic (1920x1080, 60fps):**
    * Xếp lớp trong **CapCut Pro**, **After Effects** hoặc quy trình dựng tự động bằng code (**Remotion**):
-     * *Layer 1 (Nền):* Lớp màu đặc `#0F172A` xuyên suốt 7 phút.
+     * *Layer 1 (Nền):* Lớp màu đặc `#0F172A` xuyên suốt video.
      * *Layer 2 (Đồ họa chính):* Các biểu đồ và hình minh họa xuất hiện theo từng luận điểm với hiệu ứng chuyển động mượt (*Ease-In / Ease-Out* hoặc *Spring physics*), không để khung hình đứng yên quá **4 giây**.
      * *Layer 3 (Mascot):* Đặt nhân vật ở góc dưới bên trái hoặc phải, thay đổi biểu cảm khớp với cảm xúc câu thoại.
 4. **Bước 4 — Thiết kế âm thanh (Sound Design) và nhạc nền:**
-   * Chèn hiệu ứng tiếng động ngắn (**SFX**) ở mức `-15dB` mỗi khi biểu đồ bật lên (*Pop*, *Whoosh*, *Switch click*, tiếng *tích-tắc* đồng hồ ở Phân cảnh 1).
+   * Chèn hiệu ứng tiếng động ngắn (**SFX**) ở mức `-15dB` mỗi khi biểu đồ bật lên (*Pop*, *Whoosh*, *Switch click*, tiếng *tích-tắc* đồng hồ).
    * Chọn 1 bản nhạc nền không lời tiết tấu nhẹ nhàng (*Ambient / Minimalist Synth*) và hạ âm lượng xuống mức `-26dB` đến `-28dB` để làm nổi bật giọng đọc.
 5. **Bước 5 — Tối ưu kỹ thuật và xuất bản trên YouTube Studio:**
    * Xuất file định dạng **MP4 (H.264), độ phân giải 1080p hoặc 4K, Bitrate 20–30 Mbps**.
    * Tải file phụ đề tiếng Anh (`.srt`) chuẩn xác lên mục **Subtitles** để thuật toán YouTube lập chỉ mục ngữ nghĩa.
    * Tải lên 3 phiên bản Thumbnail và 3 biến thể Tiêu đề trong mục **Test & Compare**.
-   * Cài đặt **End Screen** ở 20 giây cuối (`6:40` – `7:00`) khớp với khung hình chờ ở Phân cảnh 6.
+   * Cài đặt **End Screen** ở 15–20 giây cuối khớp với khối `[SINGLE_OUTRO]`.
+
+---
+
+### 7.3. Kỹ thuật Dựng Mô-đun (Modular Editing) & Quy tắc đóng gói Mega-Video (> 1 Tiếng)
+
+Để ghép 6 tập lẻ thành bản tổng hợp dài 62–68 phút chỉ trong vòng **30 phút** mà không bị cảm giác cắt dán chắp vá, áp dụng quy tắc dựng mô-đun ngay từ tập đầu tiên:
+
+1. **Tách riêng 2 khối kết thúc trên Timeline mỗi tập lẻ:**
+   * **Khối A — Cầu nối dẫn chuyện (`[BRIDGE_TRANSITION]` — 15 giây):** Đặt ngay sau khi tóm tắt xong nội dung tập hiện tại, mở vòng lặp trực tiếp sang tập kế tiếp. Khi ghép thành bản 1 tiếng, **giữ nguyên Khối A** để làm lời dẫn chuyển chương tự nhiên.
+   * **Khối B — Kêu gọi hành động tập lẻ (`[SINGLE_OUTRO]` — 15 giây cuối cùng):** Lời mời bấm Subscribe và End Screen. Khi ghép thành bản 1 tiếng, **xóa bỏ Khối B** ở các tập từ Tập 01 đến Tập 05 (chỉ giữ lại ở Tập 06 cuối mùa).
+2. **Chèn Bảng chuyển chương (Chapter Title Card — 3 giây):**
+   * Tại điểm nối giữa Khối A của tập trước và phần mở đầu của tập sau, chèn một bảng tiêu đề chương tối giản trên nền `#0F172A` kèm tiếng chuông trầm ấm (ví dụ: `CHAPTER II: THE DOPAMINE HIJACK`).
+3. **Sản xuất đoạn mở đầu độc quyền (Master Hook — 90 đến 120 giây):**
+   * Trước khi vào Tập 01 trong bản ghép 1 tiếng, dựng thêm 2 phút mở đầu giới thiệu bức tranh toàn cảnh của cả 6 chương kèm sơ đồ tư duy tổng quan (Mindmap) để giữ chân người xem ngay từ phút đầu tiên.
+4. **Quy tắc đặt tên & Chia mốc thời gian (Timestamps SEO):**
+   * **Không đặt tên là "Tổng hợp Tập 1–6" (Compilation)** vì khán giả mới sẽ bỏ qua. Hãy đặt tiêu đề như một **tài liệu hoàn chỉnh (Complete Visual Guide / Full Documentary)**.
+   * Liệt kê đầy đủ cả **6 chương lớn và các ý nhỏ bên trong** vào phần Mô tả video. YouTube và Google Search sẽ lập chỉ mục từng mốc thời gian này, giúp video dài 1 tiếng xuất hiện trên kết quả tìm kiếm của hàng chục từ khóa khác nhau cùng lúc.

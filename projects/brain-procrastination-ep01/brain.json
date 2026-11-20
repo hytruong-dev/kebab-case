@@ -1,1 +1,1 @@
-﻿{ "ep": "ep01", "ticks": ["hook_deadline"], "alarms": [["threat_alarm", 2.6]] }
+﻿{ "ep": "ep01", "ticks": ["hook_deadline", "midnight_vow"], "alarms": [["threat_alarm", 2.6], ["amyg_fast", 1.0]] }

@@ -1,5 +1,5 @@
 {
- "total": 374.716,
+ "total": 620.753,
  "items": [
   {
    "id": "c1_01",
@@ -50,10 +50,10 @@
    "chapter": "c1",
    "chapterTitle": "It's Not Laziness",
    "first": false,
-   "shot": "hook_stats",
-   "show": "95% procrastinate · 20% chronically",
+   "shot": "hook_emotion",
+   "show": "Emotional Regulation vs. Time Management",
    "start": 32.593,
-   "dur": 7.586,
+   "dur": 12.958,
    "file": "vo/c1_05.wav"
   },
   {
@@ -61,10 +61,10 @@
    "chapter": "c1",
    "chapterTitle": "It's Not Laziness",
    "first": false,
-   "shot": "hook_glitch",
-   "show": "An ancient brain glitch",
-   "start": 40.529,
-   "dur": 7.092,
+   "shot": "hook_stats",
+   "show": "95% procrastinate · 20% chronically",
+   "start": 45.901,
+   "dur": 7.586,
    "file": "vo/c1_06.wav"
   },
   {
@@ -72,11 +72,33 @@
    "chapter": "c1",
    "chapterTitle": "It's Not Laziness",
    "first": false,
+   "shot": "hook_sources",
+   "show": "Steel (2007): up to 95% of students · Ferrari: 1 in 5 adults chronic",
+   "start": 53.837,
+   "dur": 14.593,
+   "file": "vo/c1_07.wav"
+  },
+  {
+   "id": "c1_08",
+   "chapter": "c1",
+   "chapterTitle": "It's Not Laziness",
+   "first": false,
+   "shot": "hook_glitch",
+   "show": "An ancient brain glitch",
+   "start": 68.78,
+   "dur": 7.092,
+   "file": "vo/c1_08.wav"
+  },
+  {
+   "id": "c1_09",
+   "chapter": "c1",
+   "chapterTitle": "It's Not Laziness",
+   "first": false,
    "shot": "hook_promise",
    "show": "Inside your brain + 3 ways to rewire it",
-   "start": 47.971,
-   "dur": 9.214,
-   "file": "vo/c1_07.wav"
+   "start": 76.222,
+   "dur": 8.983,
+   "file": "vo/c1_09.wav"
   },
   {
    "id": "c2_01",
@@ -85,7 +107,7 @@
    "first": true,
    "shot": "roommates_intro",
    "show": "Meet your 2 brain roommates",
-   "start": 59.735,
+   "start": 87.755,
    "dur": 5.638,
    "file": "vo/c2_01.wav"
   },
@@ -96,7 +118,7 @@
    "first": false,
    "shot": "pfc_ceo",
    "show": "Prefrontal Cortex = the rational CEO",
-   "start": 65.723,
+   "start": 93.742,
    "dur": 7.901,
    "file": "vo/c2_02.wav"
   },
@@ -107,7 +129,7 @@
    "first": false,
    "shot": "pfc_jobs",
    "show": "Planning · Logic · Imagining the future",
-   "start": 73.973,
+   "start": 101.993,
    "dur": 7.507,
    "file": "vo/c2_03.wav"
   },
@@ -116,10 +138,10 @@
    "chapter": "c2",
    "chapterTitle": "The Two Roommates in Your Head",
    "first": false,
-   "shot": "amygdala_intro",
-   "show": "Limbic System → the Amygdala",
-   "start": 81.83,
-   "dur": 6.81,
+   "shot": "pfc_slow",
+   "show": "Matures into your mid-20s · self-control = effort",
+   "start": 109.85,
+   "dur": 10.113,
    "file": "vo/c2_04.wav"
   },
   {
@@ -127,10 +149,10 @@
    "chapter": "c2",
    "chapterTitle": "The Two Roommates in Your Head",
    "first": false,
-   "shot": "amygdala_survival",
-   "show": "Ancient survival center",
-   "start": 88.99,
-   "dur": 6.849,
+   "shot": "amygdala_intro",
+   "show": "Limbic System → the Amygdala",
+   "start": 120.313,
+   "dur": 6.81,
    "file": "vo/c2_05.wav"
   },
   {
@@ -138,10 +160,10 @@
    "chapter": "c2",
    "chapterTitle": "The Two Roommates in Your Head",
    "first": false,
-   "shot": "amygdala_two_things",
-   "show": "Avoid pain NOW · Seek pleasure NOW",
-   "start": 96.189,
-   "dur": 5.235,
+   "shot": "amygdala_survival",
+   "show": "Ancient survival center",
+   "start": 127.472,
+   "dur": 6.849,
    "file": "vo/c2_06.wav"
   },
   {
@@ -149,10 +171,10 @@
    "chapter": "c2",
    "chapterTitle": "The Two Roommates in Your Head",
    "first": false,
-   "shot": "threat_task",
-   "show": "Boring · Confusing · Overwhelming",
-   "start": 101.774,
-   "dur": 9.455,
+   "shot": "amygdala_two_things",
+   "show": "Avoid pain NOW · Seek pleasure NOW",
+   "start": 134.671,
+   "dur": 5.235,
    "file": "vo/c2_07.wav"
   },
   {
@@ -160,10 +182,10 @@
    "chapter": "c2",
    "chapterTitle": "The Two Roommates in Your Head",
    "first": false,
-   "shot": "threat_alarm",
-   "show": "Task = THREAT",
-   "start": 111.579,
-   "dur": 6.369,
+   "shot": "amyg_fast",
+   "show": "Amygdala: faster than the CEO",
+   "start": 140.257,
+   "dur": 10.862,
    "file": "vo/c2_08.wav"
   },
   {
@@ -171,10 +193,10 @@
    "chapter": "c2",
    "chapterTitle": "The Two Roommates in Your Head",
    "first": false,
-   "shot": "fight_flight",
-   "show": "FIGHT or FLIGHT",
-   "start": 118.298,
-   "dur": 3.283,
+   "shot": "threat_task",
+   "show": "Boring · Confusing · Overwhelming",
+   "start": 151.469,
+   "dur": 9.455,
    "file": "vo/c2_09.wav"
   },
   {
@@ -182,10 +204,10 @@
    "chapter": "c2",
    "chapterTitle": "The Two Roommates in Your Head",
    "first": false,
-   "shot": "flight_phone",
-   "show": "Brain chooses FLIGHT",
-   "start": 121.932,
-   "dur": 8.929,
+   "shot": "threat_alarm",
+   "show": "Task = THREAT",
+   "start": 161.274,
+   "dur": 6.369,
    "file": "vo/c2_10.wav"
   },
   {
@@ -193,11 +215,55 @@
    "chapter": "c2",
    "chapterTitle": "The Two Roommates in Your Head",
    "first": false,
+   "shot": "fight_flight",
+   "show": "FIGHT or FLIGHT",
+   "start": 167.993,
+   "dur": 3.283,
+   "file": "vo/c2_11.wav"
+  },
+  {
+   "id": "c2_12",
+   "chapter": "c2",
+   "chapterTitle": "The Two Roommates in Your Head",
+   "first": false,
+   "shot": "flight_phone",
+   "show": "Brain chooses FLIGHT",
+   "start": 171.626,
+   "dur": 8.929,
+   "file": "vo/c2_12.wav"
+  },
+  {
+   "id": "c2_13",
+   "chapter": "c2",
+   "chapterTitle": "The Two Roommates in Your Head",
+   "first": false,
    "shot": "ancestor_modern",
    "show": "Then: tiger · Now: spreadsheet",
-   "start": 131.211,
+   "start": 180.905,
    "dur": 6.269,
-   "file": "vo/c2_11.wav"
+   "file": "vo/c2_13.wav"
+  },
+  {
+   "id": "c2_14",
+   "chapter": "c2",
+   "chapterTitle": "The Two Roommates in Your Head",
+   "first": false,
+   "shot": "bochum_study",
+   "show": "Ruhr University Bochum (2018): bigger Amygdala, weaker control link",
+   "start": 187.525,
+   "dur": 16.95,
+   "file": "vo/c2_14.wav"
+  },
+  {
+   "id": "c2_15",
+   "chapter": "c2",
+   "chapterTitle": "The Two Roommates in Your Head",
+   "first": false,
+   "shot": "bochum_meaning",
+   "show": "Louder alarm · weaker line to the CEO",
+   "start": 204.824,
+   "dur": 7.23,
+   "file": "vo/c2_15.wav"
   },
   {
    "id": "c3_01",
@@ -206,7 +272,7 @@
    "first": true,
    "shot": "present_bias",
    "show": "Time Inconsistency = Present Bias",
-   "start": 140.03,
+   "start": 214.605,
    "dur": 4.861,
    "file": "vo/c3_01.wav"
   },
@@ -217,7 +283,7 @@
    "first": false,
    "shot": "small_now_big_later",
    "show": "Small reward NOW > Big reward LATER",
-   "start": 145.241,
+   "start": 219.815,
    "dur": 6.373,
    "file": "vo/c3_02.wav"
   },
@@ -226,10 +292,10 @@
    "chapter": "c3",
    "chapterTitle": "Future You Is a Stranger",
    "first": false,
-   "shot": "fmri_intro",
-   "show": "fMRI brain scans",
-   "start": 151.964,
-   "dur": 8.105,
+   "shot": "discount_test",
+   "show": "$100 today or $110 next week?",
+   "start": 226.539,
+   "dur": 8.449,
    "file": "vo/c3_03.wav"
   },
   {
@@ -237,10 +303,10 @@
    "chapter": "c3",
    "chapterTitle": "Future You Is a Stranger",
    "first": false,
-   "shot": "fmri_present",
-   "show": "Present You → empathy lights up",
-   "start": 160.42,
-   "dur": 7.048,
+   "shot": "discount_flip",
+   "show": "52 weeks vs 53 weeks → most people wait",
+   "start": 235.338,
+   "dur": 14.312,
    "file": "vo/c3_04.wav"
   },
   {
@@ -248,10 +314,10 @@
    "chapter": "c3",
    "chapterTitle": "Future You Is a Stranger",
    "first": false,
-   "shot": "fmri_future",
-   "show": "Future You (even 2 days away)",
-   "start": 167.818,
-   "dur": 6.725,
+   "shot": "fmri_intro",
+   "show": "fMRI brain scans",
+   "start": 249.999,
+   "dur": 8.105,
    "file": "vo/c3_05.wav"
   },
   {
@@ -259,10 +325,10 @@
    "chapter": "c3",
    "chapterTitle": "Future You Is a Stranger",
    "first": false,
-   "shot": "fmri_stranger",
-   "show": "Future You ≈ a STRANGER",
-   "start": 174.893,
-   "dur": 5.395,
+   "shot": "fmri_present",
+   "show": "Present You → empathy lights up",
+   "start": 258.454,
+   "dur": 7.048,
    "file": "vo/c3_06.wav"
   },
   {
@@ -270,10 +336,10 @@
    "chapter": "c3",
    "chapterTitle": "Future You Is a Stranger",
    "first": false,
-   "shot": "someone_else",
-   "show": "Future You = someone else's problem",
-   "start": 180.638,
-   "dur": 5.77,
+   "shot": "fmri_future",
+   "show": "Future You (even 2 days away)",
+   "start": 265.852,
+   "dur": 6.725,
    "file": "vo/c3_07.wav"
   },
   {
@@ -281,10 +347,10 @@
    "chapter": "c3",
    "chapterTitle": "Future You Is a Stranger",
    "first": false,
-   "shot": "dopamine_bars",
-   "show": "Instant dopamine vs. delayed reward",
-   "start": 186.758,
-   "dur": 7.937,
+   "shot": "fmri_stranger",
+   "show": "Future You ≈ a STRANGER",
+   "start": 272.928,
+   "dur": 5.395,
    "file": "vo/c3_08.wav"
   },
   {
@@ -292,11 +358,66 @@
    "chapter": "c3",
    "chapterTitle": "Future You Is a Stranger",
    "first": false,
+   "shot": "someone_else",
+   "show": "Future You = someone else's problem",
+   "start": 278.673,
+   "dur": 5.77,
+   "file": "vo/c3_09.wav"
+  },
+  {
+   "id": "c3_10",
+   "chapter": "c3",
+   "chapterTitle": "Future You Is a Stranger",
+   "first": false,
+   "shot": "avatar_mirror",
+   "show": "Hershfield: meet your older self",
+   "start": 284.792,
+   "dur": 9.16,
+   "file": "vo/c3_10.wav"
+  },
+  {
+   "id": "c3_11",
+   "chapter": "c3",
+   "chapterTitle": "Future You Is a Stranger",
+   "first": false,
+   "shot": "avatar_result",
+   "show": "More than 2× saved for the future",
+   "start": 294.302,
+   "dur": 11.26,
+   "file": "vo/c3_11.wav"
+  },
+  {
+   "id": "c3_12",
+   "chapter": "c3",
+   "chapterTitle": "Future You Is a Stranger",
+   "first": false,
+   "shot": "dopamine_bars",
+   "show": "Instant dopamine vs. delayed reward",
+   "start": 305.912,
+   "dur": 7.937,
+   "file": "vo/c3_12.wav"
+  },
+  {
+   "id": "c3_13",
+   "chapter": "c3",
+   "chapterTitle": "Future You Is a Stranger",
+   "first": false,
+   "shot": "dopamine_wanting",
+   "show": "Dopamine = anticipation, not pleasure",
+   "start": 314.199,
+   "dur": 14.806,
+   "file": "vo/c3_13.wav"
+  },
+  {
+   "id": "c3_14",
+   "chapter": "c3",
+   "chapterTitle": "Future You Is a Stranger",
+   "first": false,
    "shot": "toss_papers",
    "show": "Present You → dumps it on Future You",
-   "start": 195.044,
+   "start": 329.355,
    "dur": 5.491,
-   "file": "vo/c3_09.wav"
+   "file": "vo/c3_14.wav"
   },
   {
    "id": "c4_01",
@@ -305,7 +426,7 @@
    "first": true,
    "shot": "guilt_bruteforce",
    "show": "The 'fix': brute-force guilt",
-   "start": 203.086,
+   "start": 337.396,
    "dur": 4.812,
    "file": "vo/c4_01.wav"
   },
@@ -316,7 +437,7 @@
    "first": false,
    "shot": "midnight_vow",
    "show": "00:00 → 'I'll wake up at 5 AM'",
-   "start": 208.248,
+   "start": 342.558,
    "dur": 6.993,
    "file": "vo/c4_02.wav"
   },
@@ -327,7 +448,7 @@
    "first": false,
    "shot": "guilt_fuel",
    "show": "Guilt = FUEL",
-   "start": 215.591,
+   "start": 349.901,
    "dur": 4.705,
    "file": "vo/c4_03.wav"
   },
@@ -338,7 +459,7 @@
    "first": false,
    "shot": "loop_intro",
    "show": "The Procrastination Doom Loop",
-   "start": 220.646,
+   "start": 354.956,
    "dur": 3.947,
    "file": "vo/c4_04.wav"
   },
@@ -349,7 +470,7 @@
    "first": false,
    "shot": "loop_1_2",
    "show": "1 Hard task → 2 Anxiety",
-   "start": 224.942,
+   "start": 359.253,
    "dur": 3.586,
    "file": "vo/c4_05.wav"
   },
@@ -360,7 +481,7 @@
    "first": false,
    "shot": "loop_3_4",
    "show": "3 Avoidance → 4 Brief relief",
-   "start": 228.879,
+   "start": 363.189,
    "dur": 5.317,
    "file": "vo/c4_06.wav"
   },
@@ -371,7 +492,7 @@
    "first": false,
    "shot": "loop_5",
    "show": "5 Guilt & shame",
-   "start": 234.546,
+   "start": 368.856,
    "dur": 3.79,
    "file": "vo/c4_07.wav"
   },
@@ -382,7 +503,7 @@
    "first": false,
    "shot": "loop_cortisol",
    "show": "Cortisol ↑ (stress hormone)",
-   "start": 238.686,
+   "start": 372.997,
    "dur": 3.91,
    "file": "vo/c4_08.wav"
   },
@@ -393,7 +514,7 @@
    "first": false,
    "shot": "loop_repeat",
    "show": "Stress ↑ → another escape → loop again",
-   "start": 242.946,
+   "start": 377.257,
    "dur": 6.191,
    "file": "vo/c4_09.wav"
   },
@@ -404,9 +525,42 @@
    "first": false,
    "shot": "care_too_much",
    "show": "Not 'don't care' — you care TOO MUCH",
-   "start": 249.487,
+   "start": 383.798,
    "dur": 8.062,
    "file": "vo/c4_10.wav"
+  },
+  {
+   "id": "c4_11",
+   "chapter": "c4",
+   "chapterTitle": "The Procrastination Doom Loop",
+   "first": false,
+   "shot": "tice_early",
+   "show": "Tice & Baumeister: early semester → less stress",
+   "start": 392.21,
+   "dur": 10.846,
+   "file": "vo/c4_11.wav"
+  },
+  {
+   "id": "c4_12",
+   "chapter": "c4",
+   "chapterTitle": "The Procrastination Doom Loop",
+   "first": false,
+   "shot": "tice_late",
+   "show": "End of semester → more stress, illness, lower grades",
+   "start": 403.406,
+   "dur": 9.405,
+   "file": "vo/c4_12.wav"
+  },
+  {
+   "id": "c4_13",
+   "chapter": "c4",
+   "chapterTitle": "The Procrastination Doom Loop",
+   "first": false,
+   "shot": "sirois_health",
+   "show": "Sirois: procrastination ↔ stress & health",
+   "start": 413.161,
+   "dur": 9.687,
+   "file": "vo/c4_13.wav"
   },
   {
    "id": "c5_01",
@@ -415,7 +569,7 @@
    "first": true,
    "shot": "hacks_intro",
    "show": "Speak your Limbic System's language",
-   "start": 260.099,
+   "start": 425.397,
    "dur": 7.483,
    "file": "vo/c5_01.wav"
   },
@@ -426,7 +580,7 @@
    "first": false,
    "shot": "hacks_three",
    "show": "3 tricks to break the loop",
-   "start": 267.932,
+   "start": 433.23,
    "dur": 2.685,
    "file": "vo/c5_02.wav"
   },
@@ -437,7 +591,7 @@
    "first": false,
    "shot": "hack1_boulder",
    "show": "#1 The 5-Minute Rule",
-   "start": 270.967,
+   "start": 436.265,
    "dur": 9.484,
    "file": "vo/c5_03.wav"
   },
@@ -448,7 +602,7 @@
    "first": false,
    "shot": "hack1_permission",
    "show": "\"Just 5 minutes — then I may stop\"",
-   "start": 280.801,
+   "start": 446.099,
    "dur": 7.282,
    "file": "vo/c5_04.wav"
   },
@@ -459,7 +613,7 @@
    "first": false,
    "shot": "hack1_zeigarnik",
    "show": "Zeigarnik Effect: brains hate unfinished loops",
-   "start": 288.433,
+   "start": 453.731,
    "dur": 12.621,
    "file": "vo/c5_05.wav"
   },
@@ -468,10 +622,10 @@
    "chapter": "c5",
    "chapterTitle": "3 Ways to Trick Your Brain",
    "first": false,
-   "shot": "hack2_friction",
-   "show": "#2 Flip the Friction Ratio (+20 s)",
-   "start": 301.404,
-   "dur": 6.553,
+   "shot": "zeigarnik_waiters",
+   "show": "Bluma Zeigarnik, 1920s: waiters & unpaid orders",
+   "start": 466.702,
+   "dur": 12.364,
    "file": "vo/c5_06.wav"
   },
   {
@@ -479,10 +633,10 @@
    "chapter": "c5",
    "chapterTitle": "3 Ways to Trick Your Brain",
    "first": false,
-   "shot": "hack2_setup",
-   "show": "Phone: far away · Work: open & ready",
-   "start": 308.307,
-   "dur": 6.357,
+   "shot": "hack1_tiny",
+   "show": "Make step one ridiculously small",
+   "start": 479.416,
+   "dur": 11.733,
    "file": "vo/c5_07.wav"
   },
   {
@@ -490,10 +644,10 @@
    "chapter": "c5",
    "chapterTitle": "3 Ways to Trick Your Brain",
    "first": false,
-   "shot": "hack3_compassion",
-   "show": "#3 Self-Compassion",
-   "start": 315.014,
-   "dur": 3.475,
+   "shot": "hack2_friction",
+   "show": "#2 Flip the Friction Ratio (+20 s)",
+   "start": 491.499,
+   "dur": 6.553,
    "file": "vo/c5_08.wav"
   },
   {
@@ -501,10 +655,10 @@
    "chapter": "c5",
    "chapterTitle": "3 Ways to Trick Your Brain",
    "first": false,
-   "shot": "hack3_study",
-   "show": "Carleton University study: forgive → procrastinate less",
-   "start": 318.839,
-   "dur": 11.568,
+   "shot": "achor_guitar",
+   "show": "Shawn Achor's 20-second rule",
+   "start": 498.402,
+   "dur": 14.481,
    "file": "vo/c5_09.wav"
   },
   {
@@ -512,11 +666,77 @@
    "chapter": "c5",
    "chapterTitle": "3 Ways to Trick Your Brain",
    "first": false,
+   "shot": "hack2_setup",
+   "show": "Phone: far away · Work: open & ready",
+   "start": 513.233,
+   "dur": 6.357,
+   "file": "vo/c5_10.wav"
+  },
+  {
+   "id": "c5_11",
+   "chapter": "c5",
+   "chapterTitle": "3 Ways to Trick Your Brain",
+   "first": false,
+   "shot": "hack2_barriers",
+   "show": "Tiny barriers = time for the CEO",
+   "start": 519.94,
+   "dur": 11.052,
+   "file": "vo/c5_11.wav"
+  },
+  {
+   "id": "c5_12",
+   "chapter": "c5",
+   "chapterTitle": "3 Ways to Trick Your Brain",
+   "first": false,
+   "shot": "hack3_compassion",
+   "show": "#3 Self-Compassion",
+   "start": 531.342,
+   "dur": 3.475,
+   "file": "vo/c5_12.wav"
+  },
+  {
+   "id": "c5_13",
+   "chapter": "c5",
+   "chapterTitle": "3 Ways to Trick Your Brain",
+   "first": false,
+   "shot": "hack3_study",
+   "show": "Carleton University study: forgive → procrastinate less",
+   "start": 535.167,
+   "dur": 11.568,
+   "file": "vo/c5_13.wav"
+  },
+  {
+   "id": "c5_14",
+   "chapter": "c5",
+   "chapterTitle": "3 Ways to Trick Your Brain",
+   "first": false,
+   "shot": "selfcomp_why",
+   "show": "Self-criticism = threat · kindness = alarm off",
+   "start": 547.086,
+   "dur": 13.435,
+   "file": "vo/c5_14.wav"
+  },
+  {
+   "id": "c5_15",
+   "chapter": "c5",
+   "chapterTitle": "3 Ways to Trick Your Brain",
+   "first": false,
+   "shot": "selfcomp_try",
+   "show": "Talk to yourself like a friend",
+   "start": 560.871,
+   "dur": 8.467,
+   "file": "vo/c5_15.wav"
+  },
+  {
+   "id": "c5_16",
+   "chapter": "c5",
+   "chapterTitle": "3 Ways to Trick Your Brain",
+   "first": false,
    "shot": "hack3_starve",
    "show": "No guilt → no fuel → loop stops",
-   "start": 330.758,
+   "start": 569.688,
    "dur": 2.989,
-   "file": "vo/c5_10.wav"
+   "file": "vo/c5_16.wav"
   },
   {
    "id": "c6_01",
@@ -525,7 +745,7 @@
    "first": true,
    "shot": "outro_software",
    "show": "Ancient software · modern world",
-   "start": 336.297,
+   "start": 575.227,
    "dur": 8.909,
    "file": "vo/c6_01.wav"
   },
@@ -536,7 +756,7 @@
    "first": false,
    "shot": "outro_recap",
    "show": "No guilt · 5 minutes · be kind to Future You",
-   "start": 345.555,
+   "start": 584.485,
    "dur": 6.742,
    "file": "vo/c6_02.wav"
   },
@@ -545,10 +765,10 @@
    "chapter": "c6",
    "chapterTitle": "Your Brain Isn't Broken",
    "first": false,
-   "shot": "outro_teaser",
-   "show": "Next: how apps hijack your dopamine",
-   "start": 352.647,
-   "dur": 12.656,
+   "shot": "bridge_step_one",
+   "show": "Step 1 of the series ✓",
+   "start": 591.577,
+   "dur": 5.973,
    "file": "vo/c6_03.wav"
   },
   {
@@ -556,11 +776,22 @@
    "chapter": "c6",
    "chapterTitle": "Your Brain Isn't Broken",
    "first": false,
-   "shot": "outro_end",
-   "show": "Reset your dopamine in 7 days →",
-   "start": 365.654,
-   "dur": 8.713,
+   "shot": "bridge_dopamine",
+   "show": "Next: CHEAP DOPAMINE",
+   "start": 597.9,
+   "dur": 9.454,
    "file": "vo/c6_04.wav"
+  },
+  {
+   "id": "c7_01",
+   "chapter": "c7",
+   "chapterTitle": "[SINGLE_OUTRO]",
+   "first": true,
+   "shot": "outro_end",
+   "show": "Episode 02: How Cheap Dopamine Hijacks Your Brain →",
+   "start": 609.904,
+   "dur": 10.498,
+   "file": "vo/c7_01.wav"
   }
  ]
 }

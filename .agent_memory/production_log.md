@@ -61,3 +61,7 @@
 ### Video: brain-procrastination-ep01-v2 - "EP01 v2 — fully illustrated with Gemini (64 images, 3 accounts)" (2026-11-20 10:40)
 - **Thời lượng:** 376.0s
 - **Bài học rút ra:** Each icon reads public/brain/ep01/<id>.png via AssetCtx (fallback to vector); 6 hero images used as backdrops; 3 thumbnails in out/thumbnails; QA PASS -14.0 LUFS
+
+### Video: brain-procrastination-ep01-v2b - "S1E01 rebuilt from owner doc v2 — 10:22, 60 fps, modular bridge + single outro" (2026-11-20 19:23)
+- **Thời lượng:** 622.0s
+- **Bài học rút ra:** Doc voiceover verbatim + 21 sourced research beats to hit 10-11 min; 77 Gemini imgs via 3 parallel accounts; motion-check gate before the 20-min render; QA PASS -14.0 LUFS

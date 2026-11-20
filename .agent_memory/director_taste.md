@@ -57,3 +57,4 @@
 
 ## Kênh
 - [TASTE-33] (2026-11-20) Brain & Psychology EP01 (projects/brain-procrastination-ep01) is the owner's APPROVED STANDARD ('hoan hao') for long-term production: future videos use the channel plan PLAN_owner.md + skill learned/brain-explainer-episode; the project was cleaned down to this pipeline (old Eilean/Transistor/Wagon projects deleted, lessons kept in .agent_memory).
+- [TASTE-34] (2026-11-20) Brain channel episode LENGTH = 10-11 minutes (owner doc v2, 2026-11-21: 'lam dung thoi luong'). The doc's voiceover alone is ~6 min, so EXPAND each section with accurate, sourced research beats (keep the doc lines verbatim) until timeline total is 10:00-11:00. Ending is MODULAR: [BRIDGE_TRANSITION] block (recap + open loop to next episode, kept in the 1-hour Mega-Video) then a separate [SINGLE_OUTRO] block (end screen, cut when merging 6 episodes). 1920x1080 60fps.

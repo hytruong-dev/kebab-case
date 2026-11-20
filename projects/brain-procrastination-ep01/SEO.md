@@ -1,4 +1,4 @@
-# SEO — EP01 (from owner plan 7.1; chapter times updated to the actual film)
+# SEO — S1E01 (owner doc v2, section 7.1; chapter times = the actual film)
 
 ## Titles (A/B test)
 - A: Why Your Brain Loves Procrastinating (And How to Trick It)
@@ -13,16 +13,21 @@ In this animated explainer, we look inside the battle between your Prefrontal Co
 
 ⏱️ CHAPTERS:
 0:00 Why You Procrastinate (It's Not Laziness)
-0:58 Prefrontal Cortex vs. The Amygdala
-2:18 Why Your Brain Treats Future You Like a Stranger
-3:21 The Procrastination Doom Loop
-4:18 3 Science-Backed Ways to Trick Your Brain
-5:35 Your Brain Isn't Broken (+ Next: Reset Your Dopamine)
+1:26 Prefrontal Cortex vs. The Amygdala
+3:33 Why Your Brain Treats Future You Like a Stranger
+5:35 The Procrastination Doom Loop
+7:03 3 Science-Backed Ways to Trick Your Brain
+9:33 Next: How Cheap Dopamine Hijacks This Circuit
 
 🔬 STUDIES & CONCEPTS MENTIONED:
 • Temporal Self-Continuity & fMRI Brain Scans (Hal Hershfield, UCLA)
+• Age-progressed avatars & saving for the future (Hershfield et al., 2011)
 • Self-Forgiveness & Procrastination Reduction Study (Wohl et al., Carleton University)
-• The Zeigarnik Effect & Activation Energy
+• Procrastination as emotion regulation (Pychyl & Sirois)
+• Procrastination prevalence meta-analysis (Piers Steel, 2007)
+• Amygdala volume & action control (Schlüter et al., Ruhr University Bochum, 2018)
+• Procrastination, stress & health (Tice & Baumeister, 1997; Sirois)
+• The Zeigarnik Effect & Activation Energy · The 20-Second Rule (Shawn Achor)
 
 #Psychology #Neuroscience #Procrastination
 ```
@@ -33,8 +38,8 @@ why your brain loves procrastinating, psychology of procrastination, neuroscienc
 ## Pinned comment
 Be honest: what is the ONE task you are currently avoiding by watching this video? Drop it below so Future You has to hold you accountable. 👇
 
-## Subtitles
-Upload `brain-procrastination-ep01.srt` (generated from the narration timeline).
-
 ## End screen
-Last 20 s (≈ 5:56 – 6:16), matching the end-screen frame on the right of the final shot.
+`[SINGLE_OUTRO]` block = last ~12 s (10:09 – 10:22) → link Episode 02 "How Cheap Dopamine Hijacks Your Brain".
+
+## Mega-Video (Season 1, after Ep 06)
+Keep Part 6 `[BRIDGE_TRANSITION]`, cut the `[SINGLE_OUTRO]` block (from 10:09).

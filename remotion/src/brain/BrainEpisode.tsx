@@ -1,6 +1,7 @@
 // Brain & Psychology channel — episode film. Shots laid on the narration timeline (projects/<slug>/audio/timeline.json,
-// passed as props by projects/<slug>/scripts/render.mjs). Chapter cards between chapters, burned-in captions,
+// passed as props by scripts/brain/render.mjs). Chapter cards between chapters, burned-in captions,
 // a thin chapter progress bar (retention), navy particle field so the frame never reads as dead.
+// Modular ending (owner doc 7.3): chapter titled "[SINGLE_OUTRO]" gets no PART card and is the block to cut for the Mega-Video.
 import React from "react";
 import { AbsoluteFill, Easing, Html5Audio, Sequence, interpolate, staticFile, useCurrentFrame } from "remotion";
 import { AssetCtx, C, EpCtx, FONT, FPS, Particles, Title, pop } from "./kit";
@@ -19,8 +20,8 @@ const ShotPlayer: React.FC<{ shots: Record<string, React.FC<ShotProps>>; shot: s
   const Fn = shots[shot];
   if (!Fn) throw new Error(`Unknown shot ${shot}`);
   // smooth editorial push-in / fade at the cut (vector style -> smooth, not stop-motion)
-  const enter = interpolate(f, [0, 8], [0, 1], { extrapolateRight: "clamp", easing: Easing.out(Easing.cubic) });
-  const exit = interpolate(f, [durF - 6, durF], [1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  const enter = interpolate(f, [0, 0.27 * FPS], [0, 1], { extrapolateRight: "clamp", easing: Easing.out(Easing.cubic) });
+  const exit = interpolate(f, [durF - 0.2 * FPS, durF], [1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   return (
     <AbsoluteFill style={{ opacity: Math.min(enter, exit), transform: `scale(${1.03 - 0.03 * enter})` }}>
       <Fn t={f / FPS} d={d} />
@@ -31,7 +32,7 @@ const ShotPlayer: React.FC<{ shots: Record<string, React.FC<ShotProps>>; shot: s
 const ChapterCard: React.FC<{ n: number; title: string }> = ({ n, title }) => {
   const f = useCurrentFrame();
   const t = f / FPS;
-  const out = interpolate(f, [CARD * FPS - 6, CARD * FPS], [1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  const out = interpolate(f, [CARD * FPS - 0.2 * FPS, CARD * FPS], [1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   return (
     <AbsoluteFill style={{ background: C.bg, opacity: out }}>
       <div style={{ position: "absolute", left: 960 - 300 * pop(t, 0.05), top: 470, width: 600 * pop(t, 0.05), height: 6, background: C.amber, borderRadius: 3 }} />
@@ -43,7 +44,7 @@ const ChapterCard: React.FC<{ n: number; title: string }> = ({ n, title }) => {
 
 const Caption: React.FC<{ text: string; durF: number }> = ({ text, durF }) => {
   const f = useCurrentFrame();
-  const o = interpolate(f, [0, 5, durF - 5, durF], [0, 1, 1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  const o = interpolate(f, [0, 0.17 * FPS, durF - 0.17 * FPS, durF], [0, 1, 1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   return (
     <div style={{ position: "absolute", left: 0, right: 0, bottom: 34, display: "flex", justifyContent: "center", opacity: o }}>
       <div style={{ background: "rgba(2,6,23,0.78)", color: C.text, fontFamily: FONT, fontWeight: 800, fontSize: 34, padding: "8px 26px", borderRadius: 12, borderBottom: `4px solid ${C.amber}` }}>{text}</div>
@@ -54,7 +55,7 @@ const Caption: React.FC<{ text: string; durF: number }> = ({ text, durF }) => {
 const Progress: React.FC<{ items: BItem[]; end: number }> = ({ items, end }) => {
   const f = useCurrentFrame();
   const t = f / FPS;
-  const marks = items.filter((i) => i.first).map((i) => i.start / end);
+  const marks = items.filter((i) => i.first && !i.chapterTitle.startsWith("[")).map((i) => i.start / end);
   return (
     <div style={{ position: "absolute", left: 0, right: 0, top: 0, height: 6, background: "rgba(51,65,85,0.6)" }}>
       <div style={{ width: `${(t / end) * 100}%`, height: 6, background: C.amber }} />
@@ -87,13 +88,14 @@ export const BrainEpisode: React.FC<BrainEpisodeProps> = ({ items, total, tail, 
       {items.map((it, i) => {
         const ci = chapters.indexOf(it.chapter);
         const next = items[i + 1];
-        const nextStart = next ? (next.first ? next.start - CARD : next.start) : end;
+        const card = (x: BItem) => x.first && !x.chapterTitle.startsWith("[");
+        const nextStart = next ? (card(next) ? next.start - CARD : next.start) : end;
         const from = Math.round((i === 0 ? 0 : it.start) * FPS);
         const durF = Math.max(1, Math.round(nextStart * FPS) - from);
         const capDur = Math.round((it.dur + 0.2) * FPS);
         return (
           <React.Fragment key={it.id}>
-            {it.first && ci > 0 && (
+            {card(it) && ci > 0 && (
               <Sequence from={Math.round((it.start - CARD) * FPS)} durationInFrames={Math.round(CARD * FPS)} name={`chapter ${ci + 1}`}>
                 <ChapterCard n={ci + 1} title={it.chapterTitle} />
               </Sequence>

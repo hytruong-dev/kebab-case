@@ -63,10 +63,10 @@
 - **Ruled-out Dead-end:** Để nguyên âm lượng thô từng đoạn; lặp file nhạc có đuôi im lặng; limiter mặc định tự kích gain.
 - **Verified Golden Path:** Chuẩn hóa từng đoạn giọng về -16 LUFS + micro-fade 5ms; nhạc nền liền mạch (crossfade); ducking release ~800ms ratio 3.5; `alimiter=limit=0.75:level=0`. Đích -14..-15 LUFS, TP ≤ -1.5.
 
-### [LESSON-13] (2026-11-18)
-- **Symptom:** [kế thừa LESSON-85] Windows `WinError 206 filename too long` khi ffmpeg có hàng trăm `-i`.
-- **Ruled-out Dead-end:** Dồn mọi input vào một dòng lệnh (giới hạn 32767 ký tự).
-- **Verified Golden Path:** Trộn âm trước (NumPy hoặc HyperFrames audio mix) thành 1 file rồi mux với 2 input.
+### [LESSON-13] (2026-11-18, merged with former LESSON-39 on 2026-11-21)
+- **Symptom:** Windows `WinError 206` / `spawnSync ffmpeg ENAMETOOLONG` when ffmpeg gets hundreds of `-i`; `-filter_complex_script` -> "Unrecognized option" on ffmpeg 7+.
+- **Ruled-out Dead-end:** One `-i` per placement on one command line (32767-char limit); `-filter_complex_script` (removed in ffmpeg 7).
+- **Verified Golden Path:** One input per DISTINCT file + `asplit` per placement; write the graph to a file and pass `-/filter_complex <file>` (scripts/brain/audio.mjs). Alternative: pre-mix with NumPy, mux 2 inputs.
 
 ### [LESSON-14] (2026-11-18)
 - **Symptom:** [kế thừa LESSON-93] Viết phân cảnh trước khi có giọng thật → sau khi căn thời gian, hàng loạt hình giữ >15s.
@@ -191,3 +191,16 @@
 - **Symptom:** Remotion render fails once with only '[Tab N, react-dom-client.production.js:1141]' lines, exit 1
 - **Ruled-out Dead-end:** Piping render output through Select -Last N hides the real error
 - **Verified Golden Path:** Redirect the full log to a file (*> out/x.log) and re-run; a second identical run passed (transient). Also: qa --expect must use the exact total (timeline total + tail + ~0.05), not a rounded number
+
+### [LESSON-39] (2026-11-20)
+- Merged into LESSON-13.
+
+### [LESSON-40] (2026-11-20)
+- **Symptom:** 10-min episode QA FAIL 'frozen' (8 stretches 6-9 s) after a 20-min render — long beats (10-17 s) finished building in ~6 s and then sat still
+- **Ruled-out Dead-end:** Rendering the whole film to discover it; fixing only the listed seconds
+- **Verified Golden Path:** Before the film: cd remotion; node brain-motion-check.mjs <slug> --min 9 (2-fps tiny stills, same metric as qa-video) must print 'motion OK'; long beats get Drift (slow push/sway over d) + Kick pills at 55%/80% of d + reveals scheduled relative to d
+
+### [LESSON-41] (2026-11-20)
+- **Symptom:** Gemini runner: every download fails 'download.saveAs ENOENT ... playwright-artifacts-XXXX' for one account
+- **Ruled-out Dead-end:** Letting the job skip every image
+- **Verified Golden Path:** Kill that node process and start run-thread.mjs again on the same job.json (resumes the same chat, skips finished ids) — a fresh CDP connection gets a new artifacts folder

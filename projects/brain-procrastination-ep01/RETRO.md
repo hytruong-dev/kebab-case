@@ -1,23 +1,24 @@
-# RETRO — brain-procrastination-ep01
+# RETRO — brain-procrastination-ep01 (v2, owner doc 2026-11-21, rebuilt from scratch)
 
-**File:** `out/brain-procrastination-ep01.mp4` · 6:16 (376.3 s) · 1920×1080 · -14.0 LUFS / -1.4 dBTP · QA PASS · subtitles `out/brain-procrastination-ep01.srt`
+**File:** `out/brain-procrastination-ep01.mp4` · **10:22** (622.3 s) · 1920×1080 **60 fps** · -14.0 LUFS / -1.4 dBTP · **QA PASS**
+· subtitles `out/brain-procrastination-ep01.srt` (156 cues) · thumbnails `out/thumbnails/` (3).
+
+## What changed vs v1 (owner doc v2)
+- Length 6:16 → 10:22 (doc: 10–11 min single episodes for the Season → Mega-Video plan). Section 5 voiceover kept verbatim
+  (only "next seven minutes" → "next few minutes", as in doc v2); +21 research beats with real sources (BRIEF.md table).
+- Modular ending: Part 6 `[BRIDGE_TRANSITION]` (recap + "Next: cheap dopamine", Ep 02) and a separate `[SINGLE_OUTRO]` block (10:09–10:22,
+  no PART card) to cut when merging 6 episodes into the Mega-Video.
+- 60 fps (doc 7.2), 77 Gemini images (new: aged mirror, waiter, guitar stand, brain scan, leaking dopamine flask, handshake hero…).
 
 ## Went well
-- Plan voiceover used word for word, split into 51 beats (one picture per line); every beat builds in 2–3 stages, so the picture changes every ~2–4 s.
-- Consistent mascot: 14 expressions in one Gemini chat (anchor prompt from plan 4.1), keyed cleanly from #00FF00 onto navy.
-- A vector icon set drawn in code (brain/head/CEO/Amygdala/phone/scale/loop/flask…) is sharp, exactly on palette, and animatable (alarm shake, loop lighting up, flask filling).
+- 3 Gemini accounts in parallel, one chat each, mascot reference pasted → 77 consistent images in ~20 min.
+- Kit reuse: 51 shots from v1 + 21 new shots; only `ep01/shots.tsx` changed.
 
-## Problems
-- Gemini quota ran out after 14 images → no hero/thumbnail images yet (LESSON-37).
-- No ElevenLabs → used Kokoro `am_michael`: clear but less emotional than ElevenLabs (LESSON-36).
-- One transient render failure (LESSON-38).
-- The film is 6:16 vs the planned 7:00 (the plan's voiceover text itself is that long).
-
-## Harvest
-- LESSON-36 (Kokoro English TTS), LESSON-37 (Gemini quota → mascot first, icons in code), LESSON-38 (render log + exact --expect).
-- Pattern "brain explainer / psychology infographic (navy)".
-- Reusable kit for the channel: `remotion/src/brain/` → EP02+ only need new `shots.tsx` + `script.json`.
+## Problems → fixes
+- ffmpeg command line too long with 72 beats → asplit + `-/filter_complex` file (LESSON-13).
+- QA "frozen" on 8 long research beats after a 20-min render → `brain-motion-check.mjs` gate + Drift/Kick (LESSON-40).
+- Playwright download ENOENT on one account → restart same job (LESSON-41).
 
 ## Waiting on owner
-- Approve the voice (Kokoro am_michael) or provide an ElevenLabs key.
-- 60 fps? (currently 30). Thumbnails + Shorts 01–03 after the long video is approved.
+- Voice: Kokoro `am_michael` (local). ElevenLabs if you add a key.
+- Shorts 01–03 (doc section 6) and Episode 02 "How Cheap Dopamine Hijacks Your Brain".
