@@ -127,3 +127,67 @@
 - **Symptom:** PowerShell làm hỏng chuỗi filter ffmpeg: '$k:normalize' bị hiểu là biến có scope, 'adelay=$ms|$ms' cũng dễ vỡ; lệnh lỗi giữa chừng còn xoá luôn file render chưa ghép tiếng.
 - **Ruled-out Dead-end:** Ghép filter_complex dài bằng chuỗi PowerShell nội suy rồi Remove-Item ngay trong cùng một dòng lệnh.
 - **Verified Golden Path:** Viết bước âm thanh thành script Node (scripts/mux-assembly-audio.mjs) truyền mảng args cho ffmpeg; chỉ xoá file tạm sau khi bước sau đã thành công.
+
+### [LESSON-26] (2026-11-19)
+- **Symptom:** Ghep 6+ manh Gemini tao rieng le -> lech anh sang, ty le, bang mau; cat nen trang hong vi Gemini ve 'tam the giay' co bong xam quanh vat (khong phai nen trang thuan)
+- **Ruled-out Dead-end:** Tao tung layer o new chat roi cat nen trang bang nguong mau; ky vong layer tu ghep khop nhau
+- **Verified Golden Path:** Trong 1 chat: tao khung master H00 + tam nen P1 (troi/bien trong). Can chinh P1 vao H00 bang cv2.findTransformECC (dat 0.995 = cung camera). Mask = |H00 - P1| > 38 (blur 21, close 25, lay thanh phan lon nhat, lap lo) -> dao+bot; tach toa nha theo hop do do, bot = L>175 trong mask, song truoc = dai duoi bien song. Ghep lai sai so 2.66/255 so voi H00 => lap rap dung y khung da duyet. Code: remotion/src/eilean/DirectorOpening.tsx
+
+### [LESSON-27] (2026-11-19)
+- **Symptom:** Cat lop Gemini tu nen trang/khung chinh kho va ban (Gemini ve tam the giay co bong xam; tach bang hieu anh phai do hop tay)
+- **Ruled-out Dead-end:** Nen trang + cutout_white.py; tach lop bang GrabCut/hieu anh tu khung master
+- **Verified Golden Path:** Tao tung lop trong CUNG chat voi khung master, nen chroma-key xanh #00FF00 phang (prompt trong projects/eilean-mor/director/layers_greenscreen.json), roi python tools/image/chroma_key.py (key theo hue+saturation+G troi hon R,B, despill chi o vien nen co reu xanh dam van giu). Ket qua Eilean: 3 lop key sach, khop khung master ECC 0.94-0.99, lech <=5px, ghep thang khong can can chinh. Luu y MCP: browser_run_code_unsafe filename khong doc duoc file trong repo, va window.__job mat sau page.goto -> dan code inline kem job.
+
+### [LESSON-28] (2026-11-19)
+- **Symptom:** Lop Gemini bi ve trong khung tranh giay xe (passe-partout) va lan sang cac anh sau cung chat
+- **Ruled-out Dead-end:** Chi them 'flat green background' - Gemini van bat chuoc khung cua anh truoc trong thread
+- **Verified Golden Path:** Moi prompt lop them doan FULL-BLEED: 'no picture frame, no torn paper border, no mat/passe-partout, no wall, no vignette; ignore the framed images N-M, use ONLY image 1 as reference' + 'green right up to all four edges'. Kiem tra alpha 4 mep sau khi key (F3-F5 = 0). Ket qua: 5 lop full-man, khop master ECC 0.95-0.99, lech <=2px.
+
+### [LESSON-29] (2026-11-19)
+- **Symptom:** Lớp phông xanh bị lặp chi tiết (chủ thể dính vào mọi lớp khiến khi lắp ráp bị nhân đôi, trôi lơ lửng); cắt phông xanh sót viền
+- **Ruled-out Dead-end:** Tin tưởng ảnh AI tự bóc tách mà không soi từng khung hình; dịch chuyển vị trí (translateY) khi các lớp còn dính chi tiết của nhau
+- **Verified Golden Path:** 1) Kiểm tra từng ảnh layer: mỗi lớp CHỈ chứa đúng 1 thành phần duy nhất, không lặp lại; 2) Bóc tách bằng bounding box/mask chính xác từ khung master khi Gemini vẽ dính; 3) Khử sạch phông xanh 100% không còn hạt rác; 4) Giữ nguyên hệ tọa độ gốc chuẩn từng pixel.
+
+### [LESSON-30] (2026-11-19)
+- **Symptom:** Lõi transistor bị lặp lại ở các layer 5, 6, 7 khiến khi ráp video chi tiết bị nhân đôi bay lơ lửng trên trời và rác phông xanh chưa lọc sạch
+- **Ruled-out Dead-end:** Để AI tự vẽ các lớp phụ mà không cô lập triệt để làm AI vẽ kèm lõi transistor vào mọi lớp
+- **Verified Golden Path:** Bóc tách cô lập 100% từng linh kiện: L2 chỉ có bệ trống rỗng, L3 chỉ có dây cáp, L4 chỉ có bóng đèn, L5 chỉ có lõi; lọc sạch tuyệt đối rác phông xanh y < 450 trước khi lắp ráp
+
+### [LESSON-31] (2026-11-19)
+- **Symptom:** Dùng cắt hộp chữ nhật (bounding-box hard crop) và chỉ kiểm tra số liệu pixel bằng code mà không mở ảnh PNG xem bằng mắt khiến bóng đèn bị cắt cụt một nửa, dây bị đứt ngang, bóng đổ xanh đen dưới đế chưa được xóa và glow đặt lệch vị trí
+- **Ruled-out Dead-end:** Viết script Python cắt cứng tọa độ hộp và chỉ in thống kê số pixel mà không dùng read_file xem trực tiếp từng ảnh layer và từng frame video
+- **Verified Golden Path:** Phải dùng read_file xem trực tiếp bằng mắt từng layer PNG sau khi tách nền và từng frame 00s..11s của video; khử cả vùng bóng đổ xanh đậm (dark green shadow trên nền xanh), khử watermark Gemini, không cắt hộp đè lên linh kiện
+
+### [LESSON-32] (2026-11-20)
+- **Symptom:** ReferenceError React is not defined khi render Remotion
+- **Ruled-out Dead-end:** Bỏ qua import React ở các component TSX phụ
+- **Verified Golden Path:** Bổ sung import React from 'react' ở đầu mọi file TSX dùng JSX runtime, kiểm tra npx tsc --noEmit exit 0 trước khi render
+
+### [LESSON-33] (2026-11-20)
+- **Symptom:** Explainer shots: nhan giay dat y>900 de len thanh phu de (bottom 26px, cao ~60px) - chi thay khi xem frame that
+- **Ruled-out Dead-end:** Can toa do bang mat trong code, khong render still
+- **Verified Golden Path:** Giu dai an toan y>=900 cho phu de; render 1 still cuoi moi cau (frame = start+dur-0.2) bang remotion still --props timeline that, xem tung anh truoc khi render phim (LESSON-31)
+
+### [LESSON-34] (2026-11-20)
+- **Symptom:** Dang nhap Google trong Chrome do Playwright mo (launchPersistentContext / MCP) bi chan: 'Couldn't sign in - This browser or app may not be secure'
+- **Ruled-out Dead-end:** Mo Chrome bang chromium.launchPersistentContext(channel chrome) roi bao chu nhan dang nhap
+- **Verified Golden Path:** Mo Chrome THUONG voi --user-data-dir=tools/gemini-alt/chrome-profile --remote-debugging-port=9333, chu nhan dang nhap tay, script noi vao bang chromium.connectOverCDP (tools/gemini-alt/run-thread.mjs). Dung khi trinh duyet MCP dang ban hoac can tai khoan Google khac
+
+### [LESSON-35] (2026-11-20)
+- **Symptom:** Asset Gemini 1:1 ra 2048x2048 va KHONG theo dung so lieu prompt (banh xe 5 nan thay vi 8; tam xoay lech voi kim dong ho)
+- **Ruled-out Dead-end:** Gia dinh asset dung tam (512,512) va dung so nan nhu script
+- **Verified Golden Path:** Do tung asset bang OpenCV truoc khi dung (bbox, HoughCircles cho hoc banh/xe, mau theo vong tron cho goc nan, alpha cho tam kim); sua kich ban theo asset (doi 8 nan->5 nan, 72/60/-12 do) roi tao lai giong cau do; xuat 1024px vao remotion/public/<slug>/a
+
+### [LESSON-36] (2026-11-20)
+- **Symptom:** English voiceover needed (international channel); hyperframes tts fails 'kokoro-onnx not installed'; OmniVoice ref voices are Vietnamese only
+- **Ruled-out Dead-end:** Waiting for ElevenLabs key, or using a Vietnamese OmniVoice ref for English
+- **Verified Golden Path:** pip install kokoro-onnx soundfile -> scripts/tts_kokoro.py projects/<slug> (voice am_michael, models in ~/.cache/hyperframes/tts). Hash must match tts-project.mjs: JS prints speed 1.0 as '1'. Then tts-project.mjs --build makes timeline.json
+
+### [LESSON-37] (2026-11-20)
+- **Symptom:** Gemini quota hit mid-job (~14-30 images per account); a new account must keep the same mascot/style
+- **Ruled-out Dead-end:** Substituting SVG drawings for the missing assets (owner wants the Gemini images); recreating the mascot from text only in a new account
+- **Verified Golden Path:** Run 2+ Chromes with separate profiles + ports (tools/gemini-alt/chrome-profile-N, --remote-debugging-port=933N), owner signs in, GEMINI_PORT=933N node tools/gemini-alt/run-thread.mjs job.json; job.refs=[ref_mascot.png] is pasted into the FIRST message of the new chat -> same mascot. Order the job: hero/thumbnail images first. Rebuild job.json in Python (PowerShell ConvertTo-Json breaks nested arrays)
+### [LESSON-38] (2026-11-20)
+- **Symptom:** Remotion render fails once with only '[Tab N, react-dom-client.production.js:1141]' lines, exit 1
+- **Ruled-out Dead-end:** Piping render output through Select -Last N hides the real error
+- **Verified Golden Path:** Redirect the full log to a file (*> out/x.log) and re-run; a second identical run passed (transient). Also: qa --expect must use the exact total (timeline total + tail + ~0.05), not a rounded number

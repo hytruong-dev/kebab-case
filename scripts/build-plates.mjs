@@ -1,4 +1,4 @@
-// Bridge: Remotion renders the paper-cut "plates" (scenes and alpha overlays),
+﻿// Bridge: Remotion renders the paper-cut "plates" (scenes and alpha overlays),
 // HyperFrames assembles them into the final film with its own blocks, titles and audio.
 //
 //   node scripts/build-plates.mjs            render every plate
@@ -33,7 +33,7 @@ mkdirSync(OUT, { recursive: true });
 
 for (const still of STILLS.filter((s) => !filter || s.id.includes(filter))) {
   const out = join(OUT, still.file);
-  console.log(`\n▶ still ${still.id}@${still.frame} -> ${out}`);
+  console.log(`\nâ–¶ still ${still.id}@${still.frame} -> ${out}`);
   execFileSync(
     process.execPath,
     [REMOTION_CLI, "still", "src/index.ts", still.id, out, `--frame=${still.frame}`, "--gl=angle"],
@@ -46,9 +46,9 @@ for (const plate of PLATES.filter((p) => !filter || p.id.includes(filter))) {
   const args = [REMOTION_CLI, "render", "src/index.ts", plate.id, out, "--gl=angle"];
   if (plate.alpha) args.push("--codec=vp9", "--image-format=png", "--pixel-format=yuva420p");
   else args.push("--codec=h264", "--crf=16");
-  console.log(`\n▶ ${plate.id} -> ${out}`);
+  console.log(`\nâ–¶ ${plate.id} -> ${out}`);
   // node + the CLI's JS entry, no shell: paths with spaces ("paper-cut animation") stay one argument.
   execFileSync(process.execPath, args, { cwd: REMOTION, stdio: "inherit" });
   if (!existsSync(out) || statSync(out).size === 0) throw new Error(`Plate ${plate.id} produced no file`);
 }
-console.log("\n✓ plates ready in hyperframes/assets/plates");
+console.log("\nâœ“ plates ready in hyperframes/assets/plates");

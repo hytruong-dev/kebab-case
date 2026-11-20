@@ -13,6 +13,9 @@ video request or writing any code, read in order:
 2. `.agent_memory/lessons_learned.md` — verified fixes `[LESSON-xx]`. Use the golden path; never retry a ruled-out dead-end.
 3. `.agent_memory/visual_metaphor_dictionary.json` and `.agents/skills/learned/` — approved visual patterns and packaged skills.
 4. The last 2 entries of `.agent_memory/production_log.md`.
+5. `docs/HANDOVER-TRAINING-2026-11-19.md` — how the owner trained the agent from the rejected "22 cluttered pieces" to the
+ approved diorama pipeline; any paper-cut scene with AI images follows `.agents/skills/learned/diorama-layer-pipeline/`
+ (workflow `.agent/workflows/lam-canh-diorama.md`).
 
 Then run `node scripts/memory.mjs sync` and open your reply with the line it prints:
 *"🧠 [Memory Synced] Đã đồng bộ bộ nhớ dự án (N quy tắc đạo diễn, M bài học kỹ thuật, …). Sẵn sàng sản xuất video tiếp theo theo đúng chuẩn của bạn!"*
@@ -24,7 +27,13 @@ Then run `node scripts/memory.mjs sync` and open your reply with the line it pri
 - After every finished MP4, run **/retro**: `node scripts/memory.mjs retro <slug>` → fill `projects/<slug>/RETRO.md` →
   `log-video` + the `add-*` commands it lists; package a technique reused ≥ 2 times into `.agents/skills/learned/<name>/`.
 
-### Making a new video — "làm video mới", "làm video về <chủ đề>"
+### ⭐ Main production line — Brain & Psychology channel (approved "perfect", EP01, 2026-11-20)
+When the owner gives an episode doc / topic for the channel (English, international, flat-vector navy explainer with the mascot):
+follow `.agents/skills/learned/brain-explainer-episode/SKILL.md` (workflow `.agent/workflows/lam-tap-brain.md`).
+Reference episode: `projects/brain-procrastination-ep01/` (channel plan `PLAN_owner.md`, `script.json`, `brain.json`, `SEO.md`),
+code `remotion/src/brain/` (kit, icons, iconsImg, `epNN/shots.tsx`, `BrainEpisode.tsx`), scripts `scripts/brain/`.
+
+### Making a new video — "làm video mới", "làm video về <chủ đề>" (other styles, e.g. paper-cut)
 Follow `.agents/skills/core/video-production/SKILL.md` (Steps 0 → 8 with gates; short form `.agent/workflows/lam-video-moi.md`).
 Per-video data lives in `projects/<slug>/` (`BRIEF.md` from `templates/project/`, `RETRO.md`).
 ⛔ Never publish or schedule anything on YouTube/social by yourself — stop after QA + report and wait for the owner's order.
@@ -117,6 +126,8 @@ After any change:
 
 | Need | File |
 | --- | --- |
+| ⭐ Brain channel episode (kit, icons, shots per episode) | `remotion/src/brain/` |
+| ⭐ Brain channel scripts (TTS, assets, audio, render) | `scripts/brain/` · Gemini runner `tools/gemini-alt/run-thread.mjs` |
 | Paper-cut shot (layers, parallax, title tag) | `remotion/src/paper/PaperLandscape.tsx` |
 | Reusable paper sheet (texture + torn edge + shadow) | `remotion/src/paper/PaperLayer.tsx` |
 | Alpha overlay example | `remotion/src/paper/PaperConfetti.tsx` |

@@ -92,6 +92,53 @@
       ],
       "notes": "projects/eilean-mor/papercut + remotion/src/eilean/WaveScene.tsx; 12 ảnh cho 26.5s",
       "updatedAt": "2026-11-19 02:54"
+    },
+    "red-spoke-sampling": {
+      "approvedCount": 1,
+      "layoutPattern": "Giai thich ao giac lay mau (wagon-wheel/aliasing): son do 1 nan hoa, 1 banh xe lon + 4 o phim 'Anh 1..4' hien vi tri nan do moi tam (nan cu = net dut), mui ten doc theo day anh cho chieu NHIN THAY; 3 truong hop 30/360/350 do. Ket bang mat so sanh 2 cach doc (+350 dai vs -10 ngan) va nao chon duong ngan",
+      "primitives": [
+        "remotion/src/wagon/explainer/shots.tsx (SampleCase",
+        "S11Minus10)"
+      ],
+      "preferredColors": [],
+      "notes": "",
+      "updatedAt": "2026-11-20 04:19"
+    },
+    "scene-background-pass": {
+      "approvedCount": 1,
+      "layoutPattern": "Lam canh 'chi tiet hon' ma khong roi: lan 2 trong CUNG chat Gemini tao 8 nen 16:9 theo boi canh noi dung (phong khach TV, buong lai, studio, khong gian nao, phong thi nghiem bang xanh, so ke o, xuong dem den huynh quang, rap phim) voi luat 'giua 60% tron diu, chi tiet o mep' + 10 dao cu phong xanh (dong ho bam giay, cuon phim, bang clap, kinh lup, co ve, thuoc do do, may chieu, xe ngua, ong huynh quang, dau hoi). Do vung man hinh bang floodFill de dat noi dung vao TV/man chieu; zoom xuyen man hinh TV de mo dau",
+      "primitives": [
+        "remotion/src/wagon/explainer/shots.tsx (BgImg",
+        "Stopwatch",
+        "Protractor",
+        "S01 TV zoom)"
+      ],
+      "preferredColors": [],
+      "notes": "",
+      "updatedAt": "2026-11-20 08:07"
+    },
+    "brain explainer / psychology infographic (navy)": {
+      "approvedCount": 1,
+      "layoutPattern": "1 beat = 1 narration line, builds in 2-3 stages (pop-in elements, counters, rings, bars, meters, struck-out words); Gemini mascot (14 expressions) left, vector icons + kinetic type right; chapter cards PART n; caption pill bottom; progress bar top",
+      "primitives": [
+        "Pic mascot",
+        "SVG icons (Brain/Head/Ceo/Amyg/Phone/Scale/Loop)",
+        "Ring",
+        "Bar",
+        "Meter",
+        "Count",
+        "Tag",
+        "Card"
+      ],
+      "preferredColors": [
+        "#0F172A",
+        "#F59E0B",
+        "#F43F5E",
+        "#2DD4BF",
+        "#38BDF8"
+      ],
+      "notes": "remotion/src/brain/ (kit.tsx, icons.tsx, shots.tsx, BrainEpisode.tsx); EP01 procrastination",
+      "updatedAt": "2026-11-20 09:09"
     }
   }
 }

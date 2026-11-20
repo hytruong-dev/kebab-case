@@ -1,5 +1,19 @@
 node_modules/
 out/
+.playwright-mcp/
+remotion/brain_props.json
+
+# Gemini runner: Chrome profiles hold Google logins — never commit
+tools/gemini-alt/chrome-profile*/
+tools/gemini-alt/profile/
+
+# Brain channel: large generated media (re-creatable: raw = Gemini downloads, keep them locally as the source)
+projects/*/assets/raw/
+projects/*/assets/keyed/
+projects/*/audio/raw/
+projects/*/audio/sfx/
+projects/*/audio/master-audio.wav
+remotion/public/brain/*/master-audio.wav
 remotion/out/
 .catalog.json
 *.bin

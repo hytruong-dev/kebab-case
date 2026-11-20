@@ -1,0 +1,90 @@
+{
+  "slug": "brain-procrastination-ep01",
+  "title": "Why Your Brain Loves Procrastinating (And How to Trick It)",
+  "lang": "en",
+  "voice": { "engine": "kokoro", "voice": "am_michael", "speed": 1.0, "tempo": 1.0 },
+  "note": "Voiceover = owner's plan section 5, word for word, split into beats (one picture per beat, TASTE-08; picture changes every 3-5 s). Numbers are spelled in the voice and shown as digits on screen (TASTE-10).",
+  "chapters": [
+    {
+      "id": "c1", "title": "It's Not Laziness",
+      "sentences": [
+        { "shot": "hook_deadline", "say": "Picture this: You have a massive deadline tomorrow. It's important, you know it's important, and yet…", "show": "DEADLINE: TOMORROW" },
+        { "shot": "hook_avoid", "say": "you just spent forty-five minutes reorganizing your desktop folders, wiping down your keyboard, and watching a video about how pencils are made.", "show": "45 MIN of 'productive' avoiding" },
+        { "shot": "hook_familiar", "say": "Sound familiar? If you've ever beaten yourself up for being lazy or undisciplined, here is a plot twist backed by neuroscience:", "show": "LAZY?" },
+        { "shot": "hook_twist", "say": "procrastination has almost nothing to do with laziness, and it isn't even a time-management problem.", "show": "NOT laziness · NOT time management" },
+        { "shot": "hook_stats", "say": "In fact, studies show that over ninety-five percent of people procrastinate, and roughly twenty percent do it chronically.", "show": "95% procrastinate · 20% chronically" },
+        { "shot": "hook_glitch", "say": "What's actually happening isn't a failure of willpower. It's an ancient biological glitch inside your skull.", "show": "An ancient brain glitch" },
+        { "shot": "hook_promise", "say": "In the next seven minutes, we're going inside your brain to see why it actively sabotages your goals, and three science-backed ways to rewire it.", "show": "Inside your brain + 3 ways to rewire it" }
+      ]
+    },
+    {
+      "id": "c2", "title": "The Two Roommates in Your Head",
+      "sentences": [
+        { "shot": "roommates_intro", "say": "To understand why you put things off, you need to meet the two roommates living inside your head.", "show": "Meet your 2 brain roommates" },
+        { "shot": "pfc_ceo", "say": "First, there's the Prefrontal Cortex, located right behind your forehead. Think of it as your brain's rational CEO.", "show": "Prefrontal Cortex = the rational CEO" },
+        { "shot": "pfc_jobs", "say": "It's the newest part of human evolution, responsible for long-term planning, logic, and imagining your future.", "show": "Planning · Logic · Imagining the future" },
+        { "shot": "amygdala_intro", "say": "Right underneath it sits the Limbic System, specifically a tiny, almond-shaped region called the Amygdala.", "show": "Limbic System → the Amygdala" },
+        { "shot": "amygdala_survival", "say": "This is your ancient survival center. It doesn't care about your career, your grades, or your five-year plan.", "show": "Ancient survival center" },
+        { "shot": "amygdala_two_things", "say": "It only cares about two things: avoiding immediate pain and seeking immediate pleasure.", "show": "Avoid pain NOW · Seek pleasure NOW" },
+        { "shot": "threat_task", "say": "Here's the problem: when you look at a task that feels boring, confusing, or overwhelming, like filing taxes or writing a difficult report,", "show": "Boring · Confusing · Overwhelming" },
+        { "shot": "threat_alarm", "say": "your Amygdala doesn't see a harmless piece of work. It perceives a threat to your self-esteem or comfort.", "show": "Task = THREAT" },
+        { "shot": "fight_flight", "say": "So, it triggers a miniature fight-or-flight response.", "show": "FIGHT or FLIGHT" },
+        { "shot": "flight_phone", "say": "Because you can't physically punch a spreadsheet, your brain chooses flight, pushing you toward the nearest distraction to make the discomfort vanish.", "show": "Brain chooses FLIGHT" },
+        { "shot": "ancestor_modern", "say": "Your ancestors ran from sabertooth tigers. You run from a blank spreadsheet, straight into your phone.", "show": "Then: tiger · Now: spreadsheet" }
+      ]
+    },
+    {
+      "id": "c3", "title": "Future You Is a Stranger",
+      "sentences": [
+        { "shot": "present_bias", "say": "Psychologists call this clash Time Inconsistency, or Present Bias.", "show": "Time Inconsistency = Present Bias" },
+        { "shot": "small_now_big_later", "say": "Essentially, your brain values a small reward right now far more than a massive reward tomorrow.", "show": "Small reward NOW > Big reward LATER" },
+        { "shot": "fmri_intro", "say": "Even stranger? Neuroscientists using fMRI brain scans discovered something wild about how you view yourself.", "show": "fMRI brain scans" },
+        { "shot": "fmri_present", "say": "When people think about their current self, specific regions of the brain light up with empathy and identity.", "show": "Present You → empathy lights up" },
+        { "shot": "fmri_future", "say": "But when those same people think about their Future Self, say, ten years or even just two days from now,", "show": "Future You (even 2 days away)" },
+        { "shot": "fmri_stranger", "say": "the brain activity looks almost identical to when they think about a complete stranger.", "show": "Future You ≈ a STRANGER" },
+        { "shot": "someone_else", "say": "Read that again: neurologically, your brain treats Future You like someone else's problem.", "show": "Future You = someone else's problem" },
+        { "shot": "dopamine_bars", "say": "So when you skip a workout or delay studying to binge-watch a show, your Limbic System gets a quick hit of dopamine right now,", "show": "Instant dopamine vs. delayed reward" },
+        { "shot": "toss_papers", "say": "while dumping all the stress, panic, and sleepless nights onto a stranger tomorrow morning.", "show": "Present You → dumps it on Future You" }
+      ]
+    },
+    {
+      "id": "c4", "title": "The Procrastination Doom Loop",
+      "sentences": [
+        { "shot": "guilt_bruteforce", "say": "At this point, most people try to fix procrastination with brute-force guilt.", "show": "The 'fix': brute-force guilt" },
+        { "shot": "midnight_vow", "say": "You stare at the clock at midnight, call yourself pathetic, and swear you'll wake up at five AM to fix everything.", "show": "00:00 → 'I'll wake up at 5 AM'" },
+        { "shot": "guilt_fuel", "say": "Ironically, that guilt is the exact fuel that keeps procrastination alive.", "show": "Guilt = FUEL" },
+        { "shot": "loop_intro", "say": "It traps you in what researchers call the Procrastination Doom Loop.", "show": "The Procrastination Doom Loop" },
+        { "shot": "loop_1_2", "say": "First, you face a task, which triggers mild anxiety.", "show": "1 Hard task → 2 Anxiety" },
+        { "shot": "loop_3_4", "say": "Second, you distract yourself to escape that feeling, giving you a brief wave of relief.", "show": "3 Avoidance → 4 Brief relief" },
+        { "shot": "loop_5", "say": "Third, reality hits. You feel ashamed for wasting time.", "show": "5 Guilt & shame" },
+        { "shot": "loop_cortisol", "say": "That shame floods your bloodstream with cortisol, the stress hormone.", "show": "Cortisol ↑ (stress hormone)" },
+        { "shot": "loop_repeat", "say": "And how does your Limbic System respond to a sudden spike in stress? By craving another quick escape!", "show": "Stress ↑ → another escape → loop again" },
+        { "shot": "care_too_much", "say": "You end up procrastinating not because you don't care, but because you care too much and don't know how to process the negative emotion.", "show": "Not 'don't care' — you care TOO MUCH" }
+      ]
+    },
+    {
+      "id": "c5", "title": "3 Ways to Trick Your Brain",
+      "sentences": [
+        { "shot": "hacks_intro", "say": "So, if willpower doesn't work, how do you outsmart your own biology? You have to speak your Limbic System's language.", "show": "Speak your Limbic System's language" },
+        { "shot": "hacks_three", "say": "Here are three science-backed tricks to break the loop.", "show": "3 tricks to break the loop" },
+        { "shot": "hack1_boulder", "say": "First: Lower the Activation Energy with the Five-Minute Rule. Your Amygdala panics when it sees a three-hour task, so don't commit to finishing it.", "show": "#1 The 5-Minute Rule" },
+        { "shot": "hack1_permission", "say": "Tell your brain: I am only going to work on this for five minutes, and if I hate it, I have full permission to stop.", "show": "\"Just 5 minutes — then I may stop\"" },
+        { "shot": "hack1_zeigarnik", "say": "Five minutes isn't scary enough to trigger an alarm. And once you start, the Zeigarnik Effect takes over: your brain naturally hates leaving things unfinished, making it effortless to keep going.", "show": "Zeigarnik Effect: brains hate unfinished loops" },
+        { "shot": "hack2_friction", "say": "Second: Flip the Friction Ratio. Increase the effort required to get distracted by just twenty seconds.", "show": "#2 Flip the Friction Ratio (+20 s)" },
+        { "shot": "hack2_setup", "say": "Put your phone in another room or log out of social media, while leaving your work tools open and ready.", "show": "Phone: far away · Work: open & ready" },
+        { "shot": "hack3_compassion", "say": "Third, and most importantly: Practice Self-Compassion.", "show": "#3 Self-Compassion" },
+        { "shot": "hack3_study", "say": "In a famous study at Carleton University, students who forgave themselves for procrastinating on their first exam were significantly less likely to procrastinate on their next one.", "show": "Carleton University study: forgive → procrastinate less" },
+        { "shot": "hack3_starve", "say": "Dropping the guilt starves the stress loop of its fuel.", "show": "No guilt → no fuel → loop stops" }
+      ]
+    },
+    {
+      "id": "c6", "title": "Your Brain Isn't Broken",
+      "sentences": [
+        { "shot": "outro_software", "say": "At the end of the day, your brain isn't broken. It's just running ancient survival software in a modern world full of infinite distractions.", "show": "Ancient software · modern world" },
+        { "shot": "outro_recap", "say": "Stop fighting your biology with guilt, lower the starting line to five minutes, and give Future You a break.", "show": "No guilt · 5 minutes · be kind to Future You" },
+        { "shot": "outro_teaser", "say": "Of course, understanding procrastination is only half the battle. If you want to see how apps, short videos, and notifications are engineered to hijack that exact dopamine system,", "show": "Next: how apps hijack your dopamine" },
+        { "shot": "outro_end", "say": "and how to reset your brain's baseline in just seven days, click this video right here. Thanks for watching, and I'll see you in the next one.", "show": "Reset your dopamine in 7 days →" }
+      ]
+    }
+  ]
+}
