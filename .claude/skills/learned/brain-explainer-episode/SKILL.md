@@ -9,6 +9,7 @@ Kế hoạch kênh (nguồn gốc mọi quyết định): `projects/brain-procra
 mascot + 10 biểu cảm (4.1–4.2), cấu trúc kịch bản (2.4, 3.4), Shorts (6), SEO (7.1), lắp ráp (7.2).
 
 ## Chuẩn v2 (docs chủ dự án 2026-11-21 — BẮT BUỘC)
+- **Không vẽ đồ vật bằng code** (TASTE-35): đầu, não, cân, lửa, cửa, quả tạ… đều là ảnh Gemini; code chỉ vẽ biểu đồ/thanh/vòng/mũi tên/chữ và lớp phủ lên ảnh (vùng não sáng, kim đồng hồ, dòng chữ gõ). Cần vật mới → thêm vào job Gemini trước khi viết cảnh.
 - **Thời lượng tập lẻ 10–11 phút** (TASTE-34). Lời thoại docs chỉ ~6 phút → giữ NGUYÊN VĂN docs, chèn thêm beat nghiên cứu có nguồn thật
   (ghi nguồn vào `BRIEF.md` + mô tả SEO) cho tới khi `timeline.total` = 600–660 s. Ước lượng trước: Kokoro `am_michael` ≈ 142 từ/phút.
 - **1920×1080 60 fps** (`FPS` trong `remotion/src/brain/kit.tsx`; mọi thời gian tính bằng giây, không bằng frame).
@@ -28,8 +29,8 @@ mascot + 10 biểu cảm (4.1–4.2), cấu trúc kịch bản (2.4, 3.4), Short
 | --- | --- |
 | Khung tập (chương, phụ đề, progress, audio, registry tập) | `remotion/src/brain/BrainEpisode.tsx` (`EPISODES = { ep01, … }`) |
 | Kit: `Pic`, `Hero`, `Title`, `Tag`, `Card`, `Count`, `Ring`, `Bar`, `Meter`, `Arrow`, `Glow`, `pop`, `ramp`, `useHas`, `ShotProps` | `remotion/src/brain/kit.tsx` |
-| Icon vector có tham số động (não sáng vùng, Amygdala hoảng, vòng lặp, cân, đồng hồ…) | `remotion/src/brain/icons.tsx` |
-| Cùng API nhưng vẽ ảnh Gemini nếu có (fallback vector) — **import icon từ đây** | `remotion/src/brain/iconsImg.tsx` |
+| Chỉ dùng phần UI (`G`, `Check`, `Cross`, `Puzzle`); hình vector cũ KHÔNG dùng trong cảnh | `remotion/src/brain/icons.tsx` |
+| **Đồ vật/nhân vật = ẢNH GEMINI BẮT BUỘC** (TASTE-35): mọi icon trong cảnh import từ đây; thiếu ảnh → render báo lỗi `Missing Gemini asset`, KHÔNG vẽ thay | `remotion/src/brain/iconsImg.tsx` |
 | Cảnh của từng tập | `remotion/src/brain/epNN/shots.tsx` (mẫu: `ep01/shots.tsx`, 51 cảnh) |
 | Giọng tiếng Anh Kokoro `am_michael` | `scripts/brain/tts_kokoro.py` (+ `scripts/tts-project.mjs --build` → `audio/timeline.json`) |
 | Ảnh Gemini: khử logo, key xanh, cắt, xuất, bảng duyệt | `scripts/brain/assets.py <slug> <ep>` |

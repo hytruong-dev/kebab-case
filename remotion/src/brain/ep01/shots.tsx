@@ -9,7 +9,7 @@ import {
   AlarmButton, Amyg, Bell, Book, Boulder, Brain, Briefcase, Calendar, Caveman, Ceo, Check, Chest, Clock, Cookie, Couch, Cross, Crt, Door,
   Dumbbell, Fist, Flame, Flask, Folder, FuelCan, Gears, GradCap, Head, Heart, Keyboard, Knot, Laptop, Lock, Pebble, Person, Phone, PlayCard,
   Puzzle, Remote, Scale, Scanner, Sheet, Telescope, Tiger, Weight, Papers, Couch as Sofa, Almond, Pencils, TaxForm,
-  Im,
+  Im, Moon,
 } from "../iconsImg";
 import { G as Grp } from "../icons";
 
@@ -495,7 +495,7 @@ export const midnight_vow: React.FC<ShotProps> = ({ t }) => (
     <div style={{ position: "absolute", inset: 0, background: "#0A0F1E" }} />
     <S>
       <Clock x={1500} y={300} s={1.4} k={pop(t, 0.2)} m={0} h={0} red />
-      <circle cx={260} cy={180} r={60} fill="#F8FAFC" opacity={0.85} /><circle cx={290} cy={160} r={56} fill="#0A0F1E" />
+      <Moon x={270} y={180} s={0.9} k={1} />
     </S>
     <Pic n={useHas().has("M15_sleepless") ? "M15_sleepless" : "M08_burnout"} cx={560} cy={640} size={680} k={pop(t, 0.4)} t={t} float={3} />
     <Sub x={1500} y={540} text='"pathetic…"' k={pop(t, 2.0)} color={C.coral} size={48} />
@@ -1056,7 +1056,7 @@ export const zeigarnik_waiters: React.FC<ShotProps> = ({ t, d }) => {
 export const hack1_tiny: React.FC<ShotProps> = ({ t }) => {
   const steps = [
     { l: "Open the document", at: 1.0, el: (k: number) => <Laptop x={420} y={460} s={0.8} k={k} t={t} /> },
-    { l: "Write one ugly sentence", at: 2.4, el: (k: number) => <Laptop x={960} y={460} s={0.8} k={k} t={t} fill={0.18} vec /> },
+    { l: "Write one ugly sentence", at: 2.4, el: (k: number) => <Laptop x={960} y={460} s={0.8} k={k} t={t} fill={0.18} /> },
     { l: "Set a 5-minute timer", at: 3.8, el: (k: number) => <Obj n="O44_timer_5min" x={1500} y={460} w={260} k={k} fallback={<Clock x={1500} y={460} s={1} k={1} m={t * 6} />} /> },
   ];
   return (

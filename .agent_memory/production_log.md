@@ -65,3 +65,7 @@
 ### Video: brain-procrastination-ep01-v2b - "S1E01 rebuilt from owner doc v2 — 10:22, 60 fps, modular bridge + single outro" (2026-11-20 19:23)
 - **Thời lượng:** 622.0s
 - **Bài học rút ra:** Doc voiceover verbatim + 21 sourced research beats to hit 10-11 min; 77 Gemini imgs via 3 parallel accounts; motion-check gate before the 20-min render; QA PASS -14.0 LUFS
+
+### Video: brain-procrastination-ep01-v2c - "S1E01 v2 — all objects are Gemini images (strict asset mode)" (2026-11-21 04:51)
+- **Thời lượng:** 622.0s
+- **Bài học rút ra:** Owner: vector head/brain not allowed -> iconsImg strict (throws on missing asset), +8 Gemini objects (flame, weight, knot, stranger, fist, video card, door, moon); assets.py suffix bug fixed; QA PASS

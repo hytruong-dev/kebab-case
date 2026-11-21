@@ -204,3 +204,8 @@
 - **Symptom:** Gemini runner: every download fails 'download.saveAs ENOENT ... playwright-artifacts-XXXX' for one account
 - **Ruled-out Dead-end:** Letting the job skip every image
 - **Verified Golden Path:** Kill that node process and start run-thread.mjs again on the same job.json (resumes the same chat, skips finished ids) — a fresh CDP connection gets a new artifacts folder
+
+### [LESSON-42] (2026-11-21)
+- **Symptom:** Asset O29_keyboard published as 'O29board.png' -> strict render: Missing Gemini asset
+- **Ruled-out Dead-end:** basename.replace('_key','') to strip the chroma-key suffix
+- **Verified Golden Path:** Strip only the trailing '_key.png' suffix (scripts/brain/assets.py); avoid ids containing '_key' or always slice the suffix

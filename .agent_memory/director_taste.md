@@ -54,6 +54,7 @@
 
 ## Hình ảnh
 - [TASTE-32] (2026-11-20) When Gemini runs out of quota, the owner wants to SWITCH TO ANOTHER ACCOUNT and keep generating every image the prompts call for (no substituting with code-drawn vector images), then put them in the project and re-render the video with all of the images.
+- [TASTE-35] (2026-11-21) Every object/character on screen must be the project's Gemini illustration (remotion/public/brain/<ep>/), NOT a code-drawn vector look-alike (owner rejected the vector head/brain in EP01 v2). Code may only draw UI/infographic elements (charts, bars, rings, meters, arrows, check/cross marks, text) and overlays ON TOP of a Gemini image (glows, clock hands, typed lines). If a needed object has no image yet, generate it in Gemini first. Audit with the strict-asset check before rendering.
 
 ## Kênh
 - [TASTE-33] (2026-11-20) Brain & Psychology EP01 (projects/brain-procrastination-ep01) is the owner's APPROVED STANDARD ('hoan hao') for long-term production: future videos use the channel plan PLAN_owner.md + skill learned/brain-explainer-episode; the project was cleaned down to this pipeline (old Eilean/Transistor/Wagon projects deleted, lessons kept in .agent_memory).

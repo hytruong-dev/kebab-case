@@ -1,0 +1,42 @@
+{
+ "intro": "The attached image shows the MASCOT and the exact art style of this series (flat 2D vector, Kurzgesagt-like). We will make a set of separate illustration assets for ONE animated explainer video in this conversation. Each message asks for exactly ONE image. Keep exactly the same style, line weight and palette as the attached reference in every image.",
+ "chat": "https://gemini.google.com/app/5529dbf1f3439142",
+ "invariants": "STYLE for every image: flat 2D vector illustration, modern minimalist editorial infographic style (like Kurzgesagt), clean geometric shapes, crisp edges, subtle cel-shading, palette: deep navy #0F172A, slate #1E293B, warm amber #F59E0B, coral #F43F5E, off-white #F8FAFC, soft teal #2DD4BF.",
+ "steps": [
+  [
+   "O48_flame",
+   "Same style and palette as the earlier images in this chat. A bright stylized flame / campfire fire, coral-red outer flame with amber inner flame, no logs. Square 1:1. Isolated single subject centered with generous margin. BACKGROUND: every pixel that is not the subject is ONE flat solid pure chroma-key green (#00FF00) right up to all four edges: no gradient, no shadow on the green, no green glow, no green inside the subject. No text, no letters, no numbers."
+  ],
+  [
+   "O49_weight_guilt",
+   "Same style and palette as the earlier images in this chat. A heavy dark slate iron weight (kettlebell-like trapezoid block with a handle on top), big blank front face. Square 1:1. Isolated single subject centered with generous margin. BACKGROUND: every pixel that is not the subject is ONE flat solid pure chroma-key green (#00FF00) right up to all four edges: no gradient, no shadow on the green, no green glow, no green inside the subject. No text, no letters, no numbers."
+  ],
+  [
+   "O50_tangled_knot",
+   "Same style and palette as the earlier images in this chat. A messy tangled ball of glowing coral yarn / rope knot. Square 1:1. Isolated single subject centered with generous margin. BACKGROUND: every pixel that is not the subject is ONE flat solid pure chroma-key green (#00FF00) right up to all four edges: no gradient, no shadow on the green, no green glow, no green inside the subject. No text, no letters, no numbers."
+  ],
+  [
+   "O51_stranger",
+   "Same style and palette as the earlier images in this chat. A faceless grey anonymous person silhouette, waist-up, simple flat shape (represents a stranger). Square 1:1. Isolated single subject centered with generous margin. BACKGROUND: every pixel that is not the subject is ONE flat solid pure chroma-key green (#00FF00) right up to all four edges: no gradient, no shadow on the green, no green glow, no green inside the subject. No text, no letters, no numbers."
+  ],
+  [
+   "O52_fist",
+   "Same style and palette as the earlier images in this chat. A clenched cartoon fist punching forward, front view, skin tone with a navy sleeve. Square 1:1. Isolated single subject centered with generous margin. BACKGROUND: every pixel that is not the subject is ONE flat solid pure chroma-key green (#00FF00) right up to all four edges: no gradient, no shadow on the green, no green glow, no green inside the subject. No text, no letters, no numbers."
+  ],
+  [
+   "O53_video_card",
+   "Same style and palette as the earlier images in this chat. A floating online video player window with a big coral play button in the middle and a thin progress bar (no text). Square 1:1. Isolated single subject centered with generous margin. BACKGROUND: every pixel that is not the subject is ONE flat solid pure chroma-key green (#00FF00) right up to all four edges: no gradient, no shadow on the green, no green glow, no green inside the subject. No text, no letters, no numbers."
+  ],
+  [
+   "O54_door",
+   "Same style and palette as the earlier images in this chat. A closed wooden door in a simple frame with an amber door handle, front view. Square 1:1. Isolated single subject centered with generous margin. BACKGROUND: every pixel that is not the subject is ONE flat solid pure chroma-key green (#00FF00) right up to all four edges: no gradient, no shadow on the green, no green glow, no green inside the subject. No text, no letters, no numbers."
+  ],
+  [
+   "O55_moon",
+   "Same style and palette as the earlier images in this chat. A glowing pale crescent moon with two small stars. Square 1:1. Isolated single subject centered with generous margin. BACKGROUND: every pixel that is not the subject is ONE flat solid pure chroma-key green (#00FF00) right up to all four edges: no gradient, no shadow on the green, no green glow, no green inside the subject. No text, no letters, no numbers."
+  ]
+ ],
+ "refs": [
+  "projects/brain-procrastination-ep01/assets/ref_mascot.png"
+ ]
+}

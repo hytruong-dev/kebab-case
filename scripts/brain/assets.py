@@ -35,7 +35,7 @@ if tokey:
 
 tiles = []
 for f in sorted(glob.glob(os.path.join(KEY, "*_key.png"))):
-    n = os.path.basename(f).replace("_key", "")
+    n = os.path.basename(f)[: -len("_key.png")] + ".png"  # strip the suffix only ("O29_keyboard" contains "_key")
     im = cv2.imread(f, cv2.IMREAD_UNCHANGED)
     if n[0] == "M":
         cv2.imwrite(os.path.join(DST, n), cv2.resize(im, (1024, 1024), interpolation=cv2.INTER_AREA))
