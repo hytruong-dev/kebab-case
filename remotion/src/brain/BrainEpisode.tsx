@@ -4,8 +4,8 @@
 // Modular ending (owner doc 7.3): chapter titled "[SINGLE_OUTRO]" gets no PART card and is the block to cut for the Mega-Video.
 import React from "react";
 import { AbsoluteFill, Easing, Html5Audio, Sequence, interpolate, staticFile, useCurrentFrame } from "remotion";
-import { AssetCtx, C, EpCtx, FONT, FPS, Particles, Title, pop } from "./kit";
-import type { ShotProps } from "./kit";
+import { AssetCtx, C, EpCtx, FONT, FPS, Particles, Stage } from "./kit";
+import type { ShotProps, StageMood } from "./kit";
 import { SHOTS as EP01 } from "./ep01/shots";
 
 /** Episode registry: add `epNN: SHOTS` when a new episode gets its own shots file (src/brain/epNN/shots.tsx). */
@@ -13,41 +13,78 @@ const EPISODES: Record<string, Record<string, React.FC<ShotProps>>> = { ep01: EP
 
 export type BItem = { id: string; chapter: string; chapterTitle: string; first: boolean; shot: string; show: string; start: number; dur: number };
 export type BrainEpisodeProps = { items: BItem[]; total: number; tail: number; withAudio: boolean; assets?: string[]; ep?: string };
-const CARD = 1.6;
 
-const ShotPlayer: React.FC<{ shots: Record<string, React.FC<ShotProps>>; shot: string; d: number; durF: number }> = ({ shots, shot, d, durF }) => {
+type TransitionKind = "push" | "whip-left" | "whip-up" | "zoom-in";
+const TRANS_CYCLE: TransitionKind[] = ["push", "whip-left", "whip-up", "zoom-in"];
+const SHOT_TRANSITIONS: Record<string, TransitionKind> = {
+  hook_avoid: "whip-left",
+  hook_familiar: "push",
+  hook_twist: "whip-left",
+  hook_emotion: "whip-up",
+  hook_stats: "whip-up",
+  hook_sources: "whip-left",
+  hook_glitch: "zoom-in",
+  hook_promise: "zoom-in",
+  roommates_intro: "zoom-in",
+  pfc_ceo: "whip-left",
+};
+const SELF_STAGED = new Set([
+  "hook_deadline", "hook_avoid", "hook_familiar", "hook_twist", "hook_emotion",
+  "hook_stats", "hook_sources", "hook_glitch", "hook_promise", "roommates_intro", "pfc_ceo",
+]);
+const CHAPTER_STAGE: Record<string, { mood: StageMood; bgImg: string }> = {
+  c1: { mood: "alert", bgImg: "H1_desk_hook.jpg" },
+  c2: { mood: "mind",  bgImg: "H2_brain_roommates.jpg" },
+  c3: { mood: "desk",  bgImg: "H3_present_future.jpg" },
+  c4: { mood: "alert", bgImg: "H4_doom_loop.jpg" },
+  c5: { mood: "lab",   bgImg: "H5_three_hacks.jpg" },
+  c6: { mood: "warm",  bgImg: "H6_outro.jpg" },
+  c7: { mood: "warm",  bgImg: "H7_bridge_handshake.jpg" },
+};
+
+const ShotPlayer: React.FC<{ shots: Record<string, React.FC<ShotProps>>; shot: string; chapter: string; idx: number; d: number; durF: number }> = ({ shots, shot, chapter, idx, d, durF }) => {
   const f = useCurrentFrame();
   const Fn = shots[shot];
   if (!Fn) throw new Error(`Unknown shot ${shot}`);
-  // smooth editorial push-in / fade at the cut (vector style -> smooth, not stop-motion)
-  const enter = interpolate(f, [0, 0.27 * FPS], [0, 1], { extrapolateRight: "clamp", easing: Easing.out(Easing.cubic) });
-  const exit = interpolate(f, [durF - 0.2 * FPS, durF], [1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
-  return (
-    <AbsoluteFill style={{ opacity: Math.min(enter, exit), transform: `scale(${1.03 - 0.03 * enter})` }}>
-      <Fn t={f / FPS} d={d} />
-    </AbsoluteFill>
-  );
-};
-
-const ChapterCard: React.FC<{ n: number; title: string }> = ({ n, title }) => {
-  const f = useCurrentFrame();
+  const kind: TransitionKind = SHOT_TRANSITIONS[shot] ?? TRANS_CYCLE[idx % TRANS_CYCLE.length];
+  const enter = interpolate(f, [0, 0.28 * FPS], [0, 1], { extrapolateRight: "clamp", easing: Easing.out(Easing.cubic) });
+  const exit = interpolate(f, [durF - 0.18 * FPS, durF], [1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  const transform =
+    kind === "whip-left" ? `translateX(${(1 - enter) * 120}px)` :
+    kind === "whip-up" ? `translateY(${(1 - enter) * 80}px)` :
+    kind === "zoom-in" ? `scale(${0.93 + 0.07 * enter})` :
+    `scale(${1.03 - 0.03 * enter})`;
   const t = f / FPS;
-  const out = interpolate(f, [CARD * FPS - 0.2 * FPS, CARD * FPS], [1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  const st = CHAPTER_STAGE[chapter] ?? { mood: "mind" as StageMood, bgImg: "H2_brain_roommates.jpg" };
+  const body = <Fn t={t} d={d} />;
   return (
-    <AbsoluteFill style={{ background: C.bg, opacity: out }}>
-      <div style={{ position: "absolute", left: 960 - 300 * pop(t, 0.05), top: 470, width: 600 * pop(t, 0.05), height: 6, background: C.amber, borderRadius: 3 }} />
-      <Title x={960} y={400} text={`PART ${n}`} size={40} color={C.amber} k={pop(t, 0.1)} />
-      <Title x={960} y={560} text={title} size={84} k={pop(t, 0.3)} />
+    <AbsoluteFill style={{ opacity: Math.min(enter, exit), transform }}>
+      {SELF_STAGED.has(shot) ? body : (
+        <Stage mood={st.mood} bgImg={st.bgImg} t={t} d={d} spotX={idx % 2 === 0 ? 520 : 1380} spotY={520}>
+          {body}
+        </Stage>
+      )}
     </AbsoluteFill>
   );
 };
 
 const Caption: React.FC<{ text: string; durF: number }> = ({ text, durF }) => {
   const f = useCurrentFrame();
-  const o = interpolate(f, [0, 0.17 * FPS, durF - 0.17 * FPS, durF], [0, 1, 1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+  const o = interpolate(f, [0, 0.16 * FPS, durF - 0.16 * FPS, durF], [0, 1, 1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   return (
-    <div style={{ position: "absolute", left: 0, right: 0, bottom: 34, display: "flex", justifyContent: "center", opacity: o }}>
-      <div style={{ background: "rgba(2,6,23,0.78)", color: C.text, fontFamily: FONT, fontWeight: 800, fontSize: 34, padding: "8px 26px", borderRadius: 12, borderBottom: `4px solid ${C.amber}` }}>{text}</div>
+    <div style={{ position: "absolute", left: 0, right: 0, bottom: 32, display: "flex", justifyContent: "center", opacity: o, pointerEvents: "none" }}>
+      <div
+        style={{
+          background: "rgba(7,12,26,0.82)", color: C.text, fontFamily: FONT, fontWeight: 800, fontSize: 32,
+          padding: "9px 28px", borderRadius: 14,
+          border: "1px solid rgba(148,163,184,0.22)",
+          borderBottom: `3px solid ${C.amber}`,
+          boxShadow: "0 12px 30px rgba(0,0,0,0.5)",
+          letterSpacing: 0.2,
+        }}
+      >
+        {text}
+      </div>
     </div>
   );
 };
@@ -78,30 +115,22 @@ export const BrainEpisode: React.FC<BrainEpisodeProps> = ({ items, total, tail, 
   if (!shots) throw new Error(`No shots registered for episode ${ep}`);
   const has = React.useMemo(() => new Set(assets), [assets]);
   const end = total + tail;
-  const chapters: string[] = [];
-  items.forEach((it) => { if (!chapters.includes(it.chapter)) chapters.push(it.chapter); });
   return (
     <EpCtx.Provider value={ep}>
     <AssetCtx.Provider value={has}>
     <AbsoluteFill style={{ background: C.bg }}>
       <Bg />
       {items.map((it, i) => {
-        const ci = chapters.indexOf(it.chapter);
         const next = items[i + 1];
-        const card = (x: BItem) => x.first && !x.chapterTitle.startsWith("[");
-        const nextStart = next ? (card(next) ? next.start - CARD : next.start) : end;
+        // Continuous flow without PART chapter cards (TASTE-38)
+        const nextStart = next ? next.start : end;
         const from = Math.round((i === 0 ? 0 : it.start) * FPS);
         const durF = Math.max(1, Math.round(nextStart * FPS) - from);
         const capDur = Math.round((it.dur + 0.2) * FPS);
         return (
           <React.Fragment key={it.id}>
-            {card(it) && ci > 0 && (
-              <Sequence from={Math.round((it.start - CARD) * FPS)} durationInFrames={Math.round(CARD * FPS)} name={`chapter ${ci + 1}`}>
-                <ChapterCard n={ci + 1} title={it.chapterTitle} />
-              </Sequence>
-            )}
             <Sequence from={from} durationInFrames={durF} name={it.shot}>
-              <ShotPlayer shots={shots} shot={it.shot} d={durF / FPS} durF={durF} />
+              <ShotPlayer shots={shots} shot={it.shot} chapter={it.chapter} idx={i} d={durF / FPS} durF={durF} />
             </Sequence>
             <Sequence from={Math.round(it.start * FPS)} durationInFrames={capDur} name={`cap ${it.id}`}>
               <Caption text={it.show} durF={capDur} />

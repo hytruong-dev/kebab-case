@@ -4,7 +4,7 @@
 // Mascot = Gemini assets (M01..M15 in public/brain/ep01); everything else = vector icons (icons.tsx) + kinetic type.
 import React from "react";
 import { Easing, interpolate } from "remotion";
-import { Arrow, Bar, C, Card, Count, FONT, Glow, Hero, Meter, Pic, Ring, S, Tag, Title, lerp, pop, ramp, useHas } from "../kit";
+import { Arrow, Bar, BottomMascot, C, Card, Count, FONT, GlassCard, Glow, GroundShadow, Hero, Meter, Pic, Ring, S, Stage, Tag, Title, lerp, pop, ramp, useHas } from "../kit";
 import {
   AlarmButton, Amyg, Bell, Book, Boulder, Brain, Briefcase, Calendar, Caveman, Ceo, Check, Chest, Clock, Cookie, Couch, Cross, Crt, Door,
   Dumbbell, Fist, Flame, Flask, Folder, FuelCan, Gears, GradCap, Head, Heart, Keyboard, Knot, Laptop, Lock, Pebble, Person, Phone, PlayCard,
@@ -15,9 +15,14 @@ import { G as Grp } from "../icons";
 
 import type { ShotProps } from "../kit";
 const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
-const M: React.FC<{ n: string; t: number; x?: number; y?: number; size?: number; at?: number; flip?: boolean }> = ({ n, t, x = 360, y = 640, size = 760, at = 0, flip }) => (
-  <Pic n={n} cx={x} cy={y} size={size} k={pop(t, at, 0.5)} t={t} float={6} flip={flip} />
-);
+const FULL_BODY = new Set(["M12_running", "M13_relaxing", "M14_stressed_paper"]);
+const M: React.FC<{ n: string; t: number; x?: number; y?: number; size?: number; at?: number; flip?: boolean }> = ({ n, t, x = 380, y = 640, size = 780, at = 0, flip }) => {
+  const cleanN = n === "M08_burnout" ? "M15_sleepless" : n === "M11_polishing" ? "M06_distracted" : n;
+  if (!FULL_BODY.has(cleanN) && y >= 560 && size >= 520) {
+    return <BottomMascot n={cleanN} x={x} size={size} t={t} at={at} flip={flip} />;
+  }
+  return <Pic n={cleanN} cx={x} cy={y} size={size} k={pop(t, at, 0.5)} t={t} float={6} flip={flip} />;
+};
 const Sub: React.FC<{ x: number; y: number; text: string; k: number; color?: string; size?: number; w?: number }> = ({ x, y, text, k, color = C.dim, size = 36, w }) =>
   k <= 0.01 ? null : (
     <div style={{ position: "absolute", left: x, top: y, width: w, transform: `translate(-50%, -50%) translateY(${(1 - k) * 20}px)`, opacity: k, fontFamily: FONT, fontWeight: 700, fontSize: size, color, textAlign: "center", lineHeight: 1.25 }}>
@@ -36,8 +41,8 @@ const Drift: React.FC<{ t: number; d: number; children: React.ReactNode; amt?: n
   );
 };
 
-/** Late-beat kickers so long beats keep changing: pills pop at 55% and 80% of the beat. */
-const Kick: React.FC<{ t: number; d: number; a: string; b?: string; y?: number }> = ({ t, d, a, b, y = 960 }) => (
+/** Late-beat kickers so long beats keep changing: pills pop at 55% and 80% of the beat, safely above bottom caption. */
+const Kick: React.FC<{ t: number; d: number; a: string; b?: string; y?: number }> = ({ t, d, a, b, y = 860 }) => (
   <>
     <Tag x={b ? 700 : 960} y={y} text={a} bg={C.amber} k={pop(t, d * 0.55) * (0.94 + 0.06 * Math.sin(t * 4))} size={30} />
     {b && <Tag x={1240} y={y} text={b} bg={C.teal} k={pop(t, d * 0.8) * (0.94 + 0.06 * Math.sin(t * 4 + 1))} size={30} />}
@@ -64,112 +69,244 @@ const HeroOr: React.FC<{ n: string; t: number; d?: number; dim?: number; childre
   );
 };
 
-/* ================= c1 · Hook ================= */
+/* ================= c1 · Hook (Upgraded Studio Edition — TASTE-36) ================= */
 
-export const hook_deadline: React.FC<ShotProps> = ({ t, d }) => (
-  <HeroOr n="H1_desk_hook" t={t} d={d} fallback={<HookDeadlineVec t={t} d={d} />}>
-    <Tag x={360} y={150} text="DEADLINE" bg={C.coral} color={C.text} k={pop(t, 1.0)} size={44} />
-    <Title x={360} y={250} text="TOMORROW." color={C.text} size={80} k={pop(t, 2.0)} />
-  </HeroOr>
-);
+export const hook_deadline: React.FC<ShotProps> = ({ t, d }) => {
+  const pulse = 0.22 + 0.12 * Math.sin(t * 5);
+  return (
+    <HeroOr n="H1_desk_hook" t={t} d={d} fallback={<HookDeadlineVec t={t} d={d} />}>
+      {/* Subtle dark left scrim & vignette so typography pops with cinema contrast */}
+      <div style={{ position: "absolute", inset: 0, background: "linear-gradient(105deg, rgba(7,11,24,0.72) 0%, rgba(7,11,24,0.18) 46%, rgba(7,11,24,0.35) 100%)" }} />
+      <Glow cx={560} cy={380} r={340} color={C.coral} op={pulse * ramp(t, 1.0, 0.8)} />
+      <Tag x={310} y={145} text="⚠  DEADLINE" bg={C.coral} color={C.text} k={pop(t, 0.7)} size={40} />
+      <Title x={125} y={258} text="TOMORROW." color={C.text} size={94} align="left" k={pop(t, 1.5)} />
+      <div
+        style={{
+          position: "absolute", left: 125, top: 318, width: 460 * ramp(t, 1.8, 0.45), height: 6,
+          background: `linear-gradient(90deg, ${C.amber}, ${C.coral})`, borderRadius: 4,
+          boxShadow: `0 0 20px ${C.coral}`,
+        }}
+      />
+      <Sub x={335} y={375} text="Important. Urgent. Still untouched." k={pop(t, 2.8)} color="#CBD5E1" size={30} />
+    </HeroOr>
+  );
+};
 const HookDeadlineVec: React.FC<ShotProps> = ({ t }) => (
-  <>
+  <Stage mood="alert" t={t}>
     <Glow cx={1300} cy={480} r={520} color={C.coral} op={0.18 + 0.08 * Math.sin(t * 4)} />
     <S>
       <Calendar x={1320} y={470} s={1.6} k={pop(t, 0.3)} mark={ramp(t, 1.2, 0.8)} label="DEADLINE" />
       <Clock x={1700} y={200} s={0.8} k={pop(t, 1.6)} m={t * 40} h={11 + t * 0.6} red />
     </S>
+    <GroundShadow cx={420} cy={885} rx={190} ry={26} />
     <M n="M01_explaining" t={t} x={420} />
-    <Title x={1320} y={870} text="TOMORROW." color={C.coral} size={96} k={pop(t, 2.2)} />
-  </>
+    <Title x={1320} y={840} text="TOMORROW." color={C.coral} size={96} k={pop(t, 2.2)} />
+  </Stage>
 );
 
-export const hook_avoid: React.FC<ShotProps> = ({ t }) => {
-  const items = [
-    { at: 1.0, el: (k: number) => <Folder x={1120} y={330} s={1.1} k={k} rot={Math.sin(t * 3) * 6} />, label: "Reorganize folders" },
-    { at: 3.3, el: (k: number) => <Keyboard x={1500} y={330} s={0.9} k={k} />, label: "Wipe the keyboard" },
-    { at: 5.6, el: (k: number) => <PlayCard x={1310} y={640} s={1.0} k={k} />, label: "How pencils are made" },
+export const hook_avoid: React.FC<ShotProps> = ({ t, d }) => {
+  const steps = [
+    { at: 0.7, num: "01", title: "Reorganize desktop folders", sub: "Feels productive · zero progress", color: C.amber, icon: (k: number) => <Folder x={965} y={285} s={0.58} k={k} rot={Math.sin(t * 3) * 5} /> },
+    { at: 2.8, num: "02", title: "Wipe down the keyboard", sub: "Sudden urge to clean everything", color: C.sky, icon: (k: number) => <Keyboard x={965} y={495} s={0.5} k={k} /> },
+    { at: 5.0, num: "03", title: "Watch 'How pencils are made'", sub: "3 rabbit holes deep on YouTube", color: C.coral, icon: (k: number) => <PlayCard x={965} y={705} s={0.58} k={k} /> },
   ];
+  const mins = Math.round(interpolate(t, [0.2, 7.6], [0, 45], clamp));
   return (
-    <>
-      <M n="M11_polishing" t={t} x={380} />
-      <S>{items.map((it, i) => <g key={i}>{it.el(pop(t, it.at))}</g>)}</S>
-      {items.map((it, i) => (
-        <Sub key={i} x={[1120, 1500, 1310][i]} y={[460, 460, 760][i]} text={it.label} k={pop(t, it.at + 0.2)} color={C.text} size={30} />
-      ))}
-      <S><Pencils x={1560} y={640} s={0.8} k={pop(t, 6.0)} rot={-15} /></S>
-      <Count x={1310} y={900} to={45} t={t} at={0.2} dur={7.5} suffix=" min" size={86} color={C.amber} />
-    </>
-  );
-};
+    <Stage mood="desk" t={t} d={d} spotX={430} spotY={660}>
+      {/* Left: Bottom-anchored mascot flush to y=1080 (ZERO floating waist gap — TASTE-37) */}
+      <Glow cx={430} cy={660} r={380} color={C.amber} op={0.26 + 0.06 * Math.sin(t * 3)} />
+      <BottomMascot n="M06_distracted" x={430} size={790} t={t} />
 
-export const hook_familiar: React.FC<ShotProps> = ({ t }) => {
-  const stamp = pop(t, 3.2, 0.3);
-  return (
-    <>
-      <M n="M08_burnout" t={t} x={600} y={620} size={720} />
-      <Title x={1350} y={300} text="Sound familiar?" size={64} k={pop(t, 0.3)} />
-      {stamp > 0.01 && (
-        <div style={{ position: "absolute", left: 1350, top: 560, transform: `translate(-50%,-50%) rotate(-12deg) scale(${lerp(2.4, 1, stamp)})`, opacity: stamp, border: `10px solid ${C.coral}`, color: C.coral, fontFamily: FONT, fontWeight: 900, fontSize: 130, padding: "4px 36px", borderRadius: 18 }}>
-          LAZY?
+      {/* Top-left live wasted-time pill */}
+      <GlassCard x={135} y={100} w={570} h={132} k={pop(t, 0.25)} accent={C.amber}>
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+          <div>
+            <div style={{ fontSize: 20, fontWeight: 800, color: C.dim, letterSpacing: 1.5 }}>TIME SPENT AVOIDING</div>
+            <div style={{ fontSize: 28, fontWeight: 700, color: C.text, marginTop: 4 }}>"Productive" Procrastination</div>
+          </div>
+          <div style={{ fontSize: 58, fontWeight: 900, color: C.amber, lineHeight: 1 }}>{String(mins).padStart(2, "0")}:00</div>
         </div>
-      )}
-      <Tag x={1350} y={820} text="Plot twist: neuroscience ↓" k={pop(t, 6.2)} bg={C.teal} />
-    </>
+      </GlassCard>
+
+      {/* Right: Full-height vertical timeline + 3 sleek glass activity cards */}
+      <div
+        style={{
+          position: "absolute", left: 825, top: 205, width: 4, height: 590 * ramp(t, 0.5, 4.8),
+          background: `linear-gradient(180deg, ${C.amber}, ${C.sky}, ${C.coral})`, borderRadius: 2,
+        }}
+      />
+      {steps.map((st, i) => {
+        const y = 200 + i * 210;
+        const k = pop(t, st.at, 0.45);
+        return (
+          <GlassCard key={st.num} x={860} y={y} w={940} h={168} k={k} accent={st.color}>
+            <div style={{ paddingLeft: 180 }}>
+              <div style={{ fontSize: 20, fontWeight: 900, color: st.color, letterSpacing: 1.6 }}>STEP {st.num}</div>
+              <div style={{ fontSize: 36, fontWeight: 900, color: C.text, marginTop: 4 }}>{st.title}</div>
+              <div style={{ fontSize: 24, fontWeight: 600, color: C.dim, marginTop: 6 }}>{st.sub}</div>
+            </div>
+          </GlassCard>
+        );
+      })}
+      <S>
+        {steps.map((st, i) => <g key={i}>{st.icon(pop(t, st.at + 0.1))}</g>)}
+        <Pencils x={1710} y={705} s={0.58} k={pop(t, 5.5)} rot={-12} />
+      </S>
+    </Stage>
   );
 };
 
-export const hook_twist: React.FC<ShotProps> = ({ t }) => {
-  const row = (y: number, text: string, at: number, crossAt: number) => (
-    <>
-      <Title x={1240} y={y} text={text} size={66} k={pop(t, at)} color={C.text} />
-      {t > crossAt && <div style={{ position: "absolute", left: 1240 - 380, top: y - 6, width: 760 * ramp(t, crossAt, 0.35), height: 14, background: C.coral, borderRadius: 7, transform: "rotate(-3deg)" }} />}
-    </>
-  );
+export const hook_familiar: React.FC<ShotProps> = ({ t, d }) => {
+  const stamp = pop(t, 3.0, 0.28);
+  const shake = t >= 3.0 && t <= 3.35 ? Math.sin(t * 70) * (1 - (t - 3.0) / 0.35) * 10 : 0;
   return (
-    <>
-      <M n="M03_shocked" t={t} x={380} />
-      {row(380, "LAZINESS", 0.2, 1.8)}
-      {row(620, "TIME MANAGEMENT", 2.6, 4.4)}
-      <S><Cross x={1700} y={380} s={1.2} k={pop(t, 1.9)} /><Cross x={1700} y={620} s={1.2} k={pop(t, 4.5)} /></S>
-    </>
+    <Stage mood="alert" t={t} d={d} spotX={520} spotY={660}>
+      <div style={{ position: "absolute", inset: 0, transform: `translate(${shake}px, ${shake * 0.6}px)` }}>
+        {/* Bottom-anchored exhausted mascot flush to y=1080 */}
+        <BottomMascot n="M15_sleepless" x={500} size={820} t={t} />
+
+        <Title x={1320} y={240} text="Sound familiar?" size={76} k={pop(t, 0.25)} />
+        <Sub x={1320} y={328} w={760} text="Ever beaten yourself up for being..." k={pop(t, 1.3)} color={C.dim} size={34} />
+
+        {stamp > 0.01 && (
+          <>
+            <Glow cx={1320} cy={535} r={300} color={C.coral} op={0.34 * stamp} />
+            <div
+              style={{
+                position: "absolute", left: 1320, top: 535,
+                transform: `translate(-50%,-50%) rotate(-9deg) scale(${lerp(2.4, 1, stamp)})`,
+                opacity: stamp, border: `10px solid ${C.coral}`, color: C.coral,
+                background: "rgba(244,63,94,0.12)", boxShadow: `0 0 44px ${C.coral}44`,
+                fontFamily: FONT, fontWeight: 900, fontSize: 136, padding: "4px 48px", borderRadius: 20,
+              }}
+            >
+              LAZY?
+            </div>
+          </>
+        )}
+
+        <GlassCard x={940} y={725} w={760} h={132} k={pop(t, 5.8)} accent={C.teal}>
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", height: "100%" }}>
+            <div>
+              <div style={{ fontSize: 21, fontWeight: 800, color: C.teal, letterSpacing: 1.5 }}>NEUROSCIENCE PLOT TWIST</div>
+              <div style={{ fontSize: 34, fontWeight: 900, color: C.text, marginTop: 4 }}>It's not what you think →</div>
+            </div>
+          </div>
+        </GlassCard>
+      </div>
+    </Stage>
   );
 };
 
-export const hook_stats: React.FC<ShotProps> = ({ t }) => (
-  <>
-    <Ring cx={600} cy={500} r={230} p={ramp(t, 0.4, 2.0) * 0.95} color={C.amber} w={44} />
-    <Count x={600} y={490} to={95} t={t} at={0.4} dur={2.0} suffix="%" size={150} />
-    <Sub x={600} y={830} text="of people procrastinate" k={pop(t, 1.2)} color={C.text} size={40} />
-    <Ring cx={1320} cy={500} r={230} p={ramp(t, 3.6, 1.6) * 0.2} color={C.coral} w={44} />
-    <Count x={1320} y={490} to={20} t={t} at={3.6} dur={1.6} suffix="%" size={150} color={C.coral} />
-    <Sub x={1320} y={830} text="do it chronically" k={pop(t, 4.2)} color={C.text} size={40} />
-    <Pic n="M03_shocked" cx={1720} cy={880} size={360} k={pop(t, 5.2)} t={t} float={4} />
-  </>
+export const hook_twist: React.FC<ShotProps> = ({ t, d }) => {
+  const row = (y: number, label: string, sub: string, at: number, crossAt: number) => {
+    const crossed = ramp(t, crossAt, 0.32);
+    return (
+      <div style={{ position: "absolute", left: 820, top: y, width: 980, height: 170 }}>
+        <GlassCard x={0} y={0} w={980} h={170} k={pop(t, at)} accent={crossed > 0.1 ? C.coral : C.line}>
+          <div style={{ opacity: 1 - crossed * 0.55 }}>
+            <div style={{ fontSize: 56, fontWeight: 900, color: C.text, letterSpacing: -0.5 }}>{label}</div>
+            <div style={{ fontSize: 25, fontWeight: 600, color: C.dim, marginTop: 8 }}>{sub}</div>
+          </div>
+        </GlassCard>
+        {crossed > 0.01 && (
+          <div
+            style={{
+              position: "absolute", left: -18, top: 76, width: 1016 * crossed, height: 12,
+              background: C.coral, borderRadius: 6, transform: "rotate(-2.4deg)",
+              boxShadow: `0 0 24px ${C.coral}`,
+            }}
+          />
+        )}
+      </div>
+    );
+  };
+  return (
+    <Stage mood="alert" t={t} d={d} spotX={420} spotY={660}>
+      <BottomMascot n="M03_shocked" x={420} size={820} t={t} />
+      <Tag x={1310} y={130} text="MYTHS DEBUNKED" bg={C.panel} color={C.coral} k={pop(t, 0.15)} size={28} />
+      {row(210, "LAZINESS", "Not a character flaw or lack of ambition", 0.2, 1.7)}
+      {row(430, "TIME MANAGEMENT", "Not because you can't use a calendar", 2.4, 4.1)}
+      <S>
+        <Cross x={1720} y={295} s={1.05} k={pop(t, 1.85)} />
+        <Cross x={1720} y={515} s={1.05} k={pop(t, 4.25)} />
+      </S>
+      <GlassCard x={820} y={665} w={980} h={146} k={pop(t, 4.8)} accent={C.teal}>
+        <div style={{ fontSize: 21, fontWeight: 800, color: C.teal, letterSpacing: 1.5 }}>THE REAL CAUSE</div>
+        <div style={{ fontSize: 40, fontWeight: 900, color: C.text, marginTop: 6 }}>It's an emotional defense mechanism.</div>
+      </GlassCard>
+    </Stage>
+  );
+};
+
+export const hook_stats: React.FC<ShotProps> = ({ t, d }) => (
+  <Stage mood="data" t={t} d={d} spotX={960} spotY={480}>
+    <Tag x={960} y={108} text="YOU ARE NOT ALONE" bg={C.panel} color={C.sky} k={pop(t, 0.15)} size={30} />
+
+    {/* Left Bento Panel: 95% */}
+    <GlassCard x={140} y={180} w={760} h={700} k={pop(t, 0.2)} accent={C.amber}>
+      <div style={{ fontSize: 23, fontWeight: 800, color: C.amber, letterSpacing: 1.4, textAlign: "center" }}>GENERAL POPULATION</div>
+    </GlassCard>
+    <Ring cx={520} cy={505} r={205} p={ramp(t, 0.4, 1.9) * 0.95} color={C.amber} w={38} />
+    <Count x={520} y={505} to={95} t={t} at={0.4} dur={1.9} suffix="%" size={142} color={C.amber} />
+    <Sub x={520} y={795} text="of people procrastinate" k={pop(t, 1.1)} color={C.text} size={38} />
+
+    {/* Right Bento Panel: 20% */}
+    <GlassCard x={980} y={180} w={760} h={700} k={pop(t, 3.2)} accent={C.coral}>
+      <div style={{ fontSize: 23, fontWeight: 800, color: C.coral, letterSpacing: 1.4, textAlign: "center" }}>CHRONIC HABIT</div>
+    </GlassCard>
+    <Ring cx={1360} cy={505} r={205} p={ramp(t, 3.5, 1.6) * 0.2} color={C.coral} w={38} />
+    <Count x={1360} y={505} to={20} t={t} at={3.5} dur={1.6} suffix="%" size={142} color={C.coral} />
+    <Sub x={1360} y={795} text="do it chronically" k={pop(t, 4.1)} color={C.text} size={38} />
+
+    <BottomMascot n="M03_shocked" x={1790} size={390} t={t} at={5.0} />
+  </Stage>
 );
 
-export const hook_glitch: React.FC<ShotProps> = ({ t }) => {
-  const g = t > 3 ? (Math.floor(t * 15) % 3 === 0 ? 1 : 0.3) : 0;
+export const hook_glitch: React.FC<ShotProps> = ({ t, d }) => {
+  const g = t > 2.6 ? (Math.floor(t * 16) % 3 === 0 ? 1 : 0.35) : 0;
   return (
-    <>
-      <Glow cx={1100} cy={520} r={480} color={C.coral} op={g * 0.25} />
-      <Meter x={180} y={300} w={520} p={Math.max(0.05, 1 - ramp(t, 0.6, 2.2))} color={C.amber} label="WILLPOWER" />
-      <Sub x={440} y={420} text="Not the problem" k={pop(t, 2.4)} color={C.dim} size={32} />
-      <S><Head x={1150} y={560} s={1.5} k={pop(t, 2.6)} glitch={g} deep={g} /></S>
-      <Tag x={1150} y={150} text="⚠ BRAIN GLITCH" bg={C.coral} color={C.text} k={pop(t, 3.4)} size={44} />
-    </>
+    <Stage mood="alert" t={t} d={d} spotX={1300} spotY={540}>
+      {/* Left: Willpower myth glass panel */}
+      <GlassCard x={125} y={260} w={690} h={370} k={pop(t, 0.2)} accent={C.amber}>
+        <div style={{ fontSize: 22, fontWeight: 800, color: C.dim, letterSpacing: 1.6 }}>WHAT WE BLAME</div>
+        <div style={{ fontSize: 46, fontWeight: 900, color: C.text, marginTop: 8 }}>Willpower Battery</div>
+        <div style={{ marginTop: 115, fontSize: 30, fontWeight: 700, color: C.coral, opacity: pop(t, 2.1) }}>
+          ✕  Not the actual problem
+        </div>
+      </GlassCard>
+      <Meter x={165} y={425} w={605} p={Math.max(0.06, 1 - ramp(t, 0.5, 2.0))} color={C.amber} h={40} />
+
+      {/* Right: Glitching Head cross-section larger & balanced across full height */}
+      <Glow cx={1320} cy={560} r={450} color={C.coral} op={0.22 + g * 0.25} />
+      <S>
+        <Head x={1320} y={585} s={1.55} k={pop(t, 2.3)} glitch={g} deep={ramp(t, 2.7, 0.6)} />
+      </S>
+      <Tag x={1320} y={135} text="⚠  ANCIENT BRAIN GLITCH" bg={C.coral} color={C.text} k={pop(t, 3.1)} size={40} />
+    </Stage>
   );
 };
 
-export const hook_promise: React.FC<ShotProps> = ({ t }) => {
-  const zoom = ramp(t, 0.2, 2.5, Easing.inOut(Easing.cubic));
+export const hook_promise: React.FC<ShotProps> = ({ t, d }) => {
+  const zoom = ramp(t, 0.2, 2.6, Easing.inOut(Easing.cubic));
   return (
-    <>
-      <S><Head x={lerp(960, 960, zoom)} y={lerp(560, 700, zoom)} s={lerp(1.2, 3.2, zoom)} front={ramp(t, 2.6, 0.6)} deep={ramp(t, 2.6, 0.6)} /></S>
-      <Tag x={460} y={260} text="7 MINUTES" bg={C.panel} color={C.amber} k={pop(t, 0.6)} size={40} />
-      <Card x={1250} y={300} w={560} h={110} k={ramp(t, 4.4, 0.5)} color={C.coral}><div style={{ fontSize: 38, fontWeight: 800 }}>Why it sabotages you</div></Card>
-      <Card x={1250} y={440} w={560} h={110} k={ramp(t, 6.0, 0.5)} color={C.teal}><div style={{ fontSize: 38, fontWeight: 800 }}>3 ways to rewire it</div></Card>
-    </>
+    <Stage mood="mind" t={t} d={d} spotX={720} spotY={540}>
+      <Glow cx={640} cy={540} r={480} color={C.amber} op={0.2 + 0.1 * zoom} />
+      <S>
+        <Head x={lerp(960, 600, zoom)} y={lerp(560, 600, zoom)} s={lerp(1.25, 1.92, zoom)} front={ramp(t, 2.2, 0.7)} deep={ramp(t, 2.2, 0.7)} />
+      </S>
+      <Tag x={1410} y={170} text="10-MIN DEEP DIVE" bg={C.panel} color={C.amber} k={pop(t, 0.6)} size={34} />
+      <GlassCard x={1050} y={260} w={740} h={185} k={ramp(t, 3.6, 0.5)} accent={C.coral}>
+        <div style={{ fontSize: 22, fontWeight: 800, color: C.coral, letterSpacing: 1.5 }}>PART 1 · THE MECHANISM</div>
+        <div style={{ fontSize: 38, fontWeight: 900, color: C.text, marginTop: 8 }}>Why your brain sabotages you</div>
+        <div style={{ fontSize: 23, fontWeight: 600, color: C.dim, marginTop: 8 }}>Inside the tug-of-war in your skull</div>
+      </GlassCard>
+      <GlassCard x={1050} y={490} w={740} h={220} k={ramp(t, 5.4, 0.5)} accent={C.teal}>
+        <div style={{ fontSize: 22, fontWeight: 800, color: C.teal, letterSpacing: 1.5 }}>PART 2 · THE FIX</div>
+        <div style={{ fontSize: 38, fontWeight: 900, color: C.text, marginTop: 8, lineHeight: 1.15 }}>3 science-backed ways to rewire it</div>
+        <div style={{ fontSize: 23, fontWeight: 600, color: C.dim, marginTop: 10 }}>Practical tricks that bypass the alarm</div>
+      </GlassCard>
+    </Stage>
   );
 };
 
@@ -177,32 +314,51 @@ export const hook_promise: React.FC<ShotProps> = ({ t }) => {
 
 export const roommates_intro: React.FC<ShotProps> = ({ t, d }) => (
   <HeroOr n="H2_brain_roommates" t={t} d={d} fallback={<RoommatesVec t={t} d={d} />}>
-    <Tag x={960} y={90} text="2 roommates in your head" bg={C.amber} k={pop(t, 0.6)} size={44} />
+    <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(7,11,24,0.65) 0%, transparent 24%, transparent 78%, rgba(7,11,24,0.65) 100%)" }} />
+    <Tag x={960} y={92} text="MEET YOUR TWO BRAIN ROOMMATES" bg={C.amber} color={C.bg} k={pop(t, 0.5)} size={36} />
   </HeroOr>
 );
 const RoommatesVec: React.FC<ShotProps> = ({ t }) => (
-  <>
+  <Stage mood="mind" t={t}>
     <S>
       <Head x={960} y={600} s={1.7} k={pop(t, 0.1)} />
       <Ceo x={1060} y={430} s={0.8} k={pop(t, 1.6)} />
       <Amyg x={900} y={560} s={0.6} k={pop(t, 2.4)} t={t} />
     </S>
     <Title x={960} y={130} text="2 roommates in your head" size={70} k={pop(t, 0.6)} />
-  </>
+  </Stage>
 );
 
-export const pfc_ceo: React.FC<ShotProps> = ({ t }) => (
-  <>
-    <S>
-      <Head x={560} y={620} s={1.4} k={1} front={ramp(t, 0.6, 0.6)} />
-      <Arrow x1={760} y1={420} x2={1000} y2={420} color={C.amber} w={8} p={ramp(t, 2.2, 0.5)} />
-      <Ceo x={1300} y={520} s={1.9} k={pop(t, 3.0)} wave={Math.sin(t * 2) * 0.5 + 0.5} />
-    </S>
-    <Tag x={560} y={200} text="PREFRONTAL CORTEX" k={pop(t, 0.8)} />
-    <Sub x={560} y={260} text="right behind your forehead" k={pop(t, 1.4)} size={30} />
-    <Title x={1300} y={880} text="the rational CEO" size={64} color={C.amber} k={pop(t, 4.2)} />
-  </>
-);
+export const pfc_ceo: React.FC<ShotProps> = ({ t, d }) => {
+  const conn = ramp(t, 2.0, 0.6);
+  return (
+    <Stage mood="mind" t={t} d={d} spotX={1320} spotY={500}>
+      {/* Left: Clean anatomical Head with soft radial amber fMRI highlight */}
+      <S>
+        <Head x={520} y={605} s={1.48} k={1} front={ramp(t, 0.5, 0.7)} />
+        {/* Sleek curved dashed neural connector */}
+        {conn > 0.01 && (
+          <g opacity={conn}>
+            <path
+              d="M 710 475 Q 890 385 1065 445"
+              fill="none" stroke={C.amber} strokeWidth={5} strokeDasharray="12 10" strokeLinecap="round"
+              pathLength={100} strokeDashoffset={100 * (1 - conn)}
+            />
+            <circle cx={710} cy={475} r={9} fill={C.amber} />
+            <circle cx={1065} cy={445} r={9} fill={C.amber} opacity={conn > 0.9 ? 1 : 0} />
+          </g>
+        )}
+        <Ceo x={1340} y={475} s={1.8} k={pop(t, 2.7)} wave={Math.sin(t * 2) * 0.5 + 0.5} />
+      </S>
+      <Tag x={520} y={145} text="PREFRONTAL CORTEX" bg={C.amber} color={C.bg} k={pop(t, 0.6)} size={34} />
+      <Sub x={520} y={210} text="right behind your forehead" k={pop(t, 1.2)} color="#CBD5E1" size={28} />
+      <GlassCard x={1050} y={725} w={580} h={132} k={pop(t, 3.8)} accent={C.amber}>
+        <div style={{ fontSize: 19, fontWeight: 800, color: C.dim, letterSpacing: 1.5, textAlign: "center" }}>ROOMMATE #1</div>
+        <div style={{ fontSize: 44, fontWeight: 900, color: C.amber, textAlign: "center", marginTop: 4 }}>The Rational CEO</div>
+      </GlassCard>
+    </Stage>
+  );
+};
 
 export const pfc_jobs: React.FC<ShotProps> = ({ t }) => {
   const jobs = [
@@ -806,40 +962,60 @@ export const outro_end: React.FC<ShotProps> = ({ t }) => (
 /* ================= v2 research beats (owner doc v2: 10-11 min) ================= */
 
 export const hook_emotion: React.FC<ShotProps> = ({ t, d }) => {
-  const tilt = lerp(0, 1, ramp(t, 3.0, 1.0, Easing.out(Easing.back(1.4)))) + 0.08 * Math.sin(t * 2.2) * ramp(t, 4, 1);
+  const tilt = lerp(0, 1, ramp(t, 2.8, 1.1, Easing.out(Easing.back(1.4)))) + 0.08 * Math.sin(t * 2.2) * ramp(t, 3.8, 1);
   return (
-    <Drift t={t} d={d}>
+    <Stage mood="lab" t={t} d={d} spotX={1240} spotY={500}>
       <S>
-        <Scale x={960} y={560} s={1.4} k={pop(t, 0.2)} tilt={tilt}
-          left={<Clock x={0} y={-60} s={0.5} k={1} m={t * 30} h={3} />}
-          right={<Heart x={0} y={-60} s={0.55} k={1} glow={0.6} />} />
+        <Scale
+          x={1060} y={535} s={1.36} k={pop(t, 0.2)} tilt={tilt}
+          left={<Clock x={0} y={-22} s={0.55} k={1} m={t * 30} h={3} />}
+          right={<Heart x={0} y={-24} s={0.58} k={1} glow={0.85} />}
+        />
       </S>
-      <Tag x={560} y={200} text="Time management" bg={C.panel} color={C.text} k={pop(t, 0.8)} />
-      <Tag x={1360} y={200} text="Emotional regulation" bg={C.coral} color={C.text} k={pop(t, 1.6)} />
-      <Sub x={960} y={940} text="Pychyl & Sirois: we delay to escape bad feelings" k={pop(t, 5.0)} color={C.text} size={34} />
-      {["boredom", "anxiety", "self-doubt"].map((x, i) => <Tag key={x} x={1360 + (i - 1) * 190} y={300} text={x} bg={C.panel} color={C.coral} k={pop(t, 7.5 + i * 1.2)} size={24} />)}
-      <Pic n="M04_overthinking" cx={220} cy={760} size={380} k={pop(t, 10.0)} t={t} float={5} />
-    </Drift>
+
+      <GlassCard x={480} y={108} w={420} h={94} k={pop(t, 0.6)} accent={C.line}>
+        <div style={{ fontSize: 30, fontWeight: 800, color: C.dim, textAlign: "center", marginTop: 6 }}>Time management</div>
+      </GlassCard>
+      <GlassCard x={1190} y={108} w={460} h={94} k={pop(t, 1.4)} accent={C.coral}>
+        <div style={{ fontSize: 30, fontWeight: 900, color: C.coral, textAlign: "center", marginTop: 6 }}>Emotional regulation</div>
+      </GlassCard>
+
+      {["Boredom", "Anxiety", "Self-doubt"].map((x, i) => (
+        <Tag key={x} x={1420 + (i - 1) * 195} y={258} text={x} bg="rgba(244,63,94,0.18)" color={C.coral} k={pop(t, 6.2 + i * 1.1)} size={26} />
+      ))}
+
+      <Sub x={1060} y={880} w={1280} text="Tim Pychyl & Fuschia Sirois (2013): we delay to escape bad feelings" k={pop(t, 4.6)} color="#CBD5E1" size={28} />
+      <BottomMascot n="M04_overthinking" x={255} size={560} t={t} at={8.5} />
+    </Stage>
   );
 };
 
 export const hook_sources: React.FC<ShotProps> = ({ t, d }) => (
-  <Drift t={t} d={d}>
-    <Card x={180} y={230} w={740} h={300} k={ramp(t, 0.3, 0.5)} color={C.amber}>
-      <div style={{ fontSize: 30, color: C.dim, fontWeight: 700 }}>Piers Steel · 2007 review</div>
-      <div style={{ fontSize: 120, fontWeight: 900, color: C.amber, lineHeight: 1.1 }}>{Math.round(95 * ramp(t, 0.8, 1.6))}%</div>
-      <div style={{ fontSize: 34, fontWeight: 800 }}>of college students</div>
-    </Card>
-    <Card x={1000} y={230} w={740} h={300} k={ramp(t, 4.6, 0.5)} color={C.coral}>
-      <div style={{ fontSize: 30, color: C.dim, fontWeight: 700 }}>Joseph Ferrari</div>
-      <div style={{ fontSize: 120, fontWeight: 900, color: C.coral, lineHeight: 1.1 }}>1 in 5</div>
-      <div style={{ fontSize: 34, fontWeight: 800 }}>adults: chronic</div>
-    </Card>
-    <S>{Array.from({ length: 5 }, (_, i) => <Person key={i} x={1060 + i * 150} y={760} s={0.55} k={pop(t, 6.0 + i * 0.15)} color={i === 2 ? C.coral : "#475569"} />)}</S>
-    <Pic n="M02_pointing" cx={420} cy={790} size={420} k={pop(t, 1.4)} t={t} float={4} />
-    <Tag x={1430} y={950} text="CHRONIC" bg={C.coral} color={C.text} k={pop(t, 8.0) * (0.85 + 0.15 * Math.sin(t * 5))} size={30} />
-    <Ring cx={600} cy={380} r={0} p={0} color={C.amber} />
-  </Drift>
+  <Stage mood="data" t={t} d={d} spotX={1380} spotY={560}>
+    <Tag x={960} y={92} text="BACKED BY RESEARCH" bg={C.panel} color={C.sky} k={pop(t, 0.15)} size={28} />
+
+    <GlassCard x={140} y={160} w={780} h={310} k={ramp(t, 0.3, 0.5)} accent={C.amber}>
+      <div style={{ fontSize: 24, color: C.dim, fontWeight: 800, letterSpacing: 1 }}>PIERS STEEL · 2007 META-ANALYSIS</div>
+      <div style={{ fontSize: 112, fontWeight: 900, color: C.amber, lineHeight: 1.05, marginTop: 8 }}>{Math.round(95 * ramp(t, 0.7, 1.6))}%</div>
+      <div style={{ fontSize: 32, fontWeight: 800, color: C.text }}>of college students procrastinate</div>
+    </GlassCard>
+
+    <GlassCard x={1000} y={160} w={780} h={310} k={ramp(t, 4.4, 0.5)} accent={C.coral}>
+      <div style={{ fontSize: 24, color: C.dim, fontWeight: 800, letterSpacing: 1 }}>JOSEPH FERRARI · DEPAUL UNIVERSITY</div>
+      <div style={{ fontSize: 112, fontWeight: 900, color: C.coral, lineHeight: 1.05, marginTop: 8 }}>1 in 5</div>
+      <div style={{ fontSize: 32, fontWeight: 800, color: C.text }}>adults are chronic procrastinators</div>
+    </GlassCard>
+
+    {/* Spotlight on the 1-in-5 chronic person */}
+    <Glow cx={1385} cy={705} r={240} color={C.coral} op={0.3 * pop(t, 6.3)} />
+    <S>
+      {Array.from({ length: 5 }, (_, i) => (
+        <Person key={i} x={1085 + i * 150} y={715} s={i === 2 ? 0.72 : 0.56} k={pop(t, 5.8 + i * 0.16)} color={i === 2 ? C.coral : "#475569"} />
+      ))}
+    </S>
+    <BottomMascot n="M02_pointing" x={410} size={560} t={t} at={1.3} />
+    <Tag x={1385} y={865} text="CHRONIC (20%)" bg={C.coral} color={C.text} k={pop(t, 7.6) * (0.9 + 0.1 * Math.sin(t * 5))} size={28} />
+  </Stage>
 );
 
 export const pfc_slow: React.FC<ShotProps> = ({ t, d }) => {
@@ -855,7 +1031,7 @@ export const pfc_slow: React.FC<ShotProps> = ({ t, d }) => {
       {ages.map((a, i) => <Sub key={a} x={300 + i * 446} y={830} text={`${a}${i === 3 ? "+" : ""}`} k={pop(t, 0.6 + i * 0.3)} color={C.text} size={40} />)}
       <Tag x={960} y={150} text="Prefrontal Cortex: matures into your mid-20s" k={pop(t, 0.4)} size={36} />
       <Meter x={1180} y={940} w={520} p={0.4 + 0.5 * Math.abs(Math.sin(t * 1.4))} color={C.coral} label="SELF-CONTROL = EFFORT" h={26} />
-    <Kick t={t} d={d} a="Self-control runs out" b="→ the CEO gets tired" />
+      <Kick t={t} d={d} a="Self-control runs out" b="→ the CEO gets tired" />
     </Drift>
   );
 };
@@ -951,8 +1127,8 @@ export const avatar_mirror: React.FC<ShotProps> = ({ t, d }) => (
       <Arrow x1={760} y1={560} x2={1060} y2={560} color={C.amber} w={8} p={ramp(t, 3.0, 0.6)} dash />
     </S>
     <Sub x={1360} y={940} text="your face, digitally aged" k={pop(t, 3.6)} color={C.text} size={34} />
-  <Kick t={t} d={d} a="Future You = a real person" />
-    </Drift>
+    <Kick t={t} d={d} a="Future You = a real person" />
+  </Drift>
 );
 
 export const avatar_result: React.FC<ShotProps> = ({ t, d }) => (
@@ -962,8 +1138,8 @@ export const avatar_result: React.FC<ShotProps> = ({ t, d }) => (
     <Bar x={1450} base={820} w={220} h={520} p={ramp(t, 2.0, 1.2) * 0.9} color={C.amber} label="Met older self" value="> 2×" />
     <S><Obj n="O39_piggy_bank" x={380} y={540} w={420} k={pop(t, 0.4)} fallback={<Chest x={380} y={540} s={1.2} k={1} />} /></S>
     <Title x={380} y={820} text="Future You felt real" size={44} color={C.teal} k={pop(t, 5.6)} />
-  <Kick t={t} d={d} a="Hershfield et al. 2011" b="> 2× for retirement" />
-    </Drift>
+    <Kick t={t} d={d} a="Hershfield et al. 2011" b="> 2× for retirement" />
+  </Drift>
 );
 
 export const dopamine_wanting: React.FC<ShotProps> = ({ t, d }) => {
@@ -1013,7 +1189,7 @@ export const tice_late: React.FC<ShotProps> = ({ t }) => (
       <Obj n="O42_thermometer" x={1300} y={470} w={260} k={pop(t, 2.8)} />
       <Obj n="O43_report_card" x={1300} y={640} w={240} k={pop(t, 4.2)} />
     </S>
-    <Pic n="M08_burnout" cx={1640} cy={720} size={460} k={pop(t, 1.0)} t={t} float={3} />
+    <BottomMascot n="M15_sleepless" x={1640} size={520} t={t} at={1.0} />
     <Card x={300} y={840} w={1000} h={110} k={ramp(t, 6.4, 0.5)} color={C.amber}>
       <div style={{ fontSize: 36, fontWeight: 900 }}>The relief was borrowed — with interest.</div>
     </Card>
@@ -1032,8 +1208,8 @@ export const sirois_health: React.FC<ShotProps> = ({ t, d }) => (
     </S>
     <Sub x={650} y={520} text="poorer health habits ↓" k={pop(t, 2.6)} color={C.text} size={38} />
     <Pic n="M15_sleepless" cx={650} cy={800} size={400} k={pop(t, 2.8)} t={t} float={3} />
-  <Kick t={t} d={d} a="Skipped check-ups" b="Less exercise" />
-    </Drift>
+    <Kick t={t} d={d} a="Skipped check-ups" b="Less exercise" />
+  </Drift>
 );
 
 export const zeigarnik_waiters: React.FC<ShotProps> = ({ t, d }) => {
@@ -1048,7 +1224,7 @@ export const zeigarnik_waiters: React.FC<ShotProps> = ({ t, d }) => {
         </Card>
       ))}
       <Tag x={1350} y={790} text={paid > 0.5 ? "BILL PAID → forgotten" : "UNPAID → remembered"} bg={paid > 0.5 ? C.teal : C.amber} k={pop(t, 4.0)} size={38} />
-    <Kick t={t} d={d} a="Open loops stick" b="Closed loops fade" />
+      <Kick t={t} d={d} a="Open loops stick" b="Closed loops fade" />
     </Drift>
   );
 };
@@ -1082,7 +1258,7 @@ export const achor_guitar: React.FC<ShotProps> = ({ t, d }) => {
       <Sub x={380} y={880} text="closet: 20 s away" k={pop(t, 1.2)} color={C.dim} size={32} />
       <Tag x={1100} y={880} text="20 s closer → habit stuck" bg={C.teal} k={pop(t, 8.0)} size={34} />
       <Count x={960} y={300} to={20} t={t} at={2.6} dur={1.2} suffix=" s" size={100} color={C.amber} />
-    <Kick t={t} d={d} a="Make the good habit easy" b="Make the bad one harder" />
+      <Kick t={t} d={d} a="Make the good habit easy" b="Make the bad one harder" />
     </Drift>
   );
 };
@@ -1115,7 +1291,7 @@ export const selfcomp_why: React.FC<ShotProps> = ({ t, d }) => {
       <Tag x={500} y={840} text="self-criticism = another threat" bg={C.coral} color={C.text} k={pop(t, 2.2) * (1 - kind)} size={32} />
       <Tag x={1420} y={840} text="self-compassion = alarm OFF" bg={C.teal} k={pop(t, 6.2)} size={32} />
       <Meter x={710} y={960} w={500} p={lerp(0.95, 0.15, ramp(t, 6.4, d - 8))} color={kind > 0.5 ? C.teal : C.coral} label="AMYGDALA ALARM" h={26} />
-    <Kick t={t} d={d} a="Kindness ≠ excuses" b="Kindness = restart" />
+      <Kick t={t} d={d} a="Kindness ≠ excuses" b="Kindness = restart" />
     </Drift>
   );
 };

@@ -209,3 +209,8 @@
 - **Symptom:** Asset O29_keyboard published as 'O29board.png' -> strict render: Missing Gemini asset
 - **Ruled-out Dead-end:** basename.replace('_key','') to strip the chroma-key suffix
 - **Verified Golden Path:** Strip only the trailing '_key.png' suffix (scripts/brain/assets.py); avoid ids containing '_key' or always slice the suffix
+
+### [LESSON-43] (2026-11-22)
+- **Symptom:** Asset Gemini trong iconsImg.tsx hien sai vat the (Clock ra may MRI, Heart ra anh H4 nen den, M11 dinh vien xanh)
+- **Ruled-out Dead-end:** Tin ten file raw sau khi chay batch download Gemini ma khong doi chieu sheet_all.jpg
+- **Verified Golden Path:** Luon mo xem assets/sheet_all.jpg bang read_file de doi chieu tung ten file voi hinh that truoc khi map trong iconsImg.tsx va truoc khi render

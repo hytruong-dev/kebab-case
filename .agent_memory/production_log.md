@@ -69,3 +69,7 @@
 ### Video: brain-procrastination-ep01-v2c - "S1E01 v2 — all objects are Gemini images (strict asset mode)" (2026-11-21 04:51)
 - **Thời lượng:** 622.0s
 - **Bài học rút ra:** Owner: vector head/brain not allowed -> iconsImg strict (throws on missing asset), +8 Gemini objects (flame, weight, knot, stranger, fist, video card, door, moon); assets.py suffix bug fixed; QA PASS
+
+### Video: brain-procrastination-ep01-v3 - "S1E01 Studio Full-Bleed Edition (10:22, 60fps, Stage + BottomMascot + GlassCard + asset audit)" (2026-11-22 16:15)
+- **Thời lượng:** 622.3s
+- **Bài học rút ra:** TASTE-36/37 + LESSON-43: full-bleed Stage backdrop across all 72 beats, zero bottom strip, BottomMascot flush to y=1080, fixed swapped Gemini assets (Clock/Heart/Lock/Cookie/Scanner/Crt/Briefcase/Bell), varied transitions, QA PASS -14.0 LUFS TP -1.4

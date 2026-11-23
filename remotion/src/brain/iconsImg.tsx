@@ -50,16 +50,34 @@ const pill = (y: number, size: number, bg: string) => (p: { label?: string }) =>
 /** O01 head cross-section (821x900). Overlay anchors measured on the image (local units, image height 460):
  *  brain centre (41,-69), prefrontal = front of brain (138,-64), amygdala = deep centre (46,-9). */
 export const Head: React.FC<P & { front?: number; deep?: number; glitch?: number }> = ({ front = 0, deep = 0, glitch = 0, ...p }) => (
-  <G {...p} x={p.x + (glitch ? Math.sin(p.x + glitch * 97) * 6 * glitch : 0)}>
-    {glitch > 0 && <Im n="O01_head_section" w={420} h={460} cx={-10 * glitch} op={0.55} filter="hue-rotate(180deg) saturate(3)" />}
-    {glitch > 0 && <Im n="O01_head_section" w={420} h={460} cx={10 * glitch} op={0.55} filter="hue-rotate(-40deg) saturate(3)" />}
+  <G {...p} x={p.x + (glitch ? Math.sin(p.x + glitch * 97) * 7 * glitch : 0)}>
+    <defs>
+      <radialGradient id="pfcGlow" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stopColor={C.amber} stopOpacity="0.9" />
+        <stop offset="55%" stopColor={C.amber} stopOpacity="0.35" />
+        <stop offset="100%" stopColor={C.amber} stopOpacity="0" />
+      </radialGradient>
+      <radialGradient id="amygGlow" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stopColor={C.coral} stopOpacity="0.95" />
+        <stop offset="55%" stopColor={C.coral} stopOpacity="0.35" />
+        <stop offset="100%" stopColor={C.coral} stopOpacity="0" />
+      </radialGradient>
+    </defs>
+    {glitch > 0 && <Im n="O01_head_section" w={420} h={460} cx={-12 * glitch} op={0.6} filter="hue-rotate(180deg) saturate(3.5)" />}
+    {glitch > 0 && <Im n="O01_head_section" w={420} h={460} cx={12 * glitch} op={0.6} filter="hue-rotate(-40deg) saturate(3.5)" />}
     <Im n="O01_head_section" w={420} h={460} />
-    {front > 0 && <ellipse cx={138} cy={-64} rx={58} ry={70} fill={C.amber} opacity={0.55 * front} style={{ mixBlendMode: "screen" }} />}
+    {front > 0 && (
+      <g opacity={front}>
+        <circle cx={128} cy={-74} r={88} fill="url(#pfcGlow)" style={{ mixBlendMode: "screen" }} />
+        <circle cx={128} cy={-74} r={42} fill="none" stroke={C.amber} strokeWidth={3} strokeDasharray="8 6" opacity={0.85} />
+      </g>
+    )}
     {deep > 0 && (
-      <>
-        <circle cx={46} cy={-9} r={60 * deep} fill={C.coral} opacity={0.3 * deep} />
-        <ellipse cx={46} cy={-9} rx={20} ry={13} fill={C.coral} opacity={deep} transform="rotate(-20 46 -9)" />
-      </>
+      <g opacity={deep}>
+        <circle cx={46} cy={-9} r={76} fill="url(#amygGlow)" style={{ mixBlendMode: "screen" }} />
+        <circle cx={46} cy={-9} r={24} fill="none" stroke={C.coral} strokeWidth={3.5} opacity={0.9} />
+        <ellipse cx={46} cy={-9} rx={15} ry={10} fill={C.coral} transform="rotate(-20 46 -9)" />
+      </g>
     )}
   </G>
 );
@@ -117,13 +135,14 @@ export const Laptop = obj<P & { t?: number; fill?: number }>("O04_laptop_blank",
     </>
   ),
 });
-export const Clock = obj<P & { m?: number; h?: number; red?: boolean }>("O06_wall_clock", 240, 240, {
+/** O44_timer_5min is the clean round clock/timer dial (O06_wall_clock was swapped with MRI scanner in raw download). */
+export const Clock = obj<P & { m?: number; h?: number; red?: boolean }>("O44_timer_5min", 220, 220, {
   over: (p) => (
     <>
-      <line x1={0} y1={0} x2={0} y2={-48} stroke="#0B1120" strokeWidth={9} strokeLinecap="round" transform={`rotate(${(p.h ?? 0) * 30})`} />
-      <line x1={0} y1={0} x2={0} y2={-70} stroke={C.coral} strokeWidth={6} strokeLinecap="round" transform={`rotate(${(p.m ?? 0) * 6})`} />
-      <circle r={8} fill="#0B1120" />
-      {p.red ? <circle r={118} fill="none" stroke={C.coral} strokeWidth={6} opacity={0.8} /> : null}
+      <line x1={0} y1={0} x2={0} y2={-44} stroke="#0B1120" strokeWidth={8} strokeLinecap="round" transform={`rotate(${(p.h ?? 0) * 30})`} />
+      <line x1={0} y1={0} x2={0} y2={-66} stroke={C.coral} strokeWidth={5.5} strokeLinecap="round" transform={`rotate(${(p.m ?? 0) * 6})`} />
+      <circle r={7} fill="#0B1120" />
+      {p.red ? <circle r={108} fill="none" stroke={C.coral} strokeWidth={6} opacity={0.85} /> : null}
     </>
   ),
 });
@@ -141,35 +160,40 @@ export const Sheet = obj<P & { red?: number }>("O17_spreadsheet", 360, 260, {
 export const Boulder = obj<P & { label?: string }>("O08_boulder", 300, 260, { over: label(15, 34) });
 export const Pebble = obj<P & { label?: string }>("O09_pebble", 170, 130, { over: label(10, 30) });
 export const Lock: React.FC<P & { open?: number; color?: string }> = (p) => (
-  <G {...p}><Im n={(p.open ?? 0) > 0.5 ? "O11_padlock_open" : "O10_padlock_closed"} w={220} h={260} cy={-10} /></G>
+  <G {...p}><Im n={(p.open ?? 0) > 0.5 ? "O14_retro_computer" : "O10_padlock_closed"} w={220} h={260} cy={-10} /></G>
 );
-export const Heart = obj<P & { glow?: number }>("O12_heart", 260, 240, {
-  under: (p) => (p.glow ? <circle r={160} fill={C.coral} opacity={0.22 * p.glow} /> : null),
+/** O15_bell is the clean 3D pink heart (O12_heart was swapped with H4_doom_loop in raw download). */
+export const Heart = obj<P & { glow?: number }>("O15_bell", 220, 210, {
+  under: (p) => (p.glow ? <circle r={145} fill={C.coral} opacity={0.28 * p.glow} /> : null),
 });
 export const Flask = obj<P & { level?: number; t?: number }>("O13_dopamine_flask", 260, 300, {
   under: () => <circle r={170} fill={C.amber} opacity={0.15} />,
   over: (p) => <>{Array.from({ length: 5 }, (_, i) => <circle key={i} cx={-40 + i * 20} cy={70 - (((p.t ?? 0) * 50 + i * 31) % 120)} r={6} fill="#FDE68A" opacity={0.8} />)}</>,
 });
-/** O14 retro computer: `lines` types green boot text on the CRT (screen ≈ x -120..80, y -120..-10, w=420). */
-export const Crt = obj<P & { lines?: number; t?: number }>("O14_retro_computer", 420, 380, {
-  over: (p) => <>{Array.from({ length: 4 }, (_, i) => <rect key={i} x={-110} y={-110 + i * 24} width={(i % 2 ? 120 : 170) * Math.min(1, Math.max(0, (p.lines ?? 0) * 4 - i))} height={10} fill="#4ADE80" opacity={0.85} />)}</>,
+/** O04_laptop_blank used cleanly (O14_retro_computer was swapped with open padlock in raw download). */
+export const Crt = obj<P & { lines?: number; t?: number }>("O04_laptop_blank", 400, 300, {
+  over: (p) => <>{Array.from({ length: 4 }, (_, i) => <rect key={i} x={-100} y={-95 + i * 22} width={(i % 2 ? 120 : 175) * Math.min(1, Math.max(0, (p.lines ?? 0) * 4 - i))} height={9} fill="#4ADE80" opacity={0.85} />)}</>,
 });
+/** O16_alarm_button used for alert/notification (O15_bell was swapped with pink heart in raw download). */
 export const Bell: React.FC<P & { ring?: number }> = (p) => (
-  <G {...p} rot={(p.rot ?? 0) + (p.ring ?? 0) * 15}><Im n="O15_bell" w={200} h={200} /></G>
+  <G {...p} rot={(p.rot ?? 0) + (p.ring ?? 0) * 12}><Im n="O16_alarm_button" w={190} h={160} /></G>
 );
 export const AlarmButton = obj<P & { press?: number; flash?: number }>("O16_alarm_button", 280, 230, {
   under: (p) => (p.flash ? <circle cy={-10} r={170} fill={C.coral} opacity={0.35 * p.flash} /> : null),
 });
-export const Scanner = obj<P & { scan?: number }>("O03_fmri", 520, 420, {
-  over: (p) => (p.scan ? <rect x={-260 + 520 * p.scan - 6} y={-200} width={12} height={400} fill={C.teal} opacity={0.6} /> : null),
+/** O06_wall_clock is the clean white fMRI scanner (O03_fmri was swapped with desk image in raw download). */
+export const Scanner = obj<P & { scan?: number }>("O06_wall_clock", 500, 380, {
+  over: (p) => (p.scan ? <rect x={-240 + 480 * p.scan - 6} y={-180} width={12} height={360} fill={C.teal} opacity={0.65} /> : null),
 });
 export const Couch = obj<P>("O31_couch", 440, 240);
-export const Cookie = obj<P>("O20_cookie", 150, 150);
+/** O23_briefcase is the clean chocolate-chip cookie (O20_cookie was swapped with grad cap). */
+export const Cookie = obj<P>("O23_briefcase", 150, 150);
 export const Chest = obj<P>("O21_treasure_chest", 340, 280);
 export const FuelCan = obj<P & { pour?: number }>("O19_fuel_can", 260, 280, {
   over: (p) => (p.pour ? <path d={`M 90 -110 C 140 -120 170 -60 180 ${-60 + 160 * p.pour}`} fill="none" stroke={C.amber} strokeWidth={14} strokeLinecap="round" /> : null),
 });
-export const Briefcase = obj<P>("O23_briefcase", 230, 200);
+/** O07_papers_stack used for career/work (O23_briefcase was swapped with cookie). */
+export const Briefcase = obj<P>("O07_papers_stack", 210, 220);
 export const GradCap = obj<P>("O24_graduation_cap", 250, 210);
 export const Gears: React.FC<P & { t?: number }> = (p) => <G {...p} rot={(p.rot ?? 0) + Math.sin((p.t ?? 0) * 1.5) * 8}><Im n="O26_gears" w={260} h={230} /></G>;
 export const Telescope = obj<P>("O27_telescope", 270, 270);
@@ -208,17 +232,17 @@ const DoorImg: React.FC<{ open: number }> = ({ open }) => {
 };
 export const Moon = obj<P>("O55_moon", 200, 200);
 
-/** O22 balance scale (900x692, w=560). Pans at (±174, 56); the whole scale tips by `tilt` (-1 left down .. 1 right down). */
+/** O22 balance scale (900x692, w=560). Pans sit around (±174, 58); props rest INSIDE the pans instead of floating above ropes. */
 export const Scale: React.FC<P & { tilt?: number; left?: React.ReactNode; right?: React.ReactNode }> = ({ tilt = 0, left, right, ...p }) => {
   const a = tilt * 7;
   const r = (a * Math.PI) / 180;
-  const pan = (sx: number) => ({ x: sx * 174 * Math.cos(r), y: 56 + sx * 174 * Math.sin(r) - 20 });
+  const pan = (sx: number) => ({ x: sx * 176 * Math.cos(r), y: 42 + sx * 176 * Math.sin(r) });
   const L = pan(-1), R = pan(1);
   return (
     <G {...p}>
       <g transform={`rotate(${a} 0 -170)`}><Im n="O22_balance_scale" w={560} h={430} /></g>
-      <g transform={`translate(${L.x} ${L.y - 40})`}>{left}</g>
-      <g transform={`translate(${R.x} ${R.y - 40})`}>{right}</g>
+      <g transform={`translate(${L.x} ${L.y})`}>{left}</g>
+      <g transform={`translate(${R.x} ${R.y})`}>{right}</g>
     </G>
   );
 };
