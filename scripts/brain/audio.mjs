@@ -16,7 +16,7 @@ const OUT = join(P, "audio");
 const SFXD = join(OUT, "sfx");
 mkdirSync(SFXD, { recursive: true });
 const tl = JSON.parse(stripBom(readFileSync(join(OUT, "timeline.json"), "utf8")));
-const TAIL = 1.5; // = BrainEpisode tail
+const TAIL = cfg.tail ?? 1.5; // = BrainEpisode tail (override for tight-loop Shorts)
 const CARD = 1.6; // = BrainEpisode CARD
 const D = tl.total + TAIL;
 
@@ -81,7 +81,7 @@ inputs.forEach((f) => args.push("-i", f));
 // ffmpeg 7+: "-/opt file" reads the option value from a file
 args.push("-/filter_complex", fscript, "-map", "[out]", "-ar", "48000", "-ac", "2", join(OUT, "master-audio.wav"));
 ff(args);
-const pub = join(ROOT, "remotion/public/brain", cfg.ep);
+const pub = join(ROOT, "remotion/public/brain", cfg.audioDir || cfg.ep);
 mkdirSync(pub, { recursive: true });
 copyFileSync(join(OUT, "master-audio.wav"), join(pub, "master-audio.wav"));
 console.log(`audio: ${tl.items.length} sentences, ${labels.length - tl.items.length} sfx, ${D.toFixed(2)} s`);

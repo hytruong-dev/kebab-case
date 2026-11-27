@@ -1,0 +1,69 @@
+{
+  "slug": "curioshift-short-01",
+  "title": "Stop Calling Yourself Lazy. It's a Brain Glitch. #shorts",
+  "lang": "en",
+  "voice": {
+    "engine": "kokoro",
+    "voice": "am_michael",
+    "speed": 1.12,
+    "tempo": 1.0
+  },
+  "chapters": [
+    {
+      "id": "s1",
+      "title": "[SHORT_01]",
+      "sentences": [
+        {
+          "shot": "s01_hook",
+          "say": "Stop calling yourself lazy.",
+          "show": "STOP CALLING YOURSELF|LAZY."
+        },
+        {
+          "shot": "s02_twist",
+          "say": "Neuroscience proved procrastination isn't a time problem.",
+          "show": "NOT A TIME|PROBLEM."
+        },
+        {
+          "shot": "s03_threat",
+          "say": "Stare at a hard task, and your brain's alarm center treats it like a physical threat.",
+          "show": "YOUR BRAIN SEES A|PHYSICAL THREAT."
+        },
+        {
+          "shot": "s04_caveman",
+          "say": "The exact same panic your ancestors felt facing a predator.",
+          "show": "ANCIENT|SURVIVAL PANIC."
+        },
+        {
+          "shot": "s05_flight",
+          "say": "Since you can't punch a spreadsheet, your brain hits escape.",
+          "show": "YOUR BRAIN HITS|ESCAPE."
+        },
+        {
+          "shot": "s06_phone",
+          "say": "And hijacks your hand straight to your glowing phone.",
+          "show": "STRAIGHT TO|YOUR PHONE."
+        },
+        {
+          "shot": "s07_loop",
+          "say": "Instant relief now. Massive guilt an hour later.",
+          "show": "INSTANT RELIEF.|MASSIVE GUILT."
+        },
+        {
+          "shot": "s08_willpower",
+          "say": "That's why pure willpower loses every single time.",
+          "show": "WILLPOWER|ALWAYS FAILS."
+        },
+        {
+          "shot": "s09_hack",
+          "say": "Instead, shrink the task to five minutes so the alarm stays asleep.",
+          "show": "SHRINK IT TO|5 MINUTES."
+        },
+        {
+          "shot": "s10_cta",
+          "say": "I broke down all three science-backed tricks in the full video right below.",
+          "show": "3 BRAIN TRICKS|FULL VIDEO BELOW"
+        }
+      ]
+    }
+  ]
+}

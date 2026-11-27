@@ -1,0 +1,8 @@
+{
+  "ep": "ep01",
+  "audioDir": "short01",
+  "tail": 0.45,
+  "short": true,
+  "ticks": ["s02_twist", "s09_hack"],
+  "alarms": [["s03_threat", 0.9], ["s07_loop", 1.5]]
+}

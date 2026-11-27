@@ -1,6 +1,7 @@
 import React from "react";
 import { Composition, Folder } from "remotion";
 import { BrainEpisode, type BrainEpisodeProps, brainEpisodeDuration } from "./brain/BrainEpisode";
+import { BrainShort, type BrainShortProps, brainShortDuration } from "./brain/BrainShort";
 import { FPS as BRAIN_FPS } from "./brain/kit";
 import { EffectsGallery, galleryHeight } from "./gallery/EffectsGallery";
 import { TransitionsGallery, transitionsGalleryDuration } from "./gallery/TransitionsGallery";
@@ -24,6 +25,16 @@ export const RemotionRoot: React.FC = () => {
           height={1080}
           defaultProps={{ items: [], total: 10, tail: 1.5, withAudio: false } satisfies BrainEpisodeProps}
           calculateMetadata={({ props }) => ({ durationInFrames: brainEpisodeDuration(props) })}
+        />
+        <Composition
+          id="BrainShort"
+          component={BrainShort}
+          durationInFrames={BRAIN_FPS * 35}
+          fps={BRAIN_FPS}
+          width={1080}
+          height={1920}
+          defaultProps={{ items: [], total: 35, tail: 0.45, withAudio: false, ep: "ep01", audioDir: "short01" } satisfies BrainShortProps}
+          calculateMetadata={({ props }) => ({ durationInFrames: brainShortDuration(props) })}
         />
       </Folder>
 

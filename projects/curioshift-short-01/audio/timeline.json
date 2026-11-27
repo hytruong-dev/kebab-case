@@ -1,0 +1,115 @@
+{
+ "total": 37.448,
+ "items": [
+  {
+   "id": "s1_01",
+   "chapter": "s1",
+   "chapterTitle": "[SHORT_01]",
+   "first": true,
+   "shot": "s01_hook",
+   "show": "STOP CALLING YOURSELF|LAZY.",
+   "start": 0.8,
+   "dur": 1.641,
+   "file": "vo/s1_01.wav"
+  },
+  {
+   "id": "s1_02",
+   "chapter": "s1",
+   "chapterTitle": "[SHORT_01]",
+   "first": false,
+   "shot": "s02_twist",
+   "show": "NOT A TIME|PROBLEM.",
+   "start": 2.791,
+   "dur": 3.792,
+   "file": "vo/s1_02.wav"
+  },
+  {
+   "id": "s1_03",
+   "chapter": "s1",
+   "chapterTitle": "[SHORT_01]",
+   "first": false,
+   "shot": "s03_threat",
+   "show": "YOUR BRAIN SEES A|PHYSICAL THREAT.",
+   "start": 6.933,
+   "dur": 4.846,
+   "file": "vo/s1_03.wav"
+  },
+  {
+   "id": "s1_04",
+   "chapter": "s1",
+   "chapterTitle": "[SHORT_01]",
+   "first": false,
+   "shot": "s04_caveman",
+   "show": "ANCIENT|SURVIVAL PANIC.",
+   "start": 12.129,
+   "dur": 3.478,
+   "file": "vo/s1_04.wav"
+  },
+  {
+   "id": "s1_05",
+   "chapter": "s1",
+   "chapterTitle": "[SHORT_01]",
+   "first": false,
+   "shot": "s05_flight",
+   "show": "YOUR BRAIN HITS|ESCAPE.",
+   "start": 15.957,
+   "dur": 3.157,
+   "file": "vo/s1_05.wav"
+  },
+  {
+   "id": "s1_06",
+   "chapter": "s1",
+   "chapterTitle": "[SHORT_01]",
+   "first": false,
+   "shot": "s06_phone",
+   "show": "STRAIGHT TO|YOUR PHONE.",
+   "start": 19.463,
+   "dur": 2.415,
+   "file": "vo/s1_06.wav"
+  },
+  {
+   "id": "s1_07",
+   "chapter": "s1",
+   "chapterTitle": "[SHORT_01]",
+   "first": false,
+   "shot": "s07_loop",
+   "show": "INSTANT RELIEF.|MASSIVE GUILT.",
+   "start": 22.228,
+   "dur": 3.007,
+   "file": "vo/s1_07.wav"
+  },
+  {
+   "id": "s1_08",
+   "chapter": "s1",
+   "chapterTitle": "[SHORT_01]",
+   "first": false,
+   "shot": "s08_willpower",
+   "show": "WILLPOWER|ALWAYS FAILS.",
+   "start": 25.586,
+   "dur": 2.885,
+   "file": "vo/s1_08.wav"
+  },
+  {
+   "id": "s1_09",
+   "chapter": "s1",
+   "chapterTitle": "[SHORT_01]",
+   "first": false,
+   "shot": "s09_hack",
+   "show": "SHRINK IT TO|5 MINUTES.",
+   "start": 28.821,
+   "dur": 3.711,
+   "file": "vo/s1_09.wav"
+  },
+  {
+   "id": "s1_10",
+   "chapter": "s1",
+   "chapterTitle": "[SHORT_01]",
+   "first": false,
+   "shot": "s10_cta",
+   "show": "3 BRAIN TRICKS|FULL VIDEO BELOW",
+   "start": 32.882,
+   "dur": 4.216,
+   "file": "vo/s1_10.wav"
+  }
+ ]
+}

@@ -73,3 +73,7 @@
 ### Video: brain-procrastination-ep01-v3 - "S1E01 Studio Full-Bleed Edition (10:22, 60fps, Stage + BottomMascot + GlassCard + asset audit)" (2026-11-22 16:15)
 - **Thời lượng:** 622.3s
 - **Bài học rút ra:** TASTE-36/37 + LESSON-43: full-bleed Stage backdrop across all 72 beats, zero bottom strip, BottomMascot flush to y=1080, fixed swapped Gemini assets (Clock/Heart/Lock/Cookie/Scanner/Crt/Briefcase/Bell), varied transitions, QA PASS -14.0 LUFS TP -1.4
+
+### Video: curioshift-short-01 - "Stop Calling Yourself Lazy. It's a Brain Glitch. #shorts" (2026-11-27 07:20)
+- **Thời lượng:** 38.0s
+- **Bài học rút ra:** IfverseTales-inspired 9:16 60fps Short with top escalating status pill, bold 2-color ALL-CAPS captions above safe zone, @CurioShiftMind watermark, and EP01 Related Video funnel

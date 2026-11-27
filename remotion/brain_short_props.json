@@ -1,0 +1,79 @@
+{
+  "items": [
+    {
+      "id": "s1_01",
+      "shot": "s01_hook",
+      "show": "STOP CALLING YOURSELF|LAZY.",
+      "start": 0.8,
+      "dur": 1.641
+    },
+    {
+      "id": "s1_02",
+      "shot": "s02_twist",
+      "show": "NOT A TIME|PROBLEM.",
+      "start": 2.791,
+      "dur": 3.792
+    },
+    {
+      "id": "s1_03",
+      "shot": "s03_threat",
+      "show": "YOUR BRAIN SEES A|PHYSICAL THREAT.",
+      "start": 6.933,
+      "dur": 4.846
+    },
+    {
+      "id": "s1_04",
+      "shot": "s04_caveman",
+      "show": "ANCIENT|SURVIVAL PANIC.",
+      "start": 12.129,
+      "dur": 3.478
+    },
+    {
+      "id": "s1_05",
+      "shot": "s05_flight",
+      "show": "YOUR BRAIN HITS|ESCAPE.",
+      "start": 15.957,
+      "dur": 3.157
+    },
+    {
+      "id": "s1_06",
+      "shot": "s06_phone",
+      "show": "STRAIGHT TO|YOUR PHONE.",
+      "start": 19.463,
+      "dur": 2.415
+    },
+    {
+      "id": "s1_07",
+      "shot": "s07_loop",
+      "show": "INSTANT RELIEF.|MASSIVE GUILT.",
+      "start": 22.228,
+      "dur": 3.007
+    },
+    {
+      "id": "s1_08",
+      "shot": "s08_willpower",
+      "show": "WILLPOWER|ALWAYS FAILS.",
+      "start": 25.586,
+      "dur": 2.885
+    },
+    {
+      "id": "s1_09",
+      "shot": "s09_hack",
+      "show": "SHRINK IT TO|5 MINUTES.",
+      "start": 28.821,
+      "dur": 3.711
+    },
+    {
+      "id": "s1_10",
+      "shot": "s10_cta",
+      "show": "3 BRAIN TRICKS|FULL VIDEO BELOW",
+      "start": 32.882,
+      "dur": 4.216
+    }
+  ],
+  "total": 37.448,
+  "tail": 0.45,
+  "withAudio": true,
+  "ep": "ep01",
+  "audioDir": "short01"
+}

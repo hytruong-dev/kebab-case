@@ -107,3 +107,22 @@ Trước khi viết `script.json` hoặc tạo ảnh Gemini cho tập tiếp the
 4. [ ] **Kiểm tra Hook 30s & Retention Beats:** 30 giây đầu khớp lời hứa tiêu đề không chào dài; toàn tập 10–11 phút có **10–20 beat có nhãn** (`hook → promise → stakes → open loop → proof → re-hook → mini-payoff → late re-hook → payoff → bridge`)?
 5. [ ] **Kiểm tra Rủi ro Kiếm tiền (`audit-channel-risk`):** Kịch bản có nghiên cứu thật riêng biệt (không "thay tên đổi họ"), tài nguyên hình ảnh mới (`TASTE-35`), mô tả ghi nguồn đầy đủ?
 
+---
+
+## 5. Áp Dụng TubeLab MCP & Tối Ưu Cho Video YouTube Shorts (9:16 · 60fps)
+
+Mọi video **YouTube Shorts** của `CurioShift` cũng **BẮT BUỘC** áp dụng quy trình nghiên cứu từ **TubeLab MCP** + các skill trong `.agents/skills/` trước khi viết kịch bản và render (`BrainShort.tsx` / `scripts/brain/render-short.mjs`):
+
+### 5.1. Bộ lọc TubeLab MCP dành riêng cho Shorts (theo `skills/tubelab-mcp/SKILL.md`)
+- **Tìm Shorts đột biến (Outliers):** gọi `search_outliers` với **`type: "short"`**, **`publishedAtFrom: "month"`** (hoặc `"trimester"`), **`classificationQuality: "neutral"`** và **`subscribersCountTo: 300000`** để soi các Short thắng nhờ format chứ không nhờ kênh lớn.
+- **Tìm kênh Shorts bứt phá:** gọi `search_channels` **bắt buộc ghép cặp `contentKind: "short-form"` + `filterBy: "short"`** để các bộ lọc view/ratio đọc đúng chỉ số Shorts (lưu ý: ước tính kiếm tiền trên kênh chỉ làm Shorts kém chính xác hơn video dài).
+- **Giải mã kênh đối thủ miễn phí:** gọi `get_channel_shorts` (miễn phí, trả về mẫu Shorts kèm cờ outlier) để phân tích các tập Shorts thắng nhất của kênh mẫu (như `@IfverseTales`).
+- **Đọc Hook 3 giây & Bình luận miễn phí:** cắt bỏ tiền tố `shorts/` để lấy đúng **Video ID 11 ký tự**, sau đó gọi `get_video_transcript` (chỉ đọc 10–15 giây đầu để lấy Hook nguyên văn) và `get_video_comments` để lấy đúng câu hỏi khán giả hay hỏi nhất làm Hook/Pinned Comment.
+
+### 5.2. Chuẩn dựng hình Shorts `CurioShift` (học từ `@IfverseTales` + `PLAN_owner.md` mục 6)
+1. **Khung hình & Độ dài vàng:** `1080×1920` (9:16), `60 fps`, thời lượng tối ưu **30–45 giây**, chuyển cảnh nhanh **2,5–3,8 giây/nhịp**, giọng Kokoro `am_michael` tốc độ `1.10–1.15x`, master `-14 LUFS / TP -1.5 dBTP` (`node scripts/qa-video.mjs <file> --kind shorts`).
+2. **Thanh trạng thái leo thang ở đỉnh (Top Escalating Status Pill):** đặt ở `y ≈ 145px` (ví dụ `LABEL: ~~LAZY~~`, `AMYGDALA • THREAT 100%`, `TRICK #1 • 5-MIN RULE`) để giữ mắt người xem ngay trong 0,5 giây đầu.
+3. **Phụ đề ALL-CAPS 2 màu + Vùng an toàn (Safe Zone):** đặt gọn ở `y = 1320..1490`, **chừa trống 20% đáy (`y > 1536`)** và **15% cạnh phải (`x > 915`)** khỏi nút UI YouTube; watermark `@CurioShiftMind` nhỏ gọn ở mép trái phía trên phụ đề (`y ≈ 1265`).
+4. **Phễu kéo về Video dài (Related Video Funnel):** 3–4 giây cuối hiện nút vàng `FULL VIDEO ON THE CHANNEL ↓` + ghim liên kết **Video liên quan (Related Video)** về đúng tập dài tương ứng trên YouTube Studio.
+5. **Trung thực dữ liệu khi chưa kết nối TubeLab MCP:** nếu Antigravity chưa kết nối MCP `tubelab`, báo rõ ngay từ đầu (các số outlier ratio/RPM/ad-status ghi `not available`), dùng Playwright MCP quan sát trực tiếp kênh mẫu và vẫn áp dụng trọn bộ chuẩn dựng hình & packaging bên trên.
+

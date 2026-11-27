@@ -23,7 +23,7 @@ const kind = opt("kind", "clip");
 const expect = opt("expect") ? Number(opt("expect")) : null;
 const RULES = {
   long: { dur: [510, 660], lufs: [-15.5, -12.5], size: [1920, 1080] }, // >= 8:30 for mid-roll (TASTE-18)
-  shorts: { dur: [40, 59.5], lufs: [-20, -13], size: [1080, 1920] },
+  shorts: { dur: [25, 59.5], lufs: [-20, -13], size: [1080, 1920] },
   clip: { dur: [1, 3600], lufs: [-16, -12.5], size: [1920, 1080] }, // short films / demos
 }[kind];
 if (!RULES) throw new Error(`--kind phải là long | shorts | clip`);

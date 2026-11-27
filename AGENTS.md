@@ -34,11 +34,12 @@ Reference episode: `projects/brain-procrastination-ep01/` (channel plan `PLAN_ow
 brand kit `projects/curioshift-brand/` (`BRAND.md`, logo, banner, watermark),
 code `remotion/src/brain/` (kit, icons, iconsImg, `epNN/shots.tsx`, `BrainEpisode.tsx`), scripts `scripts/brain/`.
 
-### 📈 Mandatory YouTube Trending & Viral Optimization (`TubeLabHQ/youtube-research-skills`)
-Before scripting or generating assets for **ANY** new episode, apply `docs/YOUTUBE-TRENDING-PLAYBOOK.md` (synthesized from the 17 installed skills in `.agents/skills/` and playbooks in `docs/youtube-research-skills/`):
+### 📈 Mandatory YouTube Trending & Viral Optimization (`TubeLabHQ/youtube-research-skills` — Long-form AND Shorts)
+Before scripting or generating assets for **ANY** new episode **or YouTube Short**, apply `docs/YOUTUBE-TRENDING-PLAYBOOK.md` (synthesized from the 17 installed skills in `.agents/skills/` and playbooks in `docs/youtube-research-skills/`):
 - **Packaging first (Title BEFORE Thumbnail):** Titles ≤ 60 chars on proven formulas with audience anchors; rotate ≥ 4 distinct title shapes across a season (< 50% same shape to prevent repetitive-content demonetization risk per `audit-channel-risk`).
 - **Thumbnail = Unique Angle + Familiar Problem:** ≤ 3 words (or 0 words), NEVER repeat words from the title — show what the title leaves out.
 - **Retention script beats (`script-breakdown`):** First 30 s must deliver `Hook → Promise → Stakes → Open Loop` verbatim matching the title/thumbnail; 10–11 min episodes carry 10–20 typed beats with ≥ 2 **late re-hooks** in the second half.
+- **YouTube Shorts (`9:16` · `BrainShort.tsx`):** Use TubeLab MCP with `type: "short"`, `contentKind: "short-form"` + `filterBy: "short"`, and `get_channel_shorts` (bare 11-char ID for transcripts/comments); build 30–45 s fast-cut Shorts (`2.5–3.8 s/beat`) with top escalating status pill, ALL-CAPS 2-color captions inside Safe Zones (clear bottom 20% & right 15%), `@CurioShiftMind` watermark, and Related Video funnel CTA (`docs/YOUTUBE-TRENDING-PLAYBOOK.md` §5).
 - **Outliers & SCAMPER twists:** Rank by `averageViewsRatio` on emerging channels (< 100K–300K subs), never raw views; apply SCAMPER twists instead of copying; cite proof links when TubeLab MCP (`.mcp.json`) is connected and state clearly when TubeLab MCP is offline (never invent metrics).
 
 ### Making a new video — "làm video mới", "làm video về <chủ đề>" (other styles, e.g. paper-cut)
