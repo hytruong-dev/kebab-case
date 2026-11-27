@@ -1,0 +1,67 @@
+# Agent routing guide
+
+This repository is a set of Agent Skills for YouTube research on top of the TubeLab MCP. Skills live in `skills/<name>/SKILL.md`. Read the one that matches the ask, then follow it. `skills/tubelab-mcp` is the data layer every workflow skill names; load it when a tool call fails, returns nothing, or you are unsure which filter to use.
+
+## Which skill for which ask
+
+| The user asks | Load |
+|---|---|
+| Find a niche, unsaturated niches, faceless ideas, niches that earn beyond AdSense, twist or combine niches | `niche-finder` |
+| Bend this channel's format into another market, niche bending, which proven formats can I bring to my market | `niche-bending` |
+| What is working in X, why did this video blow up, trend report, weekly digest, hooks to steal this month | `trend-report` |
+| Video ideas for my channel, what should I make next | `video-ideation` |
+| Roast or analyze a channel, mine or anyone's, why did views drop, what to change first | `roast-channel` |
+| Will my channel get demonetized or terminated, is my channel at risk, audit my channels for monetization risk | `audit-channel-risk` |
+| Reverse engineer a channel, what works for it, its title, thumbnail and hook formulas, how it grew and earns, what can I copy from it | `reverse-engineer-channel` |
+| Thumbnail for this video or title or script, thumbnail concepts, generate thumbnails, which thumbnails work in a niche | `thumbnail-concepts` |
+| Is X worth entering, is this niche saturated, go or no-go, score this niche, compare a shortlist of niches | `niche-validator` |
+| Titles for my video, title formulas, trending title templates, rewrite a title, a title and a thumbnail together (titles first) | `title-formulas` |
+| Reverse engineer a niche, niche guidelines, what works and what flops in X, what to avoid, who are my competitors, how do I compare, competitive landscape, who is growing in my space | `reverse-engineer-niche` |
+| What do viewers ask or complain about, voice of audience, comments | `comment-mining` |
+| Script structure, beat sheet, hook of this video, script skeleton, how the top videos of a niche or channel are built | `script-breakdown` |
+| Monetization gaps for my channel, what to sell, how channels like mine make money, raise RPM, build a newsletter or products, who could sponsor my channel (the creator's side) | `revenue-maxxing` |
+| Which channels should we sponsor, creator prospect list for a product, match creators to a buyer (the brand's side) | `sponsorship-prospecting` |
+| Watch a niche, which channels broke out since last run, scheduled digest | `niche-watchlist` |
+| How do TubeLab tools work, which filter, credits, REST | `tubelab-mcp` |
+
+Ordered chains for common jobs live in `playbooks/` (run the whole agency, launch a faceless channel, monthly client report).
+
+## Roles (Claude Code agents)
+
+The plugin ships six agents in `agents/`, one per role. Each loads the skills below and returns the skill's report. On other clients, load the skills directly.
+
+| Agent | Skills |
+|---|---|
+| 🔭 `niche-scout` | `niche-finder`; `niche-bending` to bend one channel's format, or a proven one, into new markets; `niche-watchlist` to watch a niche over time |
+| ⚖️ `validator` | `niche-validator` |
+| 📈 `trend-analyst` | `trend-report` |
+| 🎬 `script-analyst` | `script-breakdown` |
+| 🎨 `packaging-team` | `title-formulas`, then `thumbnail-concepts` for the chosen title |
+| 💰 `monetization-team` | `revenue-maxxing`; `sponsorship-prospecting` when the user is a brand choosing channels to sponsor |
+
+## Rules every skill follows
+
+1. Always set `publishedAtFrom` (tokens: `month`, `trimester`, `semester`, `year`). Widen one step at a time and say so. A lookup by handle is the exception: it takes no other filter.
+2. Content Authenticity is never off: `classificationQuality` at `"neutral"` or above for niches, outliers, ideation and titles; `"positive"` for anything thumbnail-related. Never drop it to widen a thin result. `niche-watchlist`, `audit-channel-risk` and `reverse-engineer-niche` are the exceptions: the watchlist's saved search, the audit's similar channel searches and reverse-engineer-niche's two risk searches leave the filter out.
+3. Rank by `averageViewsRatio`, not raw views. Show both.
+4. Every finding carries its proof from a tool response: channel (handle) · video title verbatim · views · ratio · date. Invent nothing.
+5. Link everything you cite: videos, channels, moments, brands and products. Use a URL from tool data, never a guessed one. A sponsor that was only heard links to the video moment where it was said.
+6. Look at the thumbnail of every video you analyze. Fetch the image from its link and open it.
+7. Revenue, RPM and audience are estimates. Present as bands, labelled.
+8. Searches cost credits. Channel, video, transcript and comment reads are free. Search to find candidates, and read to understand them. Most skills use two to six searches, and do not page through a paid search. Two skills go deeper, because the sample is the product: `niche-finder` pages its two channel searches 3 to 4 pages deep, and `reverse-engineer-niche` uses up to 15 searches without paging.
+9. Write reports in plain language. Use short, full sentences, not dense or telegraphic notes, and no jargon. A reader who is not a YouTube strategist should understand every line on first read.
+10. End with the artifact laid out in the skill's "Output Format" section.
+11. If TubeLab is not connected, say so before you start. Quote the skill's "Without TubeLab" line, name the parts of the report that will be weaker or missing, and write "not available" where a number is missing. Never fill a gap with a guess.
+
+## Connecting the MCP
+
+- Claude Code: this repo is a plugin; `.mcp.json` registers `https://public-api.tubelab.net/mcp` and the first call opens OAuth. Or `claude mcp add --transport http tubelab https://public-api.tubelab.net/mcp`.
+- Claude.ai, Claude Desktop: the TubeLab connector (https://claude.ai/directory/tubelab), OAuth.
+- ChatGPT and Codex: the TubeLab app (https://chatgpt.com/plugins/plugin_asdk_app_6ab3980fb1488191a9b26b3f59efd90b), OAuth.
+- Grok Bot: ask the Bot to add the MCP server by URL, then paste or point it at a `SKILL.md` and ask it to save it as a skill; Grok Build: `/mcps` modal, skills in `.grok/skills/` or `~/.grok/skills/`.
+- Cursor, others: API key as `Authorization: Bearer <key>` (Pro plan). Setup: https://tubelab.net/docs/api/mcp-server
+- No MCP: the REST reference at https://tubelab.net/docs/skill.md.
+
+## Repo conventions for contributors
+
+See `CONTRIBUTING.md`. Each workflow skill is one self-contained `SKILL.md` with the sections Overview · Workflow · Output Format · Common Pitfalls. No skill has a `references/` folder; the full API reference lives at https://tubelab.net/docs/skill.md. Keep it simple, do not over-engineer, Conventional Commits (`type(scope): subject`). Run `node scripts/validate-skills.mjs` before opening a PR.

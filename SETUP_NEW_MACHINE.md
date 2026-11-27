@@ -85,3 +85,4 @@ Khi mở dự án trên IDE có AI (Antigravity, Cursor, Claude Code...), bạn 
 | **Trộn âm thanh & Master -14 LUFS** | `node scripts/brain/audio.mjs <tên-thư-mục-tập>` |
 | **Xuất phụ đề SRT chuẩn khung hình** | `node scripts/brain/srt.mjs <tên-thư-mục-tập>` |
 | **Kiểm định chất lượng video (QA)** | `node scripts/qa-video.mjs out/<tên-file>.mp4 --expect <thời-lượng-giây>` |
+

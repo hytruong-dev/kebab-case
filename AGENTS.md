@@ -27,11 +27,19 @@ Then run `node scripts/memory.mjs sync` and open your reply with the line it pri
 - After every finished MP4, run **/retro**: `node scripts/memory.mjs retro <slug>` → fill `projects/<slug>/RETRO.md` →
   `log-video` + the `add-*` commands it lists; package a technique reused ≥ 2 times into `.agents/skills/learned/<name>/`.
 
-### ⭐ Main production line — Brain & Psychology channel (approved "perfect", EP01, 2026-11-20)
+### ⭐ Main production line — Brain & Psychology channel (`CurioShift` · `@CurioShiftMind`, approved "perfect", EP01, 2026-11-20)
 When the owner gives an episode doc / topic for the channel (English, international, flat-vector navy explainer with the mascot):
 follow `.agents/skills/learned/brain-explainer-episode/SKILL.md` (workflow `.agent/workflows/lam-tap-brain.md`).
 Reference episode: `projects/brain-procrastination-ep01/` (channel plan `PLAN_owner.md`, `script.json`, `brain.json`, `SEO.md`),
+brand kit `projects/curioshift-brand/` (`BRAND.md`, logo, banner, watermark),
 code `remotion/src/brain/` (kit, icons, iconsImg, `epNN/shots.tsx`, `BrainEpisode.tsx`), scripts `scripts/brain/`.
+
+### 📈 Mandatory YouTube Trending & Viral Optimization (`TubeLabHQ/youtube-research-skills`)
+Before scripting or generating assets for **ANY** new episode, apply `docs/YOUTUBE-TRENDING-PLAYBOOK.md` (synthesized from the 17 installed skills in `.agents/skills/` and playbooks in `docs/youtube-research-skills/`):
+- **Packaging first (Title BEFORE Thumbnail):** Titles ≤ 60 chars on proven formulas with audience anchors; rotate ≥ 4 distinct title shapes across a season (< 50% same shape to prevent repetitive-content demonetization risk per `audit-channel-risk`).
+- **Thumbnail = Unique Angle + Familiar Problem:** ≤ 3 words (or 0 words), NEVER repeat words from the title — show what the title leaves out.
+- **Retention script beats (`script-breakdown`):** First 30 s must deliver `Hook → Promise → Stakes → Open Loop` verbatim matching the title/thumbnail; 10–11 min episodes carry 10–20 typed beats with ≥ 2 **late re-hooks** in the second half.
+- **Outliers & SCAMPER twists:** Rank by `averageViewsRatio` on emerging channels (< 100K–300K subs), never raw views; apply SCAMPER twists instead of copying; cite proof links when TubeLab MCP (`.mcp.json`) is connected and state clearly when TubeLab MCP is offline (never invent metrics).
 
 ### Making a new video — "làm video mới", "làm video về <chủ đề>" (other styles, e.g. paper-cut)
 Follow `.agents/skills/core/video-production/SKILL.md` (Steps 0 → 8 with gates; short form `.agent/workflows/lam-video-moi.md`).
@@ -64,6 +72,11 @@ Project skills live in `.agents/skills/` (mirrored in `.claude/skills/`):
   `media-use`, `reverse-any-video`, `style-sampling`, `remotion-to-hyperframes`.
 - Remotion: `remotion-best-practices` (router), `remotion-markup` (effects, transitions), `remotion-render`,
   `remotion-interactivity`, `remotion-captions`, `remotion-docs`, …
+- YouTube Research & Trending (`TubeLabHQ/youtube-research-skills`, `.mcp.json` → `https://public-api.tubelab.net/mcp`):
+  `tubelab-mcp`, `niche-finder`, `niche-bending`, `niche-validator`, `niche-watchlist`, `trend-report`,
+  `video-ideation`, `script-breakdown`, `title-formulas`, `thumbnail-concepts`, `comment-mining`,
+  `reverse-engineer-channel`, `reverse-engineer-niche`, `roast-channel`, `audit-channel-risk`,
+  `revenue-maxxing`, `sponsorship-prospecting`. Full playbooks & roles: `docs/youtube-research-skills/` and `docs/YOUTUBE-TRENDING-PLAYBOOK.md`.
 
 ## Commands (run from the repo root)
 
@@ -128,6 +141,8 @@ After any change:
 | --- | --- |
 | ⭐ Brain channel episode (kit, icons, shots per episode) | `remotion/src/brain/` |
 | ⭐ Brain channel scripts (TTS, assets, audio, render) | `scripts/brain/` · Gemini runner `tools/gemini-alt/run-thread.mjs` |
+| 📈 YouTube Trending Playbook & TubeLab Research Skills | `docs/YOUTUBE-TRENDING-PLAYBOOK.md` · `docs/youtube-research-skills/` · `.mcp.json` |
+| 🎨 CurioShift Channel Brand Kit (`@CurioShiftMind`) | `projects/curioshift-brand/` |
 | Paper-cut shot (layers, parallax, title tag) | `remotion/src/paper/PaperLandscape.tsx` |
 | Reusable paper sheet (texture + torn edge + shadow) | `remotion/src/paper/PaperLayer.tsx` |
 | Alpha overlay example | `remotion/src/paper/PaperConfetti.tsx` |

@@ -39,6 +39,11 @@ mascot + 10 biểu cảm (4.1–4.2), cấu trúc kịch bản (2.4, 3.4), Short
 | Tạo ảnh Gemini nhiều tài khoản | `tools/gemini-alt/run-thread.mjs` (CDP, `GEMINI_PORT`) |
 
 ## Quy trình 1 tập mới (slug ví dụ `brain-spotlight-ep02`, ep `ep02`)
+0. **Cổng Tối Ưu Xu Hướng YouTube (BẮT BUỘC — theo `docs/YOUTUBE-TRENDING-PLAYBOOK.md` & 17 skills `TubeLabHQ`):**
+   - Nếu TubeLab MCP đã kết nối (`.mcp.json`): chạy nhanh `trend-report` / `title-formulas` / `thumbnail-concepts` / `script-breakdown` / `comment-mining` để lấy outlier thực (xếp theo `averageViewsRatio`, không theo view thô). Nếu chưa kết nối: nói rõ phần dữ liệu nào chưa có (không bịa số) và vẫn áp dụng toàn bộ bộ nguyên tắc bên dưới.
+   - **Packaging trước (Tiêu đề TRƯỚC, Thumbnail SAU):** Soạn 3 tiêu đề A/B/C đều **≤ 60 ký tự**, có **Anchor** đúng tệp tâm lý/não bộ, **xoay vòng khuôn tiêu đề** (không quá 50% số tập dùng cùng 1 cấu trúc câu — chống đánh dấu lặp nội dung theo `audit-channel-risk`).
+   - **Thumbnail T1–T3 = Unique Angle + Familiar Problem:** tối đa **≤ 3 từ chữ (hoặc 0 chữ)**, **TUYỆT ĐỐI không lặp chữ tiêu đề** — chỉ vẽ phần hình ảnh/xung đột mà tiêu đề bỏ ngỏ.
+   - **Kiến trúc Hook & Retention Beats:** 30 giây đầu đi thẳng `Hook → Promise → Stakes → Open Loop` khớp 100% lời hứa tiêu đề/thumbnail (không chào dài); toàn tập 10–11 phút có **10–20 beat có nhãn giữ chân**, bắt buộc có **≥ 2 late re-hooks** ở nửa sau video và nghiên cứu khoa học thật riêng biệt (không kịch bản mẫu thay tên).
 1. **Sync + đọc**: `node scripts/memory.mjs sync`; đọc docs tập mới chủ dự án đưa + `PLAN_owner.md`. Không hỏi lại điều đã có trong docs/taste.
 2. **Dự án**: `projects/<slug>/` gồm `PLAN_owner.md` (docs tập), `BRIEF.md`, `brain.json` = `{ "ep": "ep02", "ticks": [...], "alarms": [[shot, giây]] }`.
 3. **Kịch bản** `script.json` (mẫu `projects/brain-procrastination-ep01/script.json`): lời thoại NGUYÊN VĂN docs, cắt mỗi câu/ý thành 1 beat
